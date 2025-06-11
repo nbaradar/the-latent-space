@@ -1,7 +1,10 @@
 ---
 title: Obsidian Github Backup
-description: A guide on how to back up your local Obsidian Vault to a remote Github repo so you can access them from anywhere. 
+description: A guide on how to back up your local Obsidian Vault to a remote Github repo so you can access them from anywhere.
 draft: false
+tags:
+  - obsidian
+date: 2025-06-10
 ---
 You should make some tooling around auto syncing with crontab (comes with macos) and put it in a repo. You could make it really easy for people to set up. 
 But just for now explain the process of setting it up in very simple steps

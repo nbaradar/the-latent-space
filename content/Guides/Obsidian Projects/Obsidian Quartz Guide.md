@@ -1,7 +1,10 @@
 ---
 title: Obsidian Quartz Guide
-description: A guide on how to turn your Obsidian Vault into a Website using Quartz and GitPages 
+description: A guide on how to turn your Obsidian Vault into a Website using Quartz and GitPages
 draft: false
+tags:
+  - obsidian
+date: 2025-06-10
 ---
 Showing how to set up and configure quartz with obsidian. And also how to easily host it with GitHub Pages/Netfliy/CloudFlare
 

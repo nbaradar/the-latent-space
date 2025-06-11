@@ -1,7 +1,10 @@
 ---
 title: Obsidian AutoSync
-description: A guide on how to automatically sync your local Obsidian Vaults with your remote Github Repos so your backed up notes will always be up-to-date. 
+description: A guide on how to automatically sync your local Obsidian Vaults with your remote Github Repos so your backed up notes will always be up-to-date.
 draft: false
+tags:
+  - obsidian
+date: 2025-06-10
 ---
 > [!warning] This section was written very quickly. I will update it with more detail later.
 ## Step 1: AutoSync Bash Script

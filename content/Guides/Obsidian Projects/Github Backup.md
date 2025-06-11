@@ -103,4 +103,4 @@ branch 'master' set up to track 'origin/master'.
 And that's it! You now have an Obsidian vault that is being tracked by Git and backed up to GitHub. This will also give you a changelog showing your history of changes, which can be very useful when organizing notes. 
 ![[Pasted image 20250610155316.png]]
 
-Next you'll want to [[Obsidian AutoSync|create a solution to automagically back up/sync your vault at regular intervals]] that you choose. 
+Next you'll want to [[AutoSync|create a solution to automagically back up/sync your vault at regular intervals]] that you choose. 

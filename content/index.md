@@ -7,6 +7,6 @@ This is a space where I share projects I'm working on, research I'm doing, usefu
 | Page                       | Category |
 | -------------------------- | -------- |
 | [[testpage\|Testing Page]] | Test ⚙️  |
-| [[Obsidian Github Backup]] | Guide 📖 |
-| [[Obsidian AutoSync]]      | Guide 📖 |
-| [[Obsidian Quartz Guide]]  | Guide 📖 |
+| [[Github Backup]] | Guide 📖 |
+| [[AutoSync]]      | Guide 📖 |
+| [[Quartz Site]]  | Guide 📖 |

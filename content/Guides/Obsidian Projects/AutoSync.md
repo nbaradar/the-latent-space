@@ -162,11 +162,11 @@ naderbaradar@Naders-MacBook-Air development_workspace % crontab -l
 
 > [!tip] IMPORTANT
 For crontab to work you may need to give it full disk access (depending on where your obsidian vault is stored. Mine is stored in my iCloud directory)
->#### Steps:
->1. Open **System Settings**
->2. Go to **Privacy & Security → Full Disk Access**
->3. Click the **`+`** button
->4. Press `Cmd + Shift + G` and enter:
+#### Steps:
+1. Open **System Settings**
+2. Go to **Privacy & Security → Full Disk Access**
+3. Click the **`+`** button
+4. Press `Cmd + Shift + G` and enter:
    `/usr/sbin/cron`
 
 

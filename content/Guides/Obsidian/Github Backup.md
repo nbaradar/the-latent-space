@@ -13,7 +13,7 @@ But just for now explain the process of setting it up in very simple steps
 ---
 
 Very simple, 3 main steps:
-## Step 1: Create Remote GitHub/Local Git Repos
+## Step 1: Create Repos
 ### Remote GitHub Repo
 First, go to GitHub.com and create an empty repository for your Obsidian Vault. I'd suggest naming it the same thing as your vault, but you don't have to. I am using the name `test` for this guide. You'll also want to set it to `private` if desired. No need for a `README` needed unless you specifically want one. 
 ![[Pasted image 20250610133937.png]]
@@ -46,7 +46,7 @@ hint:
 hint: git branch -m <name>
 Initialized empty Git repository in /Users/naderbaradar/Library/Mobile Documents/iCloud~md~obsidian/Documents/test/.git/
 ```
-## Step 2: Connect the Local/Remote Repos
+## Step 2: Connect Local/Remote Repos
 Then connect your remote GitHub repo with your local initialized Git repo. So go back to your repo in GitHub (mine happens to be at `https://github.com/nbaradar/test`) and then copy your remote repo URL.
 ![[Pasted image 20250610140435.png]]
 > [!info] I highly suggest you use SSH for better security
@@ -61,7 +61,7 @@ naderbaradar@Naders-MacBook-Air test % git remote -v
 origin git@github.com:nbaradar/test.git (fetch)
 origin git@github.com:nbaradar/test.git (push)
 ```
-## Step 3: Push Files from Local to Remote
+## Step 3: Push from Local to Remote
 Finally it's time to issue your first push. I'll just create a sample `.md` file and show you how you would sync it with your Github repo:
 ```bash
 naderbaradar@Naders-MacBook-Air test % touch sample.md

@@ -4,6 +4,7 @@ description: A guide on how to turn your Obsidian Vault into a Website using Qua
 draft: false
 tags:
   - obsidian
+  - guide
 date: 2025-06-10
 ---
 Showing how to set up and configure quartz with obsidian. And also how to easily host it with GitHub Pages/Netfliy/CloudFlare

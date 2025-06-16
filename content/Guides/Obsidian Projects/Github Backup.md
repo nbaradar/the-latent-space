@@ -4,9 +4,10 @@ description: A guide on how to back up your local Obsidian Vault to a remote Git
 draft: false
 tags:
   - obsidian
+  - guide
 date: 2025-06-10
 ---
-You should make some tooling around auto syncing with crontab (comes with macos) and put it in a repo. You could make it really easy for people to set up. 
+You should make some tooling around auto syncing with crontab (comes with MacOS) and put it in a repo. You could make it really easy for people to set up. 
 But just for now explain the process of setting it up in very simple steps
 
 ---
@@ -104,3 +105,4 @@ And that's it! You now have an Obsidian vault that is being tracked by Git and b
 ![[Pasted image 20250610155316.png]]
 
 Next you'll want to [[AutoSync|create a solution to automagically back up/sync your vault at regular intervals]] that you choose. 
+

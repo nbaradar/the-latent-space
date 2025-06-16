@@ -4,6 +4,7 @@ description: A guide on how to automatically sync your local Obsidian Vaults wit
 draft: false
 tags:
   - obsidian
+  - guide
 date: 2025-06-10
 ---
 > [!warning] This section was written very quickly. I will update it with more detail later.

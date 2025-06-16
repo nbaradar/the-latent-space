@@ -1,5 +1,5 @@
 ---
-title: Obsidian Github Backup
+title: Github Backup
 description: A guide on how to back up your local Obsidian Vault to a remote Github repo so you can access them from anywhere.
 draft: false
 tags:

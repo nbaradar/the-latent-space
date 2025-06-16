@@ -1,5 +1,5 @@
 ---
-title: Obsidian Quartz Guide
+title: Quartz Site
 description: A guide on how to turn your Obsidian Vault into a Website using Quartz and GitPages
 draft: false
 tags:
@@ -60,6 +60,7 @@ npx quartz create
 ```
 
 Then we need to set up our Quartz repo in Github. Do **not** initialize the new repository with `README`, license, or `gitignore` files.
+
 ![[Pasted image 20250610195752.png]]
 
 Next, list your git remotes in your local quartz git repo:

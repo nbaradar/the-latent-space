@@ -1,5 +1,5 @@
 ---
-title: Obsidian AutoSync
+title: AutoSync
 description: A guide on how to automatically sync your local Obsidian Vaults with your remote Github Repos so your backed up notes will always be up-to-date.
 draft: false
 tags:

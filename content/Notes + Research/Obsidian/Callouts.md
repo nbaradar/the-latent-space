@@ -1,3 +1,9 @@
+---
+title: Callouts
+tags:
+  - obsidian
+draft:
+---
 # Callouts
 
 > [!note]

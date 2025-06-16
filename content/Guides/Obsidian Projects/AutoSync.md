@@ -134,6 +134,7 @@ crontab -e
 ```
 
 Then you'll see a text editor (vi) in your terminal:
+
 ![[Pasted image 20250610170510.png]]
 
 Copy this to your clipboard
@@ -143,7 +144,9 @@ Copy this to your clipboard
 
 Then go back to the terminal and press `i` on your keyboard to enter "Insert" mode and paste the line:
 ![[Pasted image 20250610170710.png]]
+
 Finally, press `:` (colon) to enter "Command" mode and then type in `wq`
+
 ![[Pasted image 20250610170831.png]]
 
 This will `w`rite to the file and `q`uit the text editor (vi). You have now scheduled your script to run automatically everyday at these times:

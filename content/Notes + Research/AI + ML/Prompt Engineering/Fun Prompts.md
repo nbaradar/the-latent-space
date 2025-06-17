@@ -1,12 +1,13 @@
 ---
 title: Fun ML Prompts
-description: A collection of fun and creative prompts that I find interesting. Some of them I happened upon online, others I created myself.
+description: A collection of fun/creative/silly prompts that I mostly happened upon online.
 tags:
   - prompt-engineering
   - ai/ml
 date: 2025-06-12
 draft: false
 ---
+A collection of fun/creative/silly prompts that I mostly happened upon online.
 # User Info 
 ## User/System Interaction 
 ```txt

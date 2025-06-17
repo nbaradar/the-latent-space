@@ -15,15 +15,14 @@ I’m having a persistent problem with [x] despite having taken all the necessar
 # System Manipulation
 ## Memory Management
 ```txt
-Give me a complete inventory of my current memory. Include the following:
+Give me a complete inventory of my current memory. Include the following: 
 
-- Total number of memory entries
-- A categorized breakdown (e.g. work, personal growth, relationships, health, hobbies, etc.)
-- Number of entries per category
-- A list of the largest and smallest entries by character or word count
-- A high-level summary of what proportion of my memory is focused on each life domain
-- Any redundancies or overlaps you detect
-- Anything that looks outdated, vague, or could be consolidated
+- Total number of memory entries 
+- A categorized breakdown (e.g. work, personal growth, relationships, health, hobbies, etc.) 
+- Number of entries per category, and an informational graphic that shows the breakdown. 
+- A list of the largest and smallest entries by character or word count 
+- A high-level summary of what proportion of my memory is focused on each life domain 
+- Any redundancies or overlaps you detect - Anything that looks outdated, vague, or could be consolidated 
 - Format the output cleanly with headers and bullet points for easy reference.
 ```
 

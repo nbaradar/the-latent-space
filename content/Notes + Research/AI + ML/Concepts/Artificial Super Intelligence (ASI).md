@@ -2,9 +2,9 @@
 title: Artificial Super Intelligence (ASI)
 tags:
   - asi
-  - definition
   - ai/ml
   - note
+  - concepts
 draft: 
 description: Overview of ASI
 ---

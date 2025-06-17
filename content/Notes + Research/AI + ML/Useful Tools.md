@@ -1,10 +1,9 @@
 ---
 title: Useful Tools
 tags:
-  - ai
   - tools
-  - ml
   - links
+  - ai/ml
 description: Useful AI/ML tools and links
 draft:
 ---

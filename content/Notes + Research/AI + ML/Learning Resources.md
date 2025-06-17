@@ -3,6 +3,7 @@ title: Learning Resources
 tags:
   - education
   - links
+  - ai/ml
 draft:
 ---
 # Resources

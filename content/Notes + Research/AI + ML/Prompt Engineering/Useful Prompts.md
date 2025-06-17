@@ -4,6 +4,7 @@ description: A collection of useful and productive prompts that are designed to 
 draft: false
 tags:
   - prompt-engineering
+  - ai/ml
 date: 2025-06-12
 ---
 # Troubleshooting

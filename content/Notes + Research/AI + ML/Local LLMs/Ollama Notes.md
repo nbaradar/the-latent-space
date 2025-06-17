@@ -3,6 +3,7 @@ title: Ollama Notes
 tags:
   - local_llm
   - ollama
+  - ai/ml
 draft:
 ---
 

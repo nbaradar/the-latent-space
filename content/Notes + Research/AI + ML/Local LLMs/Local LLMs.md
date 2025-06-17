@@ -2,6 +2,7 @@
 title: Local LLMs
 tags:
   - local_llm
+  - ai/ml
 draft:
 ---
 > [!abstract] Summary

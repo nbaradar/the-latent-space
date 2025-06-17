@@ -4,6 +4,7 @@ tags:
   - ai
   - tools
   - ml
+  - links
 description: Useful AI/ML tools and links
 draft:
 ---

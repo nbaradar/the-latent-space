@@ -4,6 +4,7 @@ tags:
   - local_llm
   - ollama
   - ai/ml
+  - notes
 draft:
 ---
 

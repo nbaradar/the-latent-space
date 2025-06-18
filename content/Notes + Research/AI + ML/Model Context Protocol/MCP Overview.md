@@ -3,6 +3,7 @@ title: MCP Overview
 tags:
   - mcp
   - ai/ml
+  - notes
 draft:
 ---
 # What is MCP?

@@ -3,8 +3,8 @@ title: Artificial General Intelligence (AGI)
 tags:
   - asi
   - ai/ml
-  - note
   - concepts
+  - notes
 draft: 
 description: Overview of AGI
 ---

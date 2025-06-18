@@ -3,6 +3,7 @@ title: Geoffrey Hinton
 tags:
   - ai/ml
   - notable_people
+  - research
 draft:
 ---
 ![[Pasted image 20250617175820.png|400]]
@@ -10,8 +11,10 @@ draft:
 Godfather of AI, viewed as a leading figure in the deep learning community. Announced his resignation from Google in 2023 to be able to "freely speak out about the risks of A.I."
 
 ---
+## Interviews
+- [What Leaders Need to Understand About AI with Nobel Laureate Geoffrey Hinton](https://www.youtube.com/watch?v=32f9MgnLSn4)
 ## Quotes
-##### Why did Dr. Hinton seemingly change his mind about the dangers of AI? 
+#### Why did Dr. Hinton seemingly change his mind about the dangers of AI? 
 > [!quote]- It was because of the research I was doing at Google. 
 > Okay, I was trying to figure out whether you could design analog large language models that would use much less power and I began to fully realize the advantage of being digital. So all the models we've got at present are digital, and if you're a digital model you can have exactly the same neural network with the same weights in it running on several different pieces of hardware, like thousands of different pieces of hardware. 
 > 
@@ -26,5 +29,4 @@ Godfather of AI, viewed as a leading figure in the deep learning community. An
 > [Source](https://www.youtube.com/watch?v=mvAeKSBTD8c)
 
 
-## Video Interviews
-- [What Leaders Need to Understand About AI with Nobel Laureate Geoffrey Hinton](https://www.youtube.com/watch?v=32f9MgnLSn4)
+

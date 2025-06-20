@@ -6,4 +6,4 @@ tags:
 draft:
 ---
 # What is it?
-EchoForge is 
+EchoForge is the memory capture sub-system within [[ContextCore]]

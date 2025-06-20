@@ -1,0 +1,5 @@
+---
+title: OpenAI
+tags:
+  - concept
+---

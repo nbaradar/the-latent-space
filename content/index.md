@@ -13,7 +13,7 @@ I haven't nailed down the structure and how everything will be organized, don't 
 
 ---
 
-I'm also intrigued by how [[Artificial General Intelligence (AGI)|AGI]]/[[Artificial Super Intelligence (ASI)|ASI]] (Machine Learning in General, I know AI has become a buzzword) will affect society and humanity, now and in the future, on a **macro** and **micro** scale.
+I'm also intrigued by how [[Artificial General Intelligence (AGI)|AGI]]/[[Artificial Super Intelligence (ASI)|ASI]] ([[Machine Learning]] in General, I know [[Artificial Intelligence (AI)|AI]] has become a buzzword) will affect society and humanity, now and in the future, on a **macro** and **micro** scale.
 
 I want to think about/discuss the macro/societal implications of a technology that can generate statistically optimal solutions to a wide array of humanities biggest and smallest problems. If we do not design and evolve these technologies with intention, the disruption they bring could be catastrophic. Economic, Political, Infrastructural, etc. How will free-market capitalism be affected when we are all equipped with our own means of intellectual/creative production (through generative AI). The shift has already begun in certain domains like call centers, software development, help desk roles, etc. where business owners are employing AI agents to replace existing labor. 
 
@@ -28,6 +28,7 @@ Thanks for stopping by :)
 > - LinkedIn: [nbaradar](https://www.linkedin.com/in/nbaradar/)
 > - Twitter: [@ContextCore](https://x.com/ContextCore)
 > - GitHub: [nbaradar](https://github.com/nbaradar)
+> - Discord: [BlackoutZX](https://discordapp.com/users/127947040201244673)
 
 
 

@@ -4,10 +4,10 @@ tags:
   - mcp
   - ai/ml
   - links
-  - notes
+  - reference
 draft:
 ---
-A curated list of useful MCP servers that are publicly available for consumption. I can't guarantee it'll be up-to-date. Please consult page history if you're curious :) 
+A list of useful MCP servers that are publicly available for consumption. 
 
 | Server                                                           | Provider  | Description                                                                                                                                                                                                               |
 | ---------------------------------------------------------------- | --------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |

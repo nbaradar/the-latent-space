@@ -4,6 +4,7 @@ tags:
   - education
   - links
   - ai/ml
+  - "#reference"
 draft:
 ---
 # Resources

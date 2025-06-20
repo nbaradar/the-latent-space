@@ -3,7 +3,7 @@ title: Geoffrey Hinton
 tags:
   - ai/ml
   - notable_people
-  - research
+  - concept
 draft:
 ---
 ![[Pasted image 20250617175820.png|400]]

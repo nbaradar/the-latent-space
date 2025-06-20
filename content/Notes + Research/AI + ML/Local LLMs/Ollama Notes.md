@@ -4,10 +4,9 @@ tags:
   - local_llm
   - ollama
   - ai/ml
-  - notes
+  - reference
 draft:
 ---
-
 # Commands
 
 | Command                                     | Description                                           |

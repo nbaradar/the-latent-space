@@ -1,7 +1,8 @@
 ---
-title: Callouts
+title: Obsidian
 tags:
   - obsidian
+  - reference
 draft:
 ---
 # Callouts

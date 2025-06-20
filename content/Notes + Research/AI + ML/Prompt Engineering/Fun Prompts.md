@@ -4,6 +4,7 @@ description: A collection of fun/creative/silly prompts that I mostly happened u
 tags:
   - prompt-engineering
   - ai/ml
+  - "#reference"
 date: 2025-06-12
 draft: false
 ---

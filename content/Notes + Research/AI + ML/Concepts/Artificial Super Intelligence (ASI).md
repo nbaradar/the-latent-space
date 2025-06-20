@@ -3,8 +3,8 @@ title: Artificial Super Intelligence (ASI)
 tags:
   - asi
   - ai/ml
-  - concepts
   - notes
+  - concept
 draft: 
 description: Overview of ASI
 ---

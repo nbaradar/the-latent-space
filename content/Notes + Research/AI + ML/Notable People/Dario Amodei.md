@@ -1,9 +1,8 @@
 ---
 title: Dario Amodei
 tags:
-  - ai/ml
   - notable_people
-  - research
+  - concept
 draft:
 ---
 ![[Pasted image 20250617211407.png|400]]

@@ -4,6 +4,7 @@ tags:
   - tools
   - links
   - ai/ml
+  - "#reference"
 description: Useful AI/ML tools and links
 draft:
 ---

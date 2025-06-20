@@ -3,7 +3,7 @@ title: Andrew Ng
 tags:
   - ai/ml
   - notable_people
-  - research
+  - concept
 ---
 
 ![[Pasted image 20250617210708.png|400]]
@@ -12,3 +12,6 @@ Former cofounder and head of [Google Brain](https://en.wikipedia.org/wiki/Googl
 
 ---
 ## Interviews
+
+## Resources
+- [[Supervised Machine Learning]]: My Study notes from his Coursera class

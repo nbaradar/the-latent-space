@@ -3,7 +3,7 @@ title: Ilya Sutskever
 tags:
   - ai/ml
   - notable_people
-  - research
+  - concept
 draft:
 ---
 ![[Pasted image 20250617175743.png||400]]

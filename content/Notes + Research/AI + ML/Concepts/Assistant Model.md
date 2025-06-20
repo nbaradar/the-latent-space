@@ -3,8 +3,8 @@ title: Assistant Model
 tags:
   - asi
   - ai/ml
-  - concepts
   - notes
+  - concept
 draft: 
 description:
 ---

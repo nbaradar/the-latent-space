@@ -3,7 +3,7 @@ title: Fei-Fei Li
 tags:
   - ai/ml
   - notable_people
-  - research
+  - concept
 draft:
 ---
 ![[Pasted image 20250617211919.png|400]]

@@ -1,0 +1,18 @@
+---
+title: Chinese Room
+tags:
+  - thought
+---
+
+
+The Chinese Room thought expirement aims to answer if a machine can ever be truly intelligent. 
+
+A man sits in a room. He is told to translate some chinese that is passed under the door. He has a translation textbook in front of him. Every time he receives a note, he uses the textbook to find the translation.
+
+Then, he writes a response in english, and uses a second textbook to translate it back to chinese. He copies down the chinese symbols from the second textbook onto the slip of paper and sends it back under the door. 
+
+Does the man know Chinese? From the outside, it seems like he does. But really he's just matching information. 
+
+https://www.youtube.com/watch?v=TryOC83PH1g
+
+Personally, I think the man still needs to have intelligence to match in the first place and even come up with a response. So I'm not sure if this disproves that a machine can be **truly** intelligent. But I don't think machines are there just yet. 

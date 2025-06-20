@@ -1,10 +1,9 @@
 ---
 title: Inferencing
 tags:
-  - asi
   - ai/ml
-  - concepts
   - notes
+  - concept
 draft: 
 description:
 ---

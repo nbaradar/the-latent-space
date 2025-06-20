@@ -2,9 +2,14 @@
 title: The Latent Space
 draft: false
 ---
-Hello! This is a space where I share a variety of my notes. It can be pretty random, but mostly focused on tech/ai. The name was inspired from the [[Latent Space|Latent Feature Space]] concept 
+
+>[!tip] To understand how to use/navigate this space, please [[Start Here]]
+
+Hello! This is a space where I share a variety of my notes. It can be pretty random, but mostly focused on tech/ai. The name was inspired from the [[Latent Feature Space|Latent Feature Space]] concept. 
 
 I'll mainly post [[Personal Projects|projects]] I'm working on, research I'm doing, useful notes I have, interesting information and insights that I find, and philosophy/sociology/psychology as it relates to technology and AI. I refrain from posting AI generated content here, unless it's part of a guide (code). 
+
+I haven't nailed down the structure and how everything will be organized, don't have a plan at the moment. Hoping things will crystalize as I keep maintaining this so it's useful to the public. If you have any suggestions let me know. 
 
 ---
 
@@ -17,15 +22,15 @@ I also find the micro/individualistic implications profound. How will LLMs and o
 And of course, dialogue around consciousness, sentience, self-awareness, and self-perception in relation to AI technology is always fascinating. Is AI already sentient? What really is sentience? What are the implications?
 
 ---
-
-I haven't really nailed down the structure and how everything will be organized here. Don't have a plan at the moment. Hoping things will crystalize as I keep maintaining this so it's useful to the public. If you have any suggestions let me know. 
-
 Thanks for stopping by :) 
 
-> [!info] Social Accounts
-> Twitter: [@ContextCore](https://x.com/ContextCore)
-> 
-> I hardly post, but I save things I find interesting.
+> [!info] Socials
+> - LinkedIn: [nbaradar](https://www.linkedin.com/in/nbaradar/)
+> - Twitter: [@ContextCore](https://x.com/ContextCore)
+> - GitHub: [nbaradar](https://github.com/nbaradar)
+
+
+
 
 
 

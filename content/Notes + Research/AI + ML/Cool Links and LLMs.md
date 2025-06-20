@@ -4,6 +4,7 @@ tags:
   - links
   - tools
   - ai/ml
+  - "#reference"
 draft:
 ---
 >[!info] Misc Links:

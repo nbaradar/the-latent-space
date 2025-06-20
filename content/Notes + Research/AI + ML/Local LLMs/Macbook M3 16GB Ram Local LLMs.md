@@ -3,7 +3,7 @@ title: MacOS Run Local LLMs
 tags:
   - local_llm
   - ai/ml
-  - notes
+  - lab
 draft:
 ---
 # Quickstart

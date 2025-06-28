@@ -9,6 +9,12 @@ date: 2025-06-12
 draft: false
 ---
 A collection of fun/creative/silly prompts that I mostly happened upon online.
+
+# General
+```txt
+What are all of the common stereotypes of a person who is a fan of [game, tv, music, movie, etc.]
+```
+
 # User Info 
 ## User/System Interaction 
 ```txt
@@ -37,6 +43,10 @@ How would you describe me based on everything you know about me? Describe my psy
 
 ```txt
 What are the strangest things I have asked you?
+```
+
+``` txt
+What would my daily life look like if it were designed for my actual nervous system instead of what’s considered ‘normal’
 ```
 
 ---

@@ -10,3 +10,9 @@ description:
 > **Machine Learning**: The field of study that gives computers the ability to learn without being explicitly programmed. 
 > 
 > *-Arthur Samuel (1959)*
+
+
+
+[Types of Machine Learning](https://techvidvan.com/tutorials/types-of-machine-learning/)
+- [[Supervised Learning]]
+- [[Unsupervised Learning]]

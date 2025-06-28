@@ -19,13 +19,14 @@ This site is organized using 7 major categories, each corresponding with a `#tag
 | <span class="whitespace-nowrap rounded bg-gray-100 px-2 py-0.5 text-sm font-mono text-gray-800">#reference</span><br> | Cheatsheets, links, books, resources, etc.                                                                                                                           |
 | #guide                                                                                                                | A guide/tutorial I created for public consumption. These are usually finalized versions of notes in the "Lab" category that I polished for public use.               |
 | #meta                                                                                                                 | Notes about this site/PKM concepts in general. Updates, goals, decisions, etc.                                                                                       |
+|                                                                                                                       |                                                                                                                                                                      |
 >[!important]**These tags will never overlap with each other.** They are distinct. 
 
 _Note: For more detail on these choices: [[PKM Concepts#This Notebooks Taxonomy]]_
 
 ## Additional Sections
 >[!failure]- Need to Update
-> TODO: I'm still exploring how to surface personal projects or noteworthy news. I may eventually introduce a new `#signal` category for curated external content. For projects, my current thinking is to treat them as multi-note hubs that cut across existing categories like `#lab` or `#guide`.
+> TODO: I'm still exploring how to surface personal projects or noteworthy news/developments in the AI space. I may eventually introduce a new `#signal` category for curated external content. For projects, my current thinking is to treat them as multi-note hubs that cut across existing categories like `#lab` or `#guide`.
 
 ## 🚀 Suggested Starting Points
 
@@ -34,7 +35,7 @@ _Note: For more detail on these choices: [[PKM Concepts#This Notebooks Taxonomy]
 # Motivation/Purpose
 What was the motivation behind creating this space? Truthfully, I've realized with age that I don't really like playing the optics game when it comes to my career, as it doesn't really motivate me or give me energy. But unfortunately, you can't elect to sit on the sidelines and still be a great player, and I fully understand and respect that.
 
-With all that in mind, my intention was to create a low-friction method of sharing my growth/learning process online that felt aligned with my goals and methods, but still allowed me to signal to potential employers. It's basically my version of posting on LinkedIn. 
+With all that in mind, my intention was to create a low-friction method of sharing my growth/learning process online that felt aligned with my goals and methods, but still allowed me to signal to potential employers and builders. It's basically my version of posting on LinkedIn. 
 
 But I've started having a lot of fun creating a "knowledge base" for the layman when it comes to AI education. And it somehow motivates me to continue my learning and experimentation, even though I know no one is realistically reading this. Something about the potential for some to read **_if they wanted to_** keeps me "in line."
 

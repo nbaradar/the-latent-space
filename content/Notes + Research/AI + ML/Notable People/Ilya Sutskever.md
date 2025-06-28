@@ -1,7 +1,6 @@
 ---
 title: Ilya Sutskever
 tags:
-  - ai/ml
   - notable_people
   - concept
 draft:

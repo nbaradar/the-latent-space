@@ -1,7 +1,6 @@
 ---
 title: Sam Altman
 tags:
-  - ai/ml
   - notable_people
   - concept
 draft:
@@ -13,4 +12,5 @@ The CEO of OpenAI since 2019, and considered a leading figure in the [AI boom](h
 ---
 # Interviews
 - [Sam Altman: The Future of AI](https://www.youtube.com/watch?v=mZUG0pr5hBo)
+- [Sam Altman: The Future of OpenAI, ChatGPT's Origins, and Building AI Hardware](https://www.youtube.com/watch?v=V979Wd1gmTU)
 

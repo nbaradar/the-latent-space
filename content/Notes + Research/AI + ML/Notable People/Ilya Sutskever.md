@@ -9,6 +9,9 @@ draft:
 
 The co-founder and former chief scientist and OpenAI. Was a student of [[Geoffrey Hinton]], during which he invented [AlexNet](https://en.wikipedia.org/wiki/AlexNet "AlexNet"), a Convolutional Neural Network. 
 
+Left OpenAI and founded his own AI research company: [[Safe Superintelligence Inc]]
+
 ---
 ## Interviews
 - [University of Toronto: Honorary Degree Recipient Speech](https://www.youtube.com/watch?v=zuZ2zaotrJs)
+

@@ -1,7 +1,7 @@
 ---
 title: LLM Tooling VS Agents
 tags:
-  - thought
+  - study
 draft:
 ---
 With both terms now having become industry buzzwords being thrown around ambiguously, let's define the relation between [[LLM Tooling]] and an [[LLM Agent]].

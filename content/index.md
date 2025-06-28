@@ -26,8 +26,9 @@ Thanks for stopping by :)
 
 > [!info] Socials
 > - LinkedIn: [nbaradar](https://www.linkedin.com/in/nbaradar/)
-> - Twitter: [@ContextCore](https://x.com/ContextCore)
 > - GitHub: [nbaradar](https://github.com/nbaradar)
+> - Twitter: [@ContextCore](https://x.com/ContextCore)
+> - Reddit: [u/Context_Core](https://www.reddit.com/user/Context_Core/)
 > - Discord: [BlackoutZX](https://discordapp.com/users/127947040201244673)
 
 

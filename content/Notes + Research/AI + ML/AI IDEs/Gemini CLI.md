@@ -54,8 +54,31 @@ npm list -g
 Once done, just type `gemini` into the terminal and you'll see the app start up:
 ![[Pasted image 20250628151907.png]]
 
-Pick your theme (I went with `Dracula Dark`) and then either log into your Google account or Use an API key. I choose to use an API key. To do this, go to [Google AI Studio](https://aistudio.google.com/)
+Pick your theme (I went with `Dracula Dark`) and then either log into your Google account or Use an API key. Personally, I choose to use an API key as I feel it will give me more granular control. 
 
+To do this, go to [Google AI Studio](https://aistudio.google.com/) and click the "Get API key" button at the top
+![[Pasted image 20250628153254.png]]
+
+Then click the "Create API Key" button and you will be provided with a newly generated key.
+![[Pasted image 20250628153432.png]]
+
+**DO NOT LOSE THIS KEY** as you will not be able to get this value later. You will have to generate a new key if you lose this one. (Which isn't a big deal)
+
+Next, open a terminal and create an environment variable for your newly generated API key. First, export the variable, then run an echo to make sure it was set correctly. 
+```bash
+naderbaradar@Naders-MacBook-Air ~ % export GEMINI_API_KEY="YOUR_API_KEY"
+
+naderbaradar@Naders-MacBook-Air ~ % echo $GEMINI_API_KEY
+YOUR_API_KEY
+```
+NOTE: YOU MUST NAME THE ENV VARIABLE AS `GEMINI_API_KEY`
+
+Then go back to the Gemini CLI and select `Gemini API Key (AI Studio)`
+
+![[Pasted image 20250628153555.png]]
+
+And that's it! You should see this screen if you are successful:
+![[Pasted image 20250628154820.png]]
 
 ---
 # Use Cases?

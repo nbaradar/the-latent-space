@@ -20,7 +20,9 @@ Whether you're a **student**, a **data scientist** or an **AI researcher**, 
 ## [Vertex AI Studio](https://cloud.google.com/generative-ai-studio?hl=en)
 A Google Cloud project.
 
-Vertex AI Studio is a Google Cloud console tool for rapidly prototyping and testing generative AI models. Test sample prompts, design your own prompts, and customize foundation models to handle tasks to meet your application's needs.
+Vertex AI Studio is a Google Cloud console tool for rapidly prototyping and testing generative AI models. This is more enterprise focused while Google AI Studio is more developer focused.
+
+Test sample prompts, design your own prompts, and customize foundation models to handle tasks to meet your application's needs.
 
 ---
 ## [BrainTrust](https://www.braintrust.dev/)

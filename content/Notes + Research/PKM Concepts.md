@@ -33,25 +33,16 @@ NOTE (SINGLE UNIT, EACH PAGE IS A 'NOTE')
 ├── Meta: Notes about your site/PKM concepts. Updates, goals, decisions, etc.
 ```
 
-
 ---
-# Note Collection
+# Making this Vault a Productive use of time
+
+You don't want to spend too much time on organization and beautification. It's a trap. Focus on creating as much output/content as possible, and worry about organization later. 
+## Note Collection
 Collecting notes does not magically increase knowledge. This is a fallacy that most students fall victim to. You must read text effectively to assimilate its ideas and learn from it. 
 
 Reading without taking notes is a waste of time in the long run, as without taking notes our knowledge only increases for a short while. We soon forget what we learned. 
 https://zettelkasten.de/posts/collectors-fallacy/
 
 ---
-# Making this Vault a Productive use of time
-You don't want to spend too much time on organization and beautification. It's a trap. Focus on creating as much output/content as possible, and worry about organization later. 
 
- **🔁 The Two-Mind Strategy**
 
-| Mode                 | Focus                                     | Best Time                         | Energy Level        |
-| -------------------- | ----------------------------------------- | --------------------------------- | ------------------- |
-| 🧠 **Thinking Mode** | Learn, reflect, build, write real content | Morning / deep work blocks        | High mental clarity |
-| 🧹 **Tidying Mode**  | Organize, beautify, tag, structure        | Commute, evenings, low-focus time | Low/medium energy   |
-
-This way:
-- You’re **maximizing momentum** during your peak hours
-- You’re **still being productive** when you’re not in the mood to think deeply

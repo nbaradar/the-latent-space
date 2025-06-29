@@ -41,7 +41,7 @@ To do this, go to [Google AI Studio](https://aistudio.google.com/) and click the
 Then click the "Create API Key" button and you will be provided with a newly generated key.
 ![[Pasted image 20250628153432.png|450]]
 
-**DO NOT LOSE THIS KEY** as you will not be able to get this value later. You will have to generate a new key if you lose this one. (Which isn't a big deal)
+**DO NOT SHARE THIS KEY**. You will have to generate a new key if you lose or leak this one. (Which isn't a big deal, just delete it and create another)
 
 Next, open a terminal and create an environment variable for your newly generated API key. First, export the variable, then run an echo to make sure it was set correctly. 
 ```bash

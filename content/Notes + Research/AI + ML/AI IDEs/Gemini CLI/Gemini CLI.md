@@ -31,11 +31,57 @@ Whereas Gemini CLI:
 # [[Gemini CLI Commands|Commands]]
 
 ---
+# Using `GEMINI.md`
+You can create a markdown file in the root directory of your project (wherever you ran `gemini` cli from). When the session starts, the file it automatically ingested and used as context. 
+
+You should put the following in the file:
+```markdown
+   * **Project Overview:** A brief description of the project, its purpose, and the technologies used.
+   * **Build & Run Commands:** How to build, run, and serve the application.
+   * **Test Commands:** How to run the test suite.
+   * **Linting & Formatting:** Commands to check and fix code style.
+   * **Directory Structure:** An overview of the key directories and what they contain.
+   * **Architectural Patterns:** Notes on the project's architecture (e.g., "Uses Repository Pattern," "Microservices architecture").
+   * **Coding Conventions:** Specific rules or library preferences (e.g., "Always use axios for HTTP requests," "Prefer functional components in React").
+```
+
+## Example
+```
+# Project: My Awesome App
+
+This is a full-stack web application using React for the frontend and Node.js/Express for the backend.
+
+## Commands
+
+- **Run development server:** `npm run dev`
+- **Run tests:** `npm test`
+- **Lint files:** `npm run lint`
+- **Build for production:** `npm run build`
+
+## Key Directories
+
+- `src/components/`: Contains reusable React components.
+- `src/pages/`: Next.js page routes.
+- `src/server/api/`: Backend API route handlers.
+- `prisma/`: Prisma schema and database configuration.
+
+## Conventions
+
+- Use TypeScript for all new code.
+- State management is handled by Zustand.
+- All API endpoints must be validated using Zod schemas.
+- Follow Material Design principles for UI.
+```
+
+
+---
 # Configuration
 >[!info] [CLI Config Documentation](https://github.com/google-gemini/gemini-cli/blob/main/docs/cli/configuration.md#4-geminimd-files-hierarchical-instructional-context)
 
 # Tooling
 >[!info] [CLI Tools Documentation](https://github.com/google-gemini/gemini-cli/blob/main/docs/tools/index.md)
+
+---
 # Use Cases?
 Directly from the GitHub ReadMe:
 >- Query and edit large codebases in and beyond Gemini's 1M token context window.

@@ -2,9 +2,6 @@
 title: Handwritten Notes
 tags:
   - contextcore
-  - echoforge
-  - akasha
-  - contextstore
 draft: 
 description: Some quickly jotted handwritten notes. I will rewrite/organize this all later
 ---

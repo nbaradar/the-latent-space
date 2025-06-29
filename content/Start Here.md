@@ -18,16 +18,13 @@ _Note: For more detail on these choices: [[PKM Concepts#This Notebooks Taxonomy]
 | #thought                                                                                                              | A personal journal entry where I discuss thoughts, opinions, and questions I may have about a variety of relevant topics.                                            |
 | <span class="whitespace-nowrap rounded bg-gray-100 px-2 py-0.5 text-sm font-mono text-gray-800">#reference</span><br> | Cheatsheets, links, books, resources, etc.                                                                                                                           |
 | #guide                                                                                                                | A guide/tutorial I created for public consumption. These are usually finalized versions of notes in the "Lab" category that I polished for public use.               |
+| #signal                                                                                                               | Noteworthy news/developments in the AI space and curated external content. Includes research papers.                                                                 |
 | #meta                                                                                                                 | Notes about this site/PKM concepts in general. Updates, goals, decisions, etc.                                                                                       |
-|                                                                                                                       |                                                                                                                                                                      |
 >[!important]**These tags will never overlap with each other.** They are distinct. 
-
->[!failure]- Might add more tags
-> TODO: I'm still exploring how to surface noteworthy news/developments in the AI space. I may eventually introduce a new `#signal` category for curated external content. 
-> For projects, my current thinking is to treat them as multi-note hubs that cut across existing categories like `#lab` or `#guide`.
-
 ## Projects
 My [[Personal Projects]] are listed w/ GitHub links  provided.
+
+Projects will be like "multi-category" hubs where each project may have notes of different varieties in them. This is why I refrained from creating a `#project` category. 
 
 ---
 # Motivation/Purpose

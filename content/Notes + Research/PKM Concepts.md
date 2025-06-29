@@ -2,7 +2,6 @@
 title: PKM Concepts
 tags:
   - pkm
-  - obsidian
   - meta
 draft: 
 type:

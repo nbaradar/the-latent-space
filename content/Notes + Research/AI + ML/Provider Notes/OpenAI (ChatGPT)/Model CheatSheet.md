@@ -2,6 +2,8 @@
 title: Model Cheatsheet
 tags:
   - reference
+  - openai
+  - ai/ml
 draft:
 ---
 

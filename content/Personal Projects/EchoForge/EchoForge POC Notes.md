@@ -6,13 +6,12 @@ tags:
   - contextcore
 draft:
 ---
+>[!info]OpenAI export POC: **Just simply create the ability to import memories from OpenAI. Use what you learn to implement this for other providers as well. But for now just focus on ChatGPT.**
 
 This will be the memory layer that lets you import/export memories from different providers. Later it will also be responsible for integrations (like health data, academic data, etc).
 
-OpenAI export POC:
-
 Ideas to jot down:
-- use prompt engineering to ask it the current capacity of memory for the user. THat can be used when creating the UI
+- use prompt engineering to ask it the current capacity of memory for the user. That can be used when creating the UI
 - cant currently directly export memories. You have some options.
 	- 1. use prompt engineering to export them
 	- 2. use web scraping to grab them
@@ -101,6 +100,9 @@ Despite using a **precise and structured prompt**, the outputs show **non-determ
 
 But the content is largely the same, even thought he titles are different.
 
+---
+**Deduplication Strategy for the same memories with non-deterministic outputs:**
+
 The slight variations in the content field are very minor and can be normalized to remove trivial differences:
 ```python
 def normalize_content(text):
@@ -118,4 +120,41 @@ This gives you a stable ID across exports which you can then use to compare agai
 If you see the same hash after normalizing the import, then you know you can skip (or update metadata). Otherwise, insert a fresh memory.
 
 This allows **idempotent memory ingestion** meaning no duplication, no matter how many times the user imports/exports.
+
+---
+
+For now we can skip the deduplication strategy and just import the memories. Now comes the database. We already had created the beginnings of ContextStore when creating the MultiQuery WebApp. Let's see what the schema was for that. I was using mongoDB with a simple JSON schema for memories. Or maybe I was just storing prompts and responses, I can't remember. If I wasn't storing memories it makes things easier since I can start fresh. 
+
+For now this is all I have, which makes things easy:
+![[Pasted image 20250629190842.png]]
+
+I guess I will need to update that database to be called "ChatManager" or something. I'm not sure, but it's unrelated to memories right now until chat history and session stuff get's involved. So for now I'm just going to create another DB called `ContextStore` with a collection called `EchoForge` and another collection called `Memories`.
+- `EchoForge` stores all imports and raw integration data
+- `Memories` stored validated ingested memories tagged and prepped for ContextCore use
+
+```
+[External Export (e.g. OpenAI)] 
+        ↓
+   [EchoForge Collection]     ← store raw entries with source metadata
+        ↓
+ [Processing Pipeline]
+        ↓
+   [Memories Collection]      ← canonical, validated, tagged memory entries
+        ↓
+ [Used by ContextWeave, UI, etc.]
+```
+
+Memory Schema for EchoForge documents (for now)
+```JSON
+{
+  "source": "openai",
+  "raw_title": "Journaling habit",
+  "raw_content": "Started journaling again after a long break...",
+  "imported_at": "2025-06-29T20:00:00Z",
+  "processed": false,
+  "metadata": {
+    "export_session_id": "batch_001" // optional
+  }
+}
+```
 

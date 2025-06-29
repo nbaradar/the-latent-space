@@ -13,6 +13,18 @@ date: 2025-06-12
 I’m having a persistent problem with [x] despite having taken all the necessary countermeasures I could think of. Ask me enough questions about the problem to find a new approach. Ask me for all the context you need to work through this one question at a time, allowing me to respond.
 ```
 
+PASTE THIS AT THE END OF YOUR QUESTION:
+```txt
+Interpret. Contrast. Justify. Then conclude.
+```
+
+---
+# Coding
+```txt
+Reflect on 5-7 different possible sources of the problem, distill those down to 1-2 most likely sources, and then add logs to validate your assumptions before we move onto implementing the actual code fix
+```
+
+---
 # System Manipulation
 ## Memory Management
 ```txt
@@ -27,3 +39,21 @@ Give me a complete inventory of my current memory. Include the following:
 - Format the output cleanly with headers and bullet points for easy reference.
 ```
 
+## Prompt Engineering
+```txt
+Act as an expert prompt engineer. Your task is to take my simple prompt/goal and transform it into a detailed, optimized prompt that will yield a superior result.
+
+First, analyze my request below and identify any ambiguities or missing information.
+
+Then, construct a new, comprehensive prompt that:
+1.  **Assigns a clear Role/Persona** to the AI (e.g., "Act as a senior financial analyst...").
+2.  **Provides Essential Context** that the AI would need to know.
+3.  **Specifies the exact Format** for the output (e.g., Markdown table, JSON, bulleted list).
+4.  **Includes Concrete Examples** of the desired output style or content.
+5.  **Adds Constraints** to prevent common errors or unwanted content (e.g., "Do not use jargon," "Ensure the tone is encouraging").
+
+Here is my original request:
+[Your original goal or prompt]
+
+Now, provide only the new, optimized prompt.
+```

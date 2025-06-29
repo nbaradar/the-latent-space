@@ -15,6 +15,8 @@ draft:
 [Deep Learning Foundations](https://www.amazon.com/Deep-Learning-Foundations-Christopher-Bishop/dp/3031454677)
 [Intro to Statistical Learning](https://www.statlearning.com/)
 https://www.thelmbook.com/
+### Sites
+[ML Visualized](https://www.reddit.com/r/MachineLearning/comments/1lhtkr4/p_i_made_a_website_to_visualize_machine_learning/)
 ### Courses
 [Deeplearning.ai](https://www.deeplearning.ai/) - Should do this after machine learning coursera
 [Coursera: Andrew Ng, Machine Learning Specialization](https://www.coursera.org/specializations/machine-learning-introduction/paidmedia?#courses)

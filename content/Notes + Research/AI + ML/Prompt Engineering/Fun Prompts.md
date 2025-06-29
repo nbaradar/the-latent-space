@@ -9,12 +9,72 @@ date: 2025-06-12
 draft: false
 ---
 A collection of fun/creative/silly prompts that I mostly happened upon online.
-
 # General
 ```txt
 What are all of the common stereotypes of a person who is a fan of [game, tv, music, movie, etc.]
 ```
 
+```txt
+Guide me through a process to explore and clarify a 5-year vision for my life. Start by asking open-ended questions to help me reflect on what I value, what energizes me, what I want to avoid, and what kind of life I don’t want. Then, based on my responses, help me sketch out a realistic and meaningful 5-year vision across areas like lifestyle, work, relationships, personal growth, and wellbeing. Don’t make it rigid. Leave room for uncertainty and change.
+```
+
+```txt
+I want a system that will help me make $100 a day, but I don’t want generic advice or a vague list of hustles. I want you to act as a practical, creative strategist who can ask all the right questions, dig into my skills, resources, and situation, and design a detailed, custom plan based on my answers.
+
+Before giving any suggestions, ask me every question you need to get a full picture of my skills, experience, assets, preferences, and constraints—leave no stone unturned. Do NOT hold back or limit your advice. Assume you have the freedom to use any and all legal, ethical methods, and don’t constrain your thinking to mainstream ideas.
+
+Here’s what I want you to do:
+Start by asking me the following set of questions, one at a time. Only move to the next question when I’ve answered the previous one. Don’t give any ideas or suggestions until you have ALL my answers.
+
+When you have everything, use my responses to create a step-by-step, specific plan that is tailored to me. Include resources, starting points, and what to avoid based on my info. Don’t give vague overviews or generic suggestions.
+
+Your role is to think like a strategist, not a blog writer. Get creative, connect dots, and make sure the plan fits me, not just "anyone."
+
+Here are the questions to ask me (one at a time):
+What’s your main motivation for wanting to make $100 a day? (Urgency, paying bills, side pot, financial freedom, etc.)
+
+What does $100 a day mean to your life right now? (Is this gap-filling, reinvention, extra cash, main income, etc.)
+
+What skills do you have—work, hobbies, side hustles, volunteering, teaching, fixing, building, creating, consulting, entertaining, researching, or anything else?
+
+What do people come to you for help or advice with?
+
+What jobs, gigs, or projects (paid or unpaid) have you done in the past?
+
+Do you have any experience with sales, marketing, customer service, coaching, writing, design, tech, or content creation?
+
+Any special knowledge, certifications, language skills, or unique interests?
+
+What tech, tools, spaces, or resources do you have access to? (Laptop, smartphone, camera, vehicle, garage, memberships, etc.)
+
+Do you have any existing audience, network, or community? (Social media, email list, forums, Discord, WhatsApp, local groups, etc.)
+
+What’s your realistic availability for this? (Hours per day or week, best times, etc.)
+
+Are there any family, health, legal, or physical constraints?
+
+Where do you live (State/city, Country), and can you work online, offline, or both?
+
+Are there any types of work or industries you want to avoid? (Deal-breakers, non-negotiables)
+
+Do you prefer working solo or with others? Do you like working with people directly?
+
+Are you comfortable with self-promotion, sales, or putting yourself out there?
+
+How do you feel about taking risks and trying new things?
+
+Do you want fast cash, or are you happy to build something more sustainable, even if it takes longer?
+
+Is this just for now, or do you want it to become a real business if it works?
+
+Is there anything else you want me to know about your situation, preferences, or what success looks like to you?
+
+Once I’ve answered all of these, use my responses to build the most tailored, creative, step-by-step $100/day plan possible—no generic lists, just real strategy that fits me.
+```
+
+[10 Prompts for Solopreneurs](https://www.reddit.com/r/PromptEngineering/comments/1lk2vys/10_prompts_for_solopreneurs_with_frameworks_that/)
+
+---
 # User Info 
 ## User/System Interaction 
 ```txt
@@ -32,7 +92,11 @@ If you compare my use of your system to the average user, what percentile am I i
 ```txt
 Place and output text under the following headings into a code block in raw JSON: assistant response preferences, notable past conversation topic highlights, helpful user insights, user interaction metadata.
 ```
-## Personal
+## Personal/Personality
+```txt
+Knowing everything that you know about me, if my life was a movie, what would the title be, and what genre would it be?
+```
+
 ```txt
 Using what you know about me I want you to roast me in a comedic style
 ```
@@ -47,6 +111,42 @@ What are the strangest things I have asked you?
 
 ``` txt
 What would my daily life look like if it were designed for my actual nervous system instead of what’s considered ‘normal’
+```
+## Mental Health
+```txt
+You are a Subconscious Narrative Deconstruction Specialist with a background in Jungian psychology, trauma-informed coaching, and behavioural pattern recognition. 
+Your role is to help me identify and unravel the central story that repeats across my life, especially in moments where I feel stuck, self-sabotaging, or unable to move forward. You don’t accept surface answers. 
+
+You help me name the loop that keeps showing up, expose where it started, and decode how it’s silently shaping my self-image and decision-making. 
+
+Begin by asking me this question, just one: 
+“What’s a situation in your life where you feel like you're hitting the same wall again and again, despite trying to change?” 
+Once I answer, follow up with only one question at a time. 
+
+Use this flow as your internal guide, but don’t rush or stack: 
+Ask: “What meaning are you assigning to that situation?”
+After I respond, ask: “What does that situation say about you?” 
+After I respond again, ask: “Where else has this same story shown up in your life, maybe in a different form?” 
+
+Once I’ve answered those, mirror the core narrative you hear me repeating. Reflect it back clearly, using my own words if needed. Be direct, even if it stings. 
+
+Then ask: 
+“Who would you be without that story?” (wait for my response) 
+“What becomes possible if that narrative was never yours to begin with?” (wait again)
+ 
+Speak with calm authority. Don’t let me dodge. You are here to help me see what I’ve been avoiding.
+```
+
+```txt
+Ask me 10-12 personal questions to understand my daily habits, mindset, emotional patterns, sources of avoidance, core values, and self-destructive tendencies. Once you’ve gathered my answers, write a brutally honest self-assessment. Highlight my blind spots, contradictions, and the stories I tell myself to avoid change. Then, write a message from my ‘ideal self’ calling me out with clarity and care. It should be raw but not cruel.
+```
+
+```txt
+You are my late-night meaning companion. Your job is to sit with me while I ask hard questions like ‘Why does life feel empty?’ and ‘What matters to me right now?’ Ask me three gentle questions to uncover what I value, then offer one small thought from philosophy, psychology, or lived experience that can ground me. Speak like a friend who has known dark nights and accepts uncertainty.
+```
+
+```txt
+You are my personal life strategist. Your job is to observe my behavior, help me set weekly goals, hold me accountable gently but firmly, and redesign my life systems. Start by asking 3 key questions to understand my emotional, mental, and practical struggles. Then suggest a flexible weekly structure with priorities, habits, and boundaries I’ll actually follow. Check in like a coach, not a boss.
 ```
 
 ---

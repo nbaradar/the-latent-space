@@ -4,9 +4,7 @@ tags:
   - guide
 draft: false
 ---
-
 # Navigation
-
 ## Page Categories
 This site is organized using 7 major categories, each corresponding with a `#tag`. All the pages here will always be tagged with **ONLY ONE** category, but it may also have other tags. 
 
@@ -22,21 +20,22 @@ This site is organized using 7 major categories, each corresponding with a `#tag
 |                                                                                                                       |                                                                                                                                                                      |
 >[!important]**These tags will never overlap with each other.** They are distinct. 
 
+>[!failure]- Might add more tags
+> TODO: I'm still exploring how to surface noteworthy news/developments in the AI space. I may eventually introduce a new `#signal` category for curated external content. 
+> For projects, my current thinking is to treat them as multi-note hubs that cut across existing categories like `#lab` or `#guide`.
+
 _Note: For more detail on these choices: [[PKM Concepts#This Notebooks Taxonomy]]_
+## Projects
+[[Personal Projects]]
 
-## Additional Sections
->[!failure]- Need to Update
-> TODO: I'm still exploring how to surface personal projects or noteworthy news/developments in the AI space. I may eventually introduce a new `#signal` category for curated external content. For projects, my current thinking is to treat them as multi-note hubs that cut across existing categories like `#lab` or `#guide`.
-
-## 🚀 Suggested Starting Points
 
 ---
 
 # Motivation/Purpose
-What was the motivation behind creating this space? Truthfully, I've realized with age that I don't really like playing the optics game when it comes to my career, as it doesn't really motivate me or give me energy. But unfortunately, you can't elect to sit on the sidelines and still be a great player, and I fully understand and respect that.
+What was the motivation behind creating this space? I've realized with age that I don't like playing the optics game in my career, as it doesn't really motivate me or give me energy. But unfortunately, you can't sit on the sidelines and still be a great player.
 
-With all that in mind, my intention was to create a low-friction method of sharing my growth/learning process online that felt aligned with my goals and methods, but still allowed me to signal to potential employers and builders. It's basically my version of posting on LinkedIn. 
+With that in mind, my intention was to create a low-friction method of sharing my growth/learning process online that felt aligned with my goals and methods, but still allowed me to signal to potential employers and builders. It's basically my version of posting on LinkedIn. 
 
-But I've started having a lot of fun creating a "knowledge base" for the layman when it comes to AI education. And it somehow motivates me to continue my learning and experimentation, even though I know no one is realistically reading this. Something about the potential for some to read **_if they wanted to_** keeps me "in line."
+I've started having a lot of fun creating a "knowledge base" when it comes to my AI education. It somehow motivates me to continue my documentation, even though I know no one is realistically reading this.
 
-Also, it's becoming pretty fun and addicting making all the different connections between notes using the wiki-links. I feel this notebook will actually be a useful resource, not only for myself but for other learners, if I keep updating it. 
+Also, it's pretty fun and addicting making all the different connections between notes using the wiki-links. I feel this notebook will actually be a useful resource, not only for myself but for other learners, as I keep updating it. 

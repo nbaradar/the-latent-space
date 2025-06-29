@@ -25,3 +25,9 @@
 
 ## [How much do Language Models Memorize? - Meta Research ](https://arxiv.org/abs/2505.24832)
 >
+
+## [AI 2027: Research Paper outlining future AI outcomes](https://ai-2027.com/)
+>"Claims about the future are often frustratingly vague, so we tried to be as concrete and quantitative as possible, even though this means depicting one of many possible futures.
+>
+>We wrote two endings: a “slowdown” and a “race” ending."
+

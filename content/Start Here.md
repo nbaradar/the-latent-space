@@ -8,6 +8,8 @@ draft: false
 ## Page Categories
 This site is organized using 7 major categories, each corresponding with a `#tag`. All the pages here will always be tagged with **ONLY ONE** category, but it may also have other tags. 
 
+_Note: For more detail on these choices: [[PKM Concepts#This Notebooks Taxonomy]]_
+
 | Category                                                                                                              | Description                                                                                                                                                          |
 | --------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | #concept                                                                                                              | **Think of these like index cards**. Quick-hit definitions that offer context without breaking flow. These are intentionally lightweight and high-level.             |
@@ -24,13 +26,10 @@ This site is organized using 7 major categories, each corresponding with a `#tag
 > TODO: I'm still exploring how to surface noteworthy news/developments in the AI space. I may eventually introduce a new `#signal` category for curated external content. 
 > For projects, my current thinking is to treat them as multi-note hubs that cut across existing categories like `#lab` or `#guide`.
 
-_Note: For more detail on these choices: [[PKM Concepts#This Notebooks Taxonomy]]_
 ## Projects
-[[Personal Projects]]
-
+My [[Personal Projects]] are listed w/ GitHub links  provided.
 
 ---
-
 # Motivation/Purpose
 What was the motivation behind creating this space? I've realized with age that I don't like playing the optics game in my career, as it doesn't really motivate me or give me energy. But unfortunately, you can't sit on the sidelines and still be a great player.
 

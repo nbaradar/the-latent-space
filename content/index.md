@@ -2,7 +2,7 @@
 title: The Latent Space
 draft: false
 ---
-
+****
 >[!tip] To understand how to use/navigate this space, please [[Start Here]]
 
 Hello! This is a space where I share a variety of my notes. It can be pretty random, but mostly focused on tech/ai. The name was inspired from the [[Latent Feature Space|Latent Feature Space]] concept. 
@@ -28,8 +28,7 @@ Thanks for stopping by :)
 > - LinkedIn: [nbaradar](https://www.linkedin.com/in/nbaradar/)
 > - GitHub: [nbaradar](https://github.com/nbaradar)
 > - Twitter: [@ContextCore](https://x.com/ContextCore)
-> - Reddit: [u/Context_Core](https://www.reddit.com/user/Context_Core/)
-> - Discord: [BlackoutZX](https://discordapp.com/users/127947040201244673)
+
 
 
 

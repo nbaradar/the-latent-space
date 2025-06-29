@@ -12,7 +12,7 @@ draft:
 >- [GitHub Repo](https://github.com/google-gemini/gemini-cli)
 >- [Gemini CLI Docs](https://cloud.google.com/gemini/docs/codeassist/gemini-cli)
 # Overview
-Gemini CLI just brings the Gemini family of Models to your terminal. 
+Gemini CLI just brings the [[Gemini]] family of Models to your terminal. 
 
 It's similar to [[Useful Tools|Warp]] in a lot of ways, which you already use every day (by the way if someone random is reading this, I highly recommend Warp).  **BUT the biggest difference is the AI usage requests per month.**
 

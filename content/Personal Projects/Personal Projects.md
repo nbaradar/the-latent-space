@@ -1,7 +1,6 @@
 ---
 title: Personal Projects
-tags:
-  - projects
+tags: []
 draft:
 ---
 

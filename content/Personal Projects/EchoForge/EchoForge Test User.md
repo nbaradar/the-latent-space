@@ -1,6 +1,10 @@
 ---
 title: EchoForge Test User
 tags:
+  - echoforge
+  - contextcore
+  - lab
+draft:
 ---
 
 # Memories

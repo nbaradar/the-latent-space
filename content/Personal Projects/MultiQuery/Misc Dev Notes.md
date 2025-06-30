@@ -1,5 +1,5 @@
 ---
-title: Dev Notes (MultiQuery)
+title: Misc Dev Notes (MultiQuery)
 tags:
   - lab
   - multiquery

@@ -1,7 +1,7 @@
 ---
 title: Personal Projects
-tags: []
-draft:
+tags:
+  - lab
 ---
 # Current Projects
 

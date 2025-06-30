@@ -1,11 +1,11 @@
 ---
 title: Web UI
 tags:
+  - lab
   - multiquery
   - contextcore
   - userinterface
 ---
-
 # Overall App Tasks
 - [ ] DB Integrations ➕ 2025-01-07
 	- [x] MongoDB Client ✅ 2025-01-07

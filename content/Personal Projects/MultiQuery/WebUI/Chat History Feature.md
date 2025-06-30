@@ -4,6 +4,7 @@ tags:
   - multiquery
   - contextcore
   - userinterface
+  - lab
 ---
 Need to restructure how the DB schema is designed
 

@@ -1,10 +1,9 @@
 ---
-title: Export (MultiQuery)
+title: Export
 tags:
   - lab
   - multiquery
   - contextcore
-draft:
 ---
 ## JSON Export
 Steps to implement
@@ -26,7 +25,4 @@ Export functionality has been added. Here is the structure for now:
 }
 ```
 
-Should expand on it to add more metadata such as model type, price per query, tokens used, etc. 
-
----
-
+Should expand on it to add more metadata such as model type, price per query, tokens used, etc.

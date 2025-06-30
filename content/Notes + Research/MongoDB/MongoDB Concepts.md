@@ -1,3 +1,8 @@
+---
+title: MongoDB Concepts
+tags:
+  - reference
+---
 >[!note]
 >[MongoDB Fundamentals](https://www.mongodb.com/docs/manual/faq/fundamentals/#faq--mongodb-fundamentals)
 
@@ -10,4 +15,3 @@
 
 >[!CAUTION]
 >It's **strongly recommended NOT to delete** the `admin`, `config`, or `local` databases. They are part of MongoDB's internal structure and are used for various functionalities, even in a local development environment. Deleting them could lead to unexpected behavior or issues if you later decide to use more advanced MongoDB features.
-

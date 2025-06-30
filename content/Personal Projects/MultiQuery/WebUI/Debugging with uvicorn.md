@@ -4,6 +4,7 @@ tags:
   - multiquery
   - contextcore
   - userinterface
+  - lab
 ---
 Yes, it is possible to run **Uvicorn** in debug mode within **VS Code** to debug your FastAPI application. This involves configuring the VS Code debugger to run Uvicorn with your FastAPI application and enabling breakpoints for debugging.
 

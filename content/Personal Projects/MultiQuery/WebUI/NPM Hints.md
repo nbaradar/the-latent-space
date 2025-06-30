@@ -4,6 +4,7 @@ tags:
   - multiquery
   - contextcore
   - userinterface
+  - reference
 ---
 If you want to check if a Directory is an NPM directory, use 
 ```bash

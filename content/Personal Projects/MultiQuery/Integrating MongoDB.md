@@ -1,11 +1,10 @@
 ---
-title: Integrating MongoDB (MultiQuery)
+title: Integrating MongoDB
 tags:
   - lab
   - multiquery
-  - mongodb
   - contextcore
-draft:
+  - mongodb
 ---
 Let's integrate MongoDB so the exported result.json file gets stored in a database called "MultiQuery" in the collection "result" 
 
@@ -22,4 +21,3 @@ Remember where you store your mongod.conf file, you need to use it when starting
 ```bash
 mongod --config /usr/local/mongodb/mongod.conf
 ```
-

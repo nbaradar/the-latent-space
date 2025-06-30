@@ -1,13 +1,11 @@
 ---
-title: Grok API (MultiQuery)
+title: Grok API
 tags:
   - lab
   - multiquery
-  - xai
   - contextcore
+  - xai
 ---
-
-
 [The Hitchhikers Guide to the API](https://docs.x.ai/docs/tutorial)
 
 The python SDK is compatible with OpenAI and Anthropic SDK
@@ -32,4 +30,3 @@ completion = client.chat.completions.create(
 
 print(completion.choices[0].message.content)
 ```
-

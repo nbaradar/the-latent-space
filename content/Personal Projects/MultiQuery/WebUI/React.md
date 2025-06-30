@@ -4,6 +4,7 @@ tags:
   - multiquery
   - contextcore
   - userinterface
+  - guide
 ---
 >[!info] Quick Notes
 >- **Functional Components** are the preferred modern approach (use 'function' keyword)

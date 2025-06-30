@@ -4,6 +4,7 @@ tags:
   - multiquery
   - contextcore
   - userinterface
+  - lab
 ---
 Using tailwind involves downloading different tailwind component libraries. 
 

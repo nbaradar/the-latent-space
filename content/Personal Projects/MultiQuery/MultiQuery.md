@@ -6,7 +6,7 @@ tags:
   - contextcore
 ---
 # What is it?
-MultiQuery is the async multi-provider query system within [[ContextCore]]. It was written to allow connection to any LLM provider with an API. It was also designed w/ Asynchronous functionality and Dependency Injection in mind, so it is very fast. 
+MultiQuery is the async multi-provider query system within [[ContextCore]]. It was written to allow connection to any LLM provider with an API. It was also designed w/ Asynchronous functionality and Dependency Injection in mind, so it is very fast and easy to test. 
 
 I wanted to get started working on ContextCore but it's such a large project I didn't really know where to begin. So I figured I'd start with something small and essential: LLM-Agnostic functionality (also lets you compare different LLMs)
 

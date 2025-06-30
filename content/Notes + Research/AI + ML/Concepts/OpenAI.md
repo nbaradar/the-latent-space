@@ -5,6 +5,7 @@ tags:
   - ai/ml
   - openai
   - chatgpt
+  - company
 ---
 ![[Pasted image 20250630003500.png|350]]
 [Wiki](https://en.wikipedia.org/wiki/OpenAI "OpenAI")

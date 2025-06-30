@@ -2,6 +2,7 @@
 title: Anthropic
 tags:
   - concept
+  - company
 ---
 ![[Pasted image 20250620145732.png|400]]
 

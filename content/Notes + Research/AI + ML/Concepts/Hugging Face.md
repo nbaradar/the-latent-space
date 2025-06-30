@@ -2,6 +2,7 @@
 title: Hugging Face
 tags:
   - concept
+  - company
 ---
 ![[Pasted image 20250623121304.png|600]]
 

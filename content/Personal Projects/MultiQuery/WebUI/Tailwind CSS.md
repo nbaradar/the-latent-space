@@ -1,3 +1,10 @@
+---
+title: Tailwind CSS
+tags:
+  - multiquery
+  - contextcore
+  - userinterface
+---
 Using tailwind involves downloading different tailwind component libraries. 
 
 DO NOT use Bootstrap in combination with tailwind. 
@@ -12,3 +19,7 @@ https://www.reddit.com/r/javascript/comments/1abt0ue/shadcnchat_chat_component_f
 It is a chat component. very well developed. 
 
 
+
+
+---
+#tailwindcss #css #style #research #development

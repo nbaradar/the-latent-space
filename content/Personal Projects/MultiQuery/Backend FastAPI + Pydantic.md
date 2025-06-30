@@ -1,3 +1,11 @@
+---
+title: Backend Config Notes
+tags:
+  - multiquery
+  - contextcore
+  - pydantic
+  - fastapi
+---
 # Plan for FastAPI Backend
 #### **1. Set Up the FastAPI Application**
 - Create a FastAPI app to handle API requests.

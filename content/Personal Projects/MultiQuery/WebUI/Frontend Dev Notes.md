@@ -1,3 +1,10 @@
+---
+title: Frontend Dev Notes
+tags:
+  - multiquery
+  - contextcore
+  - userinterface
+---
 ## Overview
 We will most likely be using...
 - [[React]] for the front end UI

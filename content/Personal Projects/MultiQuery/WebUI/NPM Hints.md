@@ -1,3 +1,10 @@
+---
+title: NPM Hints
+tags:
+  - multiquery
+  - contextcore
+  - userinterface
+---
 If you want to check if a Directory is an NPM directory, use 
 ```bash
 npm root
@@ -10,4 +17,4 @@ These files contains essential metadata about the project, including its name, v
 
 ---
 
-#npm #research #development 
+#npm #research #development

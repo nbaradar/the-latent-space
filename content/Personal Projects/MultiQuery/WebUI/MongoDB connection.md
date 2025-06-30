@@ -1,3 +1,10 @@
+---
+title: MongoDB connection
+tags:
+  - multiquery
+  - contextcore
+  - userinterface
+---
 The best way to interact with a MongoDB database in a **FastAPI** application is to use an **asynchronous MongoDB driver**, such as `motor`. It integrates seamlessly with FastAPI and allows for non-blocking database operations, which is important to maintain the responsiveness of your application.
 
 > [!info]- Key Considerations
@@ -32,4 +39,4 @@ Stores details about LLM responses and metadata
 
 ---
 
-#motor #mongodb #backend #development #research #webapp #fastapi #python 
+#motor #mongodb #backend #development #research #webapp #fastapi #python

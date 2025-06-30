@@ -4,6 +4,7 @@ tags:
   - lab
   - multiquery
   - openai
+  - contextcore
 draft:
 ---
 If you want to use ChatGPT 1.0 and higher for python, you have to [follow this documentation](https://github.com/openai/openai-python)

@@ -3,6 +3,7 @@ title: CORS FrontEnd+BackEnd (MultiQuery)
 tags:
   - lab
   - multiquery
+  - contextcore
 draft:
 ---
 CORS (Cross-Origin Resource Sharing) allows your frontend and backend to run on different origins (e.g., `http://localhost:3000` for the frontend and `http://127.0.0.1:8000` for the backend).

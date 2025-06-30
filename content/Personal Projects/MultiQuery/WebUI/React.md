@@ -1,3 +1,10 @@
+---
+title: React
+tags:
+  - multiquery
+  - contextcore
+  - userinterface
+---
 >[!info] Quick Notes
 >- **Functional Components** are the preferred modern approach (use 'function' keyword)
 >- For **single-page applications (SPAs)**, you’ll likely use **React Router** for navigation

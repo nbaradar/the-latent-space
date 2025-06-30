@@ -4,6 +4,7 @@ tags:
   - lab
   - multiquery
   - mongodb
+  - contextcore
 draft:
 ---
 Let's integrate MongoDB so the exported result.json file gets stored in a database called "MultiQuery" in the collection "result" 

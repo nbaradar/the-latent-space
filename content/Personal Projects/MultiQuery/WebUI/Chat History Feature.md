@@ -1,3 +1,10 @@
+---
+title: Chat History Feature
+tags:
+  - multiquery
+  - contextcore
+  - userinterface
+---
 Need to restructure how the DB schema is designed
 
 Rename the `results` collection to `messages`
@@ -37,4 +44,3 @@ You will also need to add a new field to your `messages` schema
   "timestamp": { "$date": "2025-01-08T03:46:35.036Z" }
 }
 ```
-

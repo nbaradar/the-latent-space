@@ -152,9 +152,8 @@ Memory Schema for EchoForge documents (for now)
   "raw_content": "Started journaling again after a long break...",
   "imported_at": "2025-06-29T20:00:00Z",
   "processed": false,
-  "metadata": {
-    "export_session_id": "batch_001" // optional
-  }
 }
 ```
+
+[[UI Designs#POC v0.1]]
 

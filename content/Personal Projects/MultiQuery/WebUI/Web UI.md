@@ -1,3 +1,10 @@
+---
+title: Web UI
+tags:
+  - multiquery
+  - contextcore
+  - userinterface
+---
 
 # Overall App Tasks
 - [ ] DB Integrations ➕ 2025-01-07
@@ -6,11 +13,11 @@
 		- [x] save_query_result ✅ 2025-01-07
 		- [ ] read_result
 			- [ ] based on dates
-			- [ ] based on id
+			- [x] based on id
 			- [ ] based on user
 			- [ ] based on chatID
-		- [ ] delete_result
-		- [ ] update_result
+		- [x] delete_result
+		- [x] update_result
 	- [x] MongoDB Config Injections ✅ 2025-01-07
 - [ ] Create DB Schema
 - [x] Create Frontend ✅ 2025-01-14
@@ -130,7 +137,7 @@ multiquery/
 
 %% Begin Waypoint %%
 - [[Axios]]
-- [[Backend Config Notes]]
+- [[Backend FastAPI + Pydantic]]
 - [[Chat History Feature]]
 - [[Debugging with uvicorn]]
 - [[Frontend Dev Notes]]

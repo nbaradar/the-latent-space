@@ -14,3 +14,7 @@ Just a quick to-do list for this site:
 	- Remove the default links at the bottom of the site. Makes it look cheap and lame
 - [ ] Create DNS entry for website name
 	- Instructions to [add custom Domain](https://quartz.jzhao.xyz/hosting#custom-domain)
+- [ ] Fix left pane not refreshing due to caching
+	- Check if there's a configuration. 
+
+

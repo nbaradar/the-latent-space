@@ -157,3 +157,7 @@ Memory Schema for EchoForge documents (for now)
 
 [[UI Designs#POC v0.1]]
 
+I was going to go with this: 
+![[Pasted image 20250629215756.png]]
+
+But now I'm rethinking. I don't know how MongoDB design works. Should each collection be an "object", which means "echoforge" should be it's own DB or I should change the name to "imports" or something. 

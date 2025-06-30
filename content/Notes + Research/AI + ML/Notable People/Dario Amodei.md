@@ -7,7 +7,7 @@ draft:
 ---
 ![[Pasted image 20250617211407.png|400]]
 
-The co-founder and CEO of the 2021 AI startup company [[Anthropic]] with his sister [[Daniela Amodei]]. They created the large language model series series [Claude](https://en.wikipedia.org/wiki/Claude_\(language_model\)). Previously served as the VP of research at OpenAI. 
+The co-founder and CEO of the 2021 AI startup company [[Anthropic]] with his sister [[Daniela Amodei]]. They created the large language model series series [Claude](https://en.wikipedia.org/wiki/Claude_\(language_model\)). Previously served as the VP of research at [[OpenAI]]. 
 
 ---
 ## Interviews

@@ -1,7 +1,7 @@
 ---
 title: Personal Projects
 tags:
-  - lab
+  - personalproject
 ---
 # Current Projects
 

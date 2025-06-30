@@ -11,7 +11,7 @@ draft:
 >- [Announcement Blog](https://blog.google/technology/developers/introducing-gemini-cli-open-source-ai-agent/)
 >- [GitHub Repo](https://github.com/google-gemini/gemini-cli)
 >- [Gemini CLI Docs](https://cloud.google.com/gemini/docs/codeassist/gemini-cli)
-# Overview
+
 Gemini CLI just brings the [[Gemini]] family of Models to your terminal. 
 
 It's similar to [[Useful Tools|Warp]] in a lot of ways, which you already use every day (by the way if someone random is reading this, I highly recommend Warp).  **BUT the biggest difference is the AI usage requests per month.**
@@ -29,8 +29,6 @@ Whereas Gemini CLI:
 # [[Gemini CLI Install|Installation]]
 
 # [[Gemini CLI Commands|Commands]]
-
----
 
 ---
 # Configuration
@@ -171,7 +169,7 @@ Here's how you can [use Gemini CLIs HUGE ContextWindow within Claude Code](https
 >```
 
 ---
-# Use Cases?
+# Use Cases
 Directly from the GitHub ReadMe:
 >- Query and edit large codebases in and beyond Gemini's 1M token context window.
 >- Generate new apps from PDFs or sketches, using Gemini's multimodal capabilities.

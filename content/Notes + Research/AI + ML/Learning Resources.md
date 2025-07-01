@@ -17,6 +17,7 @@ draft:
 https://www.thelmbook.com/
 ### Sites
 [ML Visualized](https://www.reddit.com/r/MachineLearning/comments/1lhtkr4/p_i_made_a_website_to_visualize_machine_learning/)
+[AI Engineer Roadmap](https://roadmap.sh/ai-engineer)
 ### Courses
 [Deeplearning.ai](https://www.deeplearning.ai/) - Should do this after machine learning coursera
 [Coursera: Andrew Ng, Machine Learning Specialization](https://www.coursera.org/specializations/machine-learning-introduction/paidmedia?#courses)

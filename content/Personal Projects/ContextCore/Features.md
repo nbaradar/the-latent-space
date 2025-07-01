@@ -1,10 +1,9 @@
 ---
-title: Features
+title: ContextCore Features
 tags:
   - contextcore
-  - projects
 draft: false
-description: The Features of ContextCore exists
+description:
 ---
 **What are all the features of ContextCore? What are FREE features vs PRO features?**
 

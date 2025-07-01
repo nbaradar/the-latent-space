@@ -8,15 +8,12 @@ description: An overview of what ContextCore is and why it exists
 ---
 # ContextCore
 
-This is the landing page for all notes related to ContextCore.
-## 🔬 Labs
-- [[Building the context retrieval pipeline]]
-## 🧠 Thoughts
-- [[Why modular context is necessary for LLMs]]
-## 🧭 Guides
-- [[How to structure memory shards in MongoDB]]
-
-# **Vision**
+>[!info]- Related Pages
+>- [[ContextCore Modules and Systems]] 
+>- [[Features]]
+>- [[Memory Strategy]]
+>- [[Shards]]
+>- [[Handwritten Notes]]
 
 **ContextCore** envisions a future where AI interactions are no longer generic and impersonal but deeply reflective of individual preferences, needs, and contexts. It strives to give users full control over their AI systems, empowering them to **own their data**, **customize AI behavior**, and seamlessly integrate advanced contextual intelligence into their workflows. ContextCore transforms AI from a tool into an **extension of the user's mind**.
 
@@ -64,6 +61,7 @@ The purpose of ContextCore is to enable:
 
 - **Context Store**: Centralized database for managing user-defined contexts.
 - **ContextWeave**: Toggles and injects tagged contexts into AI interactions.
+- **EchoForge**: Import/Export memories to and from providers. Setup data integrations
 - **PromptEngine**: Stores, categorizes, and reuses prompts to refine AI behavior.
 - **ConversationCore**: Tracks and injects chat history for continuity.
 - **MultiQuery**: Queries multiple LLMs concurrently and stores results.

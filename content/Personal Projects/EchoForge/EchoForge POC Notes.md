@@ -8,8 +8,6 @@ draft:
 ---
 >[!info]OpenAI export POC: **Just simply create the ability to import memories from OpenAI. Use what you learn to implement this for other providers as well. But for now just focus on ChatGPT.**
 
-This will be the memory layer that lets you import/export memories from different providers. Later it will also be responsible for integrations (like health data, academic data, etc).
-
 Ideas to jot down:
 - use prompt engineering to ask it the current capacity of memory for the user. That can be used when creating the UI
 - cant currently directly export memories. You have some options.

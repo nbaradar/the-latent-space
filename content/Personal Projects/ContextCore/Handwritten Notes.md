@@ -2,6 +2,7 @@
 title: Handwritten Notes
 tags:
   - contextcore
+  - lab
 draft: 
 description: Some quickly jotted handwritten notes. I will rewrite/organize this all later
 ---

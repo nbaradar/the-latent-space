@@ -5,7 +5,9 @@ tags:
   - lab
 draft:
 ---
-# Components
+# Memory Systems
+>[!important] Update: [[EchoForge POC Notes#Thought Memory Management Systems|Thought: Memory Management Systems]]
+
 Each system/module involved with memory
 
 **[[EchoForge]]**
@@ -34,8 +36,6 @@ Reads metadata and selects subsets to inject as context
 # Memory Schema
 ContextStore is all based on `elements` which are basically memories that are stored in the ContextStore. `elements` are combined with a prompt to give the LLM context when prompting through ContextStore. 
 
-
-
 Retrieval will be based on 2 layers: 
 - Filtering on Tags/Categories
 - Filtering on [[Shards]] (will explain/expand later)
@@ -44,7 +44,6 @@ Retrieval will be based on 2 layers:
 We will also include in the context by default:
 - Relevant Chat data
 - Memories chosen by RAM System
-
 
 A `memory`(element) contains the following:
 - **Tags/Categories**: Human readable filters used for labeling

@@ -159,3 +159,95 @@ I was going to go with this:
 ![[Pasted image 20250629215756.png]]
 
 But now I'm rethinking. I don't know how MongoDB design works. Should each collection be an "object", which means "echoforge" should be it's own DB or I should change the name to "imports" or something. 
+
+---
+Im going to try using [[Gemini CLI]] to get the backend started. Let's see how this goes...
+
+>[!example]- The `GEMINI.md` file:
+>```markdown
+>>> # Project: EchoForge POC
+> I’m building EchoForge (Memory Capture), A project that handles import/export, tagging, fingerprinting, and snapshotting of memories. First I need to build a POC for this. My goal for this POC is to build an app that can import memories from OpenAI's ChatGPT for a user. I want to write the application so it has a backend and a frontend. I have already built a frontend for another POC application I created called MultiQuery, I built it in React. I want to build this in React as well. For the backend, I used Python with FastAPI+Pydnatic. I have also created a Mongo database already. 
+> 
+> I want you to act as a world-class software architect and system designer assisting me in designing this system from the ground up, especially focusing on scalability, modularity, and cross-provider compatibility.
+> 
+> Act like a senior architect and collaborative technical partner.
+> Provide clear, structured, technically deep guidance.
+> Help design clean schemas, define module boundaries, and validate assumptions.
+> Don’t dumb things down—use architectural language, offer trade-offs, and challenge poor abstractions.
+> Prioritize design that supports future extensibility, API surface clarity, and evolving user needs.
+> When relevant, assume a backend stack of Python (FastAPI), MongoDB, and a React-based frontend.
+> 
+> ## Key Directories
+> - `/Users/naderbaradar/development_workspace/echoforge`: This projects top level directory
+> - `/Users/naderbaradar/development_workspace/echoforge/documentation`: Notes I'm taking while developing the EchoForge POC application
+> - `/Users/naderbaradar/development_workspace/multiquery_webapp/frontend`: This is where the multiquery frontend lives. Contains a React interface from the multiquery POC that we can reference when creating EchoForge.
+> - `/Users/naderbaradar/development_workspace/multiquery_webapp/backend`: This is where the multiquery backend lives.
+> 
+> ## ADDITIONAL CONTEXT: 
+> EchoForge is part of a project called ContextCore, a modular, LLM-agnostic framework designed to act as a second brain for the user. It prioritizes data sovereignty, privacy, and fine-grained contextual memory control.
+> 
+> ContextCore consists of multiple subsystems:
+> - Akasha (Personality): Prompt-engineered personality modules (e.g., coaches, instructors, characters). Users can create, import, and export these.
+> - ContextStore (Ontology & Data Capture): A structured MongoDB backend that stores user memories, tags them with predefined "elements", and generates unique “shards” (high-resolution sub-tags).
+> - EchoForge: Memory Capture for ContextCore, Import/Export memories from different LLM providers and integrate external data sources.
+> - ContextWeave (Memory Retrieval): Dynamically injects contextual memory into any LLM at runtime, with full user-side control over what memories are included.
+> - User Interface: Contains many UIs for the user to interact with and manage contextcore, and relies on many modules. Some modules include MultiQuery, ChatManager, ElementsManager, etc. 
+> 
+> The module MultiQuery is responsible for sending a single query to multiple LLM providers. This is part of what enables ContextCore to be LLM agnostic. It was built with Pydantic/FastAPI and uses concurrency to asynchronsouly send the query to all LLM providers, and uses Depenency Injection and Factory pattern for the providers. So it is fast. 
+>```
+
+From Gemini CLI:
+```txt
+  Here is the plan:
+   1. Create a backend directory to house our FastAPI application.
+   2. Create a Python virtual environment inside it to manage our project's dependencies in an isolated
+      way.
+   3. Install the necessary base libraries: fastapi for the web framework, uvicorn to run the server,
+      pydantic for data validation, and motor as the asynchronous driver for MongoDB.
+   4. Create an initial main.py with a simple "Hello World" endpoint to confirm everything is working.
+   5. Create a requirements.txt file to list our dependencies.
+```
+
+Wow holy shit it worked:
+```txt
+To start the development server, you can run the following command from the /Users/naderbaradar/development_workspace/echoforge/backend directory:
+source venv/bin/activate && uvicorn main:app --reload
+   
+This will start the server, and you can access the "Hello World" endpoint at http://127.0.0.1:8000.
+```
+
+I'll keep trying to use GeminiCLI while coding. I don't fully trust it enough to just say "make this app" but i'll keep writing down dropdown notes when I use it for changes.
+
+---
+## Thought: Memory Management Systems
+Rethinking the mental model for memory management in ContextCore. Thinking it should look like this:
+**Subsystems:**
+- **EchoForge:** 
+	- Handles external ingestion triggers
+    - Pushes raw memory to `imports` collection
+    - Kicks off ingestion pipeline
+- **ContextStore:**
+    - MongoDB schema + access layer
+    - No business logic
+    - Used by both EchoForge and ContextWeave
+- **ContextWeave:**
+    - Runtime memory retrieval
+    - Optional search on embeddings or tag filters
+- **MemoryIngestor: `NEW SUBSYSTEM`**
+    - Adds metadata
+    - Generates embeddings
+    - Tags from static taxonomy
+    - Saves canonical memory to `memories`
+
+| Subsystem                                | Role                                                                                                                                                          |
+| ---------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **EchoForge**                            | Responsible for all external ingestion triggers (user import, health app sync, LLM provider sync). It receives _raw memory_.                                  |
+| **ContextStore**                         | Stores final, structured memories + metadata. Acts as **pure DB + schema definitions**. Can expose simple data access APIs (CRUD, search). No business logic. |
+| **MemoryIngestor** _(new logical layer)_ | Handles tagging, metadata enrichment, fingerprinting, embedding. Can be a background worker or service. Triggered by EchoForge, or run on a schedule.         |
+
+You can implement this **MemoryIngestor logic** within the backend app as a set of services/workers, without needing to expose it as a separately deployed system (unless needed later).
+
+---
+```
+Conversation checkpoint saved with tag: echoforgepoc
+```

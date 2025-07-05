@@ -82,7 +82,7 @@ You should aim to include the following context in the `GEMINI.md` file:
 > - Follow Material Design principles for UI.
 >```
 
-## Using ClaudeCode w/ GeminiCLI
+## Using [[Claude Code]] w/ GeminiCLI
 Here's how you can [use Gemini CLIs HUGE ContextWindow within Claude Code](https://www.reddit.com/r/ChatGPTCoding/comments/1lm3fxq/gemini_cli_is_awesome_but_only_when_you_make/):
 
 >I just added instructions to CLAUDE.md to have Claude use the Gemini CLI in non-interactive mode (passing the -p param with a prompt to just get a response back from the CLI) when it needs to gather information about a large part of the codebase.

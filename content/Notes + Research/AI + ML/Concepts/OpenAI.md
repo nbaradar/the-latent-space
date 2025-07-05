@@ -11,4 +11,5 @@ tags:
 [Wiki](https://en.wikipedia.org/wiki/OpenAI "OpenAI")
 
 CEO: [[Sam Altman]]
-ChatGPT
+
+Created first [[GPT (Large Language Model)]], which became the product ChatGPT.

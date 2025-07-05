@@ -19,6 +19,7 @@ https://www.thelmbook.com/
 [ML Visualized](https://www.reddit.com/r/MachineLearning/comments/1lhtkr4/p_i_made_a_website_to_visualize_machine_learning/)
 [AI Engineer Roadmap](https://roadmap.sh/ai-engineer)
 ### Courses
+[Neural Networks: Zero to Hero | Andrej Kaparthy](https://karpathy.ai/zero-to-hero.html) - Free and amazing lecture series
 [Deeplearning.ai](https://www.deeplearning.ai/) - Should do this after machine learning coursera
 [Coursera: Andrew Ng, Machine Learning Specialization](https://www.coursera.org/specializations/machine-learning-introduction/paidmedia?#courses)
 - [Supervised Machine Learning](https://www.coursera.org/learn/machine-learning/paidmedia?specialization=machine-learning-introduction)
@@ -39,3 +40,6 @@ https://www.thelmbook.com/
 [3Blue1Brown: Linear Algebra](https://www.3blue1brown.com/topics/linear-algebra)
 [Linear Algebra Review and Reference](https://www.cs.umd.edu/class/fall2023/cmsc422/materials/linear-algebra-review.pdf)
 [Review of Probability Theory](https://www.cs.umd.edu/class/fall2023/cmsc422/materials/prob-review.pdf)
+
+### Research Papers
+[The Elements of Differentiable Programming](https://arxiv.org/abs/2403.14606v3) - Paper that contains most of the math used in modern ai/dl/ml

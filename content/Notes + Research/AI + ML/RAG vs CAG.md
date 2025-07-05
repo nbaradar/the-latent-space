@@ -5,6 +5,8 @@ tags:
   - ai/ml
 draft:
 ---
+![[Pasted image 20250705132048.png|500]]
+
 [[Retrieval-Augmented Generation]]
 [[Cache-Augmented Generation]]
 

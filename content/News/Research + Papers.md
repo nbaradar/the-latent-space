@@ -10,14 +10,6 @@ draft:
 ## [Non-Determinism of "Deterministic" LLM Settings](https://arxiv.org/abs/2408.04667)
 > LLM (large language model) practitioners commonly notice that outputs can vary for the same inputs under settings expected to be deterministic. Yet the questions of how pervasive this is, and with what impact on results, have not to our knowledge been systematically investigated. We investigate non-determinism in five LLMs configured to be deterministic when applied to eight common tasks in across 10 runs, in both zero-shot and few-shot settings. We see accuracy variations up to 15% across naturally occurring runs with a gap of best possible performance to worst possible performance up to 70%. In fact, none of the LLMs consistently delivers repeatable accuracy across all tasks, much less identical output strings. Sharing preliminary results with insiders has revealed that non-determinism perhaps essential to the efficient use of compute resources via co-mingled data in input buffers so this issue is not going away anytime soon. To better quantify our observations, we introduce metrics focused on quantifying determinism, TARr@N for the total agreement rate at N runs over raw output, and TARa@N for total agreement rate of parsed-out answers. Our code and data are publicly available at [this https URL](https://github.com/breckbaldwin/llm-stability).
 
-## [Research Paper: Self-Adapting Language Models](https://arxiv.org/abs/2506.10943)
-> [!warning]
-> The papers title is slightly misleading, but it's stepping stone in the development of ai/ml systems. 
-
-> Catastrophic forgetting. [...] We do not explicitly optimize for retention in our current training setup, but we aim to establish a baseline for how well SEAL handles sequential self-edits without dedicated mechanisms for handling catastrophic forgetting. [...] As shown in Figure 6, performance on earlier tasks gradually declines as the number of edits increases, suggesting that SEAL is still susceptible to catastrophic forgetting. [...]
-
-![[Pasted image 20250616151718.png|400]]
-
 ## [The Illusion of Thinking - Apple Research](https://machinelearning.apple.com/research/illusion-of-thinking)
 > Research paper written by the Apple AI research team. Brief takeaway:
 > - Regular models beat thinking models on simple tasks.
@@ -26,8 +18,6 @@ draft:
 > - Thinking models allocate more reasoning tokens with increasing task complexity, yet at some point start reducing them and thus result quality suffers.
 > - Models tend to stick to wrong early answers, which aligns with the [multi-turn research](https://www.reddit.com/r/LocalLLaMA/comments/1kn2mv9/llms_get_lost_in_multiturn_conversation/).
 > - Problem-solving doesn't generalize. They can be doing OK in some puzzles, yet utterly fail in others despite no increase in difficulty.
-
-![[Pasted image 20250623132628.png|400]]
 
 ## [How much do Language Models Memorize? - Meta Research ](https://arxiv.org/abs/2505.24832)
 >A new method for estimating how much a model knows about a datapoint and use it to measure the capacity of modern language models. Prior studies of language model memorization have struggled to disentangle memorization from generalization. We formally separate memorization into two components: unintended memorization, the information a model contains about a specific dataset, and generalization, the information a model contains about the true data-generation process.
@@ -50,3 +40,5 @@ draft:
 >- Claude pushes back less than 10% of the time in supportive contexts
 >- People tend to end conversations more positively than they started
 
+## [Early Signs of Steganographic Capabilities in Frontier LLMs](https://arxiv.org/abs/2507.02737)
+> Can frontier models hide secret information and reasoning in their outputs? We find that current models are unable to encode short messages in their outputs without a monitor noticing under standard affordances. They can succeed, however, if given additional affordances such as using an unmonitored scratchpad and coordinating on what encoding scheme to use. We additionally find early signs that models can perform basic encoded reasoning in a simple state-tracking problem. This includes some ability to reason with their own and pre-defined schemes, including encoding schemes such as Hexadecimal. Despite this, they can rarely hide reasoning subtly within a cover task to fool a monitor. Overall, our results indicate that current LLMs exhibit nascent steganographic capabilities. While these capabilities are likely insufficient to bypass well-designed monitors at present, this could change in the future.

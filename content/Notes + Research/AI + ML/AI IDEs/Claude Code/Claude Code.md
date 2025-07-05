@@ -13,7 +13,15 @@ draft:
 >- `$20/month` if billed monthly.
 >Also comes with more usage and more models. 
 
-An agentic CLI provided by [[Anthropic]].
+>[!info]- Addtional Resources
+>- https://www.reddit.com/r/ClaudeAI/comments/1ljv2kz/tips_for_developing_large_projects_with_claude/
+>- https://www.reddit.com/r/ClaudeAI/comments/1lquetd/the_claude_code_divide_those_who_know_vs_those/
+>- https://github.com/hesreallyhim/awesome-claude-code
+>- https://github.com/wong2/awesome-mcp-servers
+>- https://github.com/punkpeye/awesome-mcp-servers
 
-https://www.reddit.com/r/ClaudeAI/comments/1ljv2kz/tips_for_developing_large_projects_with_claude/
+An agentic IDE/CLI provided by [[Anthropic]].
+
+It seems like the most important thing when it comes to "vibe-coding" is setting up your context and tooling correctly. 
+So your `CLAUDE.md` file, slash commands, and the newly added "hooks" feature.
 

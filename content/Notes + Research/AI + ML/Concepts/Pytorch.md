@@ -3,6 +3,6 @@ title: Pytorch
 tags:
   - ai/ml
   - concept
-draft: true
+draft: false
 ---
 https://pytorch.org/

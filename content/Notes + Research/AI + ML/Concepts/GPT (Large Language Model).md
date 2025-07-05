@@ -5,7 +5,7 @@ tags:
   - concept
 draft:
 ---
-A **generative pre-trained transformer** (**GPT**) is a type of [large language model](https://en.wikipedia.org/wiki/Large_language_model "Large language model") (LLM) and a prominent framework for [generative artificial intelligence](https://en.wikipedia.org/wiki/Generative_artificial_intelligence).
+A **generative pre-trained transformer** (**GPT**) is a type of [[Large Language Model]](LLM) and a prominent framework for [[Generative AI]]. 
 
-https://en.wikipedia.org/wiki/Generative_pre-trained_transformer#Foundation_models
+It was developed by researchers at [[OpenAI]], and is considered a [[Foundation Model]]. 
 

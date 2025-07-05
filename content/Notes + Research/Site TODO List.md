@@ -16,5 +16,13 @@ Just a quick to-do list for this site:
 	- Instructions to [add custom Domain](https://quartz.jzhao.xyz/hosting#custom-domain)
 - [ ] Fix left pane not refreshing due to caching
 	- Check if there's a configuration. 
-
+- [ ]  Flesh out Project Pages
+       * For each project in Personal Projects, create a detailed write-up. Don't just have notes. Have a
+         proper project page that answers:
+           * **Problem**: What problem were you trying to solve?
+           * **Solution**: How did you solve it? What was the architecture?
+           * **Tech Stack**: What technologies did you use?
+           * **Link**: A link to the GitHub repository and, if possible, a live demo.
+       * This is the single most important thing you can do. A portfolio with 2-3 well-documented projects is 
+         infinitely more valuable than 100 pages of notes.
 

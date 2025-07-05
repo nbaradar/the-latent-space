@@ -6,5 +6,5 @@ A Directory of all the CLI coding agents currently available: https://clicodinga
 [[Gemini CLI]] (Google)
 [[Codex CLI]] (OpenAI)
 [[Claude Code]] (Anthropic)
-[[Aider]]
-
+[[Cursor]] (Anysphere)
+[[Aider]](Open Source)

@@ -35,7 +35,7 @@ I'm trying to map out all of ContextCore as a system. Can't build a system if yo
 >>[!abstract]- ContextWeave
 >>
 >>**RAG/Context injection of Memories and Personalities**. 
->>Will have custom logic and dynamic routing. So ContextWeave will take everything from ContextStore and Akasha and use magic to figure out exactly how to use that information optimally for your query. 
+>>Will have custom logic and dynamic routing. So ContextWeave will take everything from ContextStore and Akasha and use magic to figure out exactly how to use that information optimally for your query. This is going to be the most complicated system, which is why I have the least notes for it so far. Still planning it out.
 >
 >>[!abstract]- UserInterface
 >>

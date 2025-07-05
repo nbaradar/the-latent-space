@@ -6,6 +6,7 @@ tags:
   - contextcore
 draft:
 ---
+>[!important] [Github Repo](https://github.com/nbaradar/echoforge)
 # What is it?
 EchoForge is the memory capture sub-system within [[ContextCore]]
 

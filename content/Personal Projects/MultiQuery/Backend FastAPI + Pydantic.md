@@ -46,23 +46,7 @@ multiquery/
       |--> app.py
 |--> output/
 ```
-## Pydantic
-Python library used for **data validation and settings management**. Allows you to define schemas using Python classes and ensures that data adheres to those schemas. Often used in modern Python applications, especially with frameworks like FastAPI, because of its integration and simplicity.
-### **What is Pydantic?**
-Pydantic is a Python library used for **data validation and settings management**. It allows you to define schemas using Python classes and ensures that data adheres to those schemas. Pydantic is often used in modern Python applications, especially with frameworks like FastAPI, because of its integration and simplicity.
-### **General Uses of Pydantic**
-1. **Data Validation**:
-    - Automatically validates incoming data against predefined schemas.
-    - Ensures types, formats, and required fields are correct.
-2. **Settings Management**:
-    - Simplifies configuration loading (e.g., environment variables, config files).
-    - Provides default values and validation for settings.
-3. **Serialization and Deserialization**:
-    - Converts data between Python objects and JSON or dictionaries seamlessly.
-4. **Integration with FastAPI**:
-    - Automatically generates API request and response models.
-    - Provides validation for endpoint parameters and request bodies.
-
+## [[Pydantic]]
 ### How are we using Pydantic?
    1. API Data Validation: The project uses FastAPI, which leverages Pydantic to validate
       incoming API requests. For example, in backend/multiquery/api/endpoints/query.py, the
@@ -74,6 +58,7 @@ Pydantic is a Python library used for **data validation and settings management*
       providers and the database. This ensures that the configuration loaded from config.yaml
       is valid and adheres to a strict, typed schema, which makes the application more robust
       and easier to maintain.
+
 ---
 # Settings Configs using Pydantic
 

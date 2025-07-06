@@ -43,7 +43,7 @@ I'm trying to map out all of ContextCore as a system. Can't build a system if yo
 >>For now, it relies on these modules(might change architecture later)
 >>- Chat Interface
 >>- [[MultiQuery]]: Module that sends a query to multiple providers. 
->>- Memory Manager
+>>- Memory Manager (ContextManager/ElementManager?)
 >
 >
 

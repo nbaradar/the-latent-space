@@ -24,9 +24,9 @@ load("myScript.js")
 # CRUD Operations
 #### Create
 ```javascript
-db.coll.insertOne({name: "Max"})
-db.coll.insertMany([{name: "Max"}, {name:"Alex"}]) // ordered bulk insert
-db.coll.insertMany([{name: "Max"}, {name:"Alex"}], {ordered: false}) // unordered bulk insert
-db.coll.insertOne({date: ISODate()})
-db.coll.insertOne({name: "Max"}, {"writeConcern": {"w": "majority", "wtimeout": 5000}})
+db.[dbname].insertOne({name: "Max"})
+db.[dbname].insertMany([{name: "Max"}, {name:"Alex"}]) // ordered bulk insert
+db.[dbname].insertMany([{name: "Max"}, {name:"Alex"}], {ordered: false}) // unordered bulk insert
+db.[dbname].insertOne({date: ISODate()})
+db.[dbname].insertOne({name: "Max"}, {"writeConcern": {"w": "majority", "wtimeout": 5000}})
 ```

@@ -5,23 +5,23 @@ tags:
   - lab
 draft:
 ---
-# Memory Systems
->[!important] Update: [[EchoForge POC Notes#Thought Memory Management Systems|Thought: Memory Management Systems]]
+>[!todo] [[EchoForge POC Notes#NOTE Memory Management Systems|Thought on memory management systems]]
+# Systems Involved with Memory 
 
-Each system/module involved with memory
-
-**[[EchoForge]]**
-Memory Management
-
-**ContextWeave**
-Filtering + RAG pipeline
-
-**ContextStore**
-Memory IngestionNeeds a system that... 
+## **[[EchoForge]]**
+Memory Ingestion
+Also needs a system that for ContextWeave that... 
 - tags data with auto generated `element` from a pre-defined list of elements
 - auto-generate [[Shards]] that are very specific tags. They will be unique
 
-**Chat System**
+## **ContextWeave**
+Memory Retrieval 
+Through Filtering + RAG pipeline
+
+## **[[ContextStore]]**
+Memory Storage 
+
+## **Chat System**
 Need to have context of chats. 
 Layers of memory by order:
 - Current Chat  -> always persists session memory and is part of context
@@ -29,8 +29,11 @@ Layers of memory by order:
 - Chat Tags -> filter through all user chats and include `n` related Chats based on tagging
 - IDEA: Chat sessions can be ingested as specific `elements` (memories) automatically so that you can RAG over them. You can ask the user if they want to do so before deleting the chat. And also give them the option to "sync" the chat
 
-**RAM Controller**
+## **RAM Controller**
 Reads metadata and selects subsets to inject as context
+
+>[!warning] **CONTEXT MANAGER?**
+this could be the ui part for element (memory) management. Either way there will be a way for users to manage their memories and that system will interact with Memory
 
 ---
 # Memory Schema

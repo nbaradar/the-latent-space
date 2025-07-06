@@ -64,6 +64,9 @@ These **were not manually entered** using `@bio`, ChatGPT may or may not have ac
 You **must scrape the UI summaries** separately if you want **100% coverage of OpenAI’s memory system**, because:
 - **My export won’t include some summaries** that are only visible in the UI.
 - **OpenAI doesn’t expose those UI memories to prompt-access directly** unless they were added explicitly via `@bio`.
+
+For more info, see here: [[OpenAI Tips & Tricks#How memory works in OpenAI/ChatGPT]]
+
 ---
 # Strategy/Plan
 1. **Prompt-based export** → for structured, explicit, LLM-usable memory.
@@ -392,5 +395,99 @@ We have now completed the full pipeline for the /import endpoint.
   What would you like to do next?
 ```
 
-I need to now go through the code and see if it even makes sense. 
+I need to now go through the code and see if it even makes sense. Wow most of it made sense, I just had to make minor adjustments here and there. 
+
+Next let's create a minimal schema for the [[users]] collection since we will need to save the `user_id` field in the `imports` documents we create.
+```JSON
+{
+  "_id": ObjectId,
+  "email": "testuser@example.com",
+  "name": "Test User",
+  "created_at": ISODate()
+}
+```
+
+| Field        | Purpose         |
+| ------------ | --------------- |
+| `_id`        | Primary key     |
+| `email`      | Lookup identity |
+| `name`       | Display/debug   |
+| `created_at` | Traceability    |
+Inserted with [[Mongosh Commands|mongosh]]
+```JSON
+db.users.insertOne({
+  email: "testuser@example.com",
+  name: "Test User",
+  created_at: new Date()
+});
+```
+
+Now I can replace hardcoded IDs in my code with the real test user ID: `6869ab95ba829ecd62853fe2`
+
+I tried running this request to the service, but it didn't work.
+```shell
+curl --request POST \
+  --url http://127.0.0.1:8000/api/import \
+  --header 'content-type: application/json' \
+  --data '{
+  "memories": [
+    {
+      "title": "Title",
+      "content": "memory data"
+    }
+  ]
+}'
+```
+
+I am getting issues with malformed data. Let's go back to the drawing board for a second, I think I trust AI too much and it made a bunch of random Pydantic models we don't need. 
+
+We are using [[Pydantic]] in this project. What are the different models we have?
+
+**1. `models/db_models.py`**
+- `User`
+- `Import`
+- `Prompt`
+- `Log`
+- `Memory`
+
+**2.`schemas/requests.py`**
+- `MemoryRequest` (basic title + content, a single memory from within a users exported memories.)
+- `ImportRequest` (e.g. `{ memories: [MemoryRequest] }`, exported memories that the user will send with the request. Contains multiple MemoryRequests)
+
+**3. `schemas/responses.py`**
+- `ImportResponse` (e.g., `{ import_id, status, message }`)
+- `UserResponse` (e.g., `{ name, email, _id }`)
+
+**4. Optional: `schemas/internal.py`**
+- `NormalizedMemory`
+- `HashedMemory`
+- `TaggedMemory`
+
+---
+
+Okay, with everything updated, the `/import` endpoint is working. It can take a raw JSON file and insert it into the DB. Next is actually processing the inserted data. 
+
+Well actually the very first thing should be to parse through the users JSON file of exported memories RIGHT BEFORE it gets entered into the DB to make sure it is structured correctly, and if there's something simple like it's just missing the top "memories" field I think we should go ahead and add it, and then try again. Or any other simple fixes we can think of, like if instead of "memories" there's a different word like memory, but the title/content remains the same. 
+
+Alright that's done now too. 
+
+So next like I said, time to process the data. But how do we process the data for deduplication? We thought of the hashing method and heres the flow:
+  IngestService --> Normalizer
+  IngestService --> Validator
+  IngestService --> Hasher
+  IngestService -->|Save canonical| MemoriesDB[memories collection]
+
+But hashing will only work for idempotent ingestion and detecting exact duplicates (after normalization). 
+
+  For detecting "almost identical" or semantically similar memories, you would need to introduce a semantic 
+  deduplication layer. 
+   * Embedding Generation: Converting memory content into numerical vectors (embeddings) using an LLM or a
+     dedicated embedding model.
+   * Similarity Search: Using vector databases or approximate nearest neighbor (ANN) algorithms to find
+     memories whose embeddings are "close" to each other, indicating semantic similarity.
+
+So for now let's just implement the first layer: normalized deduplication and idempotency.
+
+Oh I guess before I continue, I'll need to now design the schema for the [[memories]] collection and create it in the DB. Okay, I want to actually call `memories` something else within the larger scope of "ContextCore." I am going to change the naming scheme to **elements**, because an `element` could be a memory, OR many other things. Think of this scenario: What if you wanted to repurpose ContextCore to ingest a codebase and create elements out of certain things like files or coding conventions? That unlocks a whole new layer of functionality. I know ContextCore can solve a lot of problems, but my issue is clear language and explanations around what it is capable of. 
+
 

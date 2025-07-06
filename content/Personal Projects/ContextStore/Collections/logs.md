@@ -1,5 +1,5 @@
 ---
-title: Logs
+title: logs
 tags:
   - contextstore
   - lab

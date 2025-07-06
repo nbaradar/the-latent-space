@@ -499,6 +499,22 @@ But hashing will only work for idempotent ingestion and detecting exact duplicat
      memories whose embeddings are "close" to each other, indicating semantic similarity.
 
 So for now let's just implement the first layer: normalized deduplication and idempotency.
+```
+1. Receive `ImportRequest`: The IngestionService gets the ImportRequest (which contains a list of
+      MemoryRequest objects) after import_parser.py has done its job.
+   2. Iterate through `MemoryRequest`s: For each MemoryRequest in the list:
+      a.  Validate: Apply the "Validator" rules. If a memory fails, it's logged as a skipped/failed memory.
+      b.  Hash: Generate the SHA256 fingerprint using the normalized title and content.
+      c.  Check for Duplicates: Query your memories collection to see if any existing memory already has
+  this exact fingerprint.
+      d.  Conditional Save:
+           * If a duplicate is found, you log it as such and skip saving this memory to the memories
+             collection (or update its metadata if needed).
+           * If no duplicate, save the memory (including its fingerprint) to the memories collection.
+```
+
+Questions: Are fingerprints global? or user-scoped? 
+
 
 ---
 ### Design [[quartz/content/Personal Projects/ContextStore/Collections/elements|elements]] DB schema

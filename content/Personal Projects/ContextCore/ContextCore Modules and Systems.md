@@ -47,9 +47,13 @@ I'm trying to map out all of ContextCore as a system. Can't build a system if yo
 >
 >
 
+**IDEAS:** 
+**ContextIntent**
+Should there be some kind of system that can schedule automations that make sense? Like if you are talking to a therapy or life coach persona and they want to make you a schedule and then automatically update your calendars. How can you implement that within ContextCore? Idea for way in the future. If you cetain prompts like  "turn on my lights on low tomorrow morning at 9" they can be stored as an "intent" in the `intent` collection. Shitty working name: `ContextIntent`
 
+`intents` will then send the correct prompt using MCP to the correct service at the scheduled time. So then MCP to Philips hue API to turn on lights. And different personas can have access to or be aware of different intent types.
+what are intent types? I Don't know yet. But i thinking of things like "`alarm`, `light`, `calendar`, `command`(cli), `mem_management`(delete x memories at y time), etc."
 
-
-
+That way lets say you have a Persona on for travel agent. If you ask them to look up flights, they see they have access to the `flights` intent which can book flights on websites through MCP. But other personas wouldnt randomly suggest to book flights if you were talking about taking a trip since they don't have access to that intent. 
 
 

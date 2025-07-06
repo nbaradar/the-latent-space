@@ -500,6 +500,7 @@ But hashing will only work for idempotent ingestion and detecting exact duplicat
 
 So for now let's just implement the first layer: normalized deduplication and idempotency.
 
+---
 ### Design [[quartz/content/Personal Projects/ContextStore/Collections/elements|elements]] DB schema
 Oh I guess before I continue, I'll need to now design the schema for the [[quartz/content/Personal Projects/ContextStore/Collections/elements|elements]] collection and create it in the DB. 
 
@@ -556,6 +557,8 @@ A summarized plan from chatgpt based on some design convos:
 - Powers search, memory compression, and similarity graphs
 - This is your **deep memory indexing** layer
 - Computationally expensive → worth deferring
+
+---
 ### Design [[tags]] DB schema
 I think I'll also create a tags collection
 

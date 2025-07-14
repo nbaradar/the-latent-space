@@ -5,7 +5,6 @@ tags:
   - local_llm
   - ai/ml
 ---
-
 ### Common Runtime Tools in 2025
 
 | Tool                         | Best For                                  | Runs on                     | Supports Quantized?     | Interface          | Notes                                                               |
@@ -19,18 +18,20 @@ tags:
 | **llamafile**                | Self-contained binaries (model + runtime) | CPU/GPU                     | ✅ Yes (.gguf)           | CLI, API           | Like a portable .exe for models. No install needed.                 |
 | **AutoGPTQ**                 | Quantized model inference (GPTQ format)   | GPU                         | ✅ GPTQ only             | Python scripts     | For developers using GPTQ quantization.                             |
 
+---
 ### Comparison Summary
 
-|Feature|Ollama|llama.cpp|text-gen-webui|vLLM|LM Studio|
-|---|---|---|---|---|---|
-|Ease of Use|⭐⭐⭐⭐⭐|⭐⭐|⭐⭐⭐|⭐⭐⭐⭐|⭐⭐⭐⭐|
-|Quantization Support|✅|✅|✅|❌|✅|
-|GPU Acceleration|✅|✅|✅|✅|✅|
-|LoRA / Fine-tune Plugins|❌|⚠️ (partial)|✅|❌|❌|
-|Multi-Model Switching|❌|⚠️ (manual)|✅|⚠️ (restarts needed)|⚠️ (manual)|
-|API Exposure|✅|✅|✅|✅|❌|
-|Local-Only Privacy|✅|✅|✅|✅|✅|
+| Feature                  | Ollama | llama.cpp    | text-gen-webui | vLLM                 | LM Studio   |
+| ------------------------ | ------ | ------------ | -------------- | -------------------- | ----------- |
+| Ease of Use              | ⭐⭐⭐⭐⭐  | ⭐⭐           | ⭐⭐⭐            | ⭐⭐⭐⭐                 | ⭐⭐⭐⭐        |
+| Quantization Support     | ✅      | ✅            | ✅              | ❌                    | ✅           |
+| GPU Acceleration         | ✅      | ✅            | ✅              | ✅                    | ✅           |
+| LoRA / Fine-tune Plugins | ❌      | ⚠️ (partial) | ✅              | ❌                    | ❌           |
+| Multi-Model Switching    | ❌      | ⚠️ (manual)  | ✅              | ⚠️ (restarts needed) | ⚠️ (manual) |
+| API Exposure             | ✅      | ✅            | ✅              | ✅                    | ❌           |
+| Local-Only Privacy       | ✅      | ✅            | ✅              | ✅                    | ✅           |
 
+---
 ### File Formats by Runtime
 
 | Format         | Used By                      | Description                                       |
@@ -42,6 +43,7 @@ tags:
 | `.pt/.pth`     | PyTorch                      | Full-precision, often used before quantization    |
 | `.ggqt`        | AutoGPTQ                     | Specialized GPTQ quantized weights                |
 
+---
 ### When to Use What
 |Use Case|Recommended Tool|
 |---|---|

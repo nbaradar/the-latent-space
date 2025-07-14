@@ -103,6 +103,11 @@ In your use case, the GPU is still better. VRAM is a constraint though...
 But if a model exceeds your GPU VRAM, `text-generation-webui` or `transformers` can **offload layers to RAM**, at the cost of speed.
 
 ---
+## Full Precision VS Quantized Performance
+>**Full precision** = reading the original, uncompressed encyclopedia — accurate, but huge and slow.
+>**Quantized** = reading a high-quality summary — 95% of the info, in half the time.
+
+---
 # Useful Links
 - [VRAM Calculator](https://apxml.com/tools/vram-calculator)
 	- Use this to check if your PC can run the model you are interested in depending on parameterization and quantization

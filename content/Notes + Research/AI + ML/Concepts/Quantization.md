@@ -13,3 +13,5 @@ This helps to
 - Enhance Accessibility: Enables running large models on devices with limited memory and processing power.
 
 ![[Pasted image 20250714152748.png|500]]
+
+for in depth guide: https://newsletter.maartengrootendorst.com/p/a-visual-guide-to-quantization

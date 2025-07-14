@@ -516,6 +516,8 @@ So for now let's just implement the first layer: normalized deduplication and id
 Questions: Are fingerprints global? or user-scoped? 
 
 
+
+
 ---
 ### Design [[quartz/content/Personal Projects/ContextStore/Collections/elements|elements]] DB schema
 Oh I guess before I continue, I'll need to now design the schema for the [[quartz/content/Personal Projects/ContextStore/Collections/elements|elements]] collection and create it in the DB. 

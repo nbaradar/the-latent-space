@@ -25,4 +25,7 @@ Just a quick to-do list for this site:
            * **Link**: A link to the GitHub repository and, if possible, a live demo.
        * This is the single most important thing you can do. A portfolio with 2-3 well-documented projects is 
          infinitely more valuable than 100 pages of notes.
-
+- [ ] Right now your categories are documented in Start Here, but readers will find it even easier if (for example) you:
+    1. Add a collapsible “Categories” section in your Quartz sidebar (via `quartz.layout.ts` or `quartz.config.ts`), linking directly to each tag index.
+    2. Generate simple index pages (e.g. `concept/index.md`, `study/index.md`) so category landing pages are one click away.
+- [ ] SEO & descriptions — consider adding a brief `description:` field in the front‑matter of key pages (especially your homepage and upcoming “hire-me” page) to improve discoverability.

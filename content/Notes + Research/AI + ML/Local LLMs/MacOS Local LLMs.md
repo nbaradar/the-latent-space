@@ -1,5 +1,5 @@
 ---
-title: MacOS Run Local LLMs
+title: MacOS Local LLMs
 tags:
   - local_llm
   - ai/ml
@@ -7,6 +7,10 @@ tags:
 draft:
 ---
 # Quickstart
+>![note]- Specs
+>16GB Ram
+>M3 Processor
+
 installed ollama through brew. To run the ollama service:
 `brew services start ollama`
 

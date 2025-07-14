@@ -23,7 +23,7 @@ draft:
 | `ollama run <model> --template <template>`  | Run a model with a custom prompt template             |
 # llama.cpp
 This is a C++ implementation of the LLaMA model inference engine that runs **ENTIRELY ON CPU** with optional GPU acceleration (like Metal on macOS)
-This is the GO-TO tool for running models on a laptop. More info can be found [[Macbook M3 16GB Ram Local LLMs#What is Llama.cpp?|here]]
+This is the GO-TO tool for running models on a laptop. More info can be found [[MacOS Local LLMs#What is Llama.cpp?|here]]
 
 
 

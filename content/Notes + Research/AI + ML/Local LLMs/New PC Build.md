@@ -7,6 +7,11 @@ tags:
 
 Built a new windows PC for AI development. Getting my dev environment set up. Testing Quartz syncing using this page.
 
+The date/time on my WSL were out of sync, so my github changelog had the wrong date/time. 
+
+Just updated WSL, let's see if the commit time is correct now...
+
+---
 # 🖥️ Full System Specifications
 
 | **Component**         | **Details**                                                                                                                                                                                                                                                          |

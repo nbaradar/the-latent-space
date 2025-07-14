@@ -54,20 +54,20 @@ So based on everything I know, I want to run something easy for now. Like a 16FP
 ## Model Overview
 >[!info] Here's [the Model I chose](https://huggingface.co/DavidAU/Llama-3.2-8X3B-MOE-Dark-Champion-Instruct-uncensored-abliterated-18.4B-GGUF)
 > [Download Link for Q4_K_M Quant (11.3GB)](https://huggingface.co/DavidAU/Llama-3.2-8X3B-MOE-Dark-Champion-Instruct-uncensored-abliterated-18.4B-GGUF/resolve/main/L3.2-8X3B-MOE-Dark-Champion-Inst-18.4B-uncen-ablit_D_AU-Q4_k_m.gguf?download=true)
-
-![[Pasted image 20250714172115.png|200]]
-
-Name: **Llama-3.2-8X3B-MOE-Dark-Champion-Instruct-uncensored-abliterated-18.4B-GGUF**
-Type:
-- **Mixture of Experts (MoE)**: Uses 8 x 3B models — but only a _subset_ is active per token
-- **Params:** **18.4B total**, but fewer are used per forward pass
-- **Architecture:** LLaMA 3.2 MoE
-- **Context length:** 128k (!!) — excellent for long-form generation
-
-[[Mixture of Experts (MOE)]] don't activate all the parameters at once. Instead 
-- They load all "experts" into memory
-- then only 2-4 of them are used at a time per token
-
+>
+>![[Pasted image 20250714172115.png|200]]
+>
+>Name: **Llama-3.2-8X3B-MOE-Dark-Champion-Instruct-uncensored-abliterated-18.4B-GGUF**
+>Type:
+>- **Mixture of Experts (MoE)**: Uses 8 x 3B models — but only a _subset_ is active per token
+>- **Params:** **18.4B total**, but fewer are used per forward pass
+>- **Architecture:** LLaMA 3.2 MoE
+>- **Context length:** 128k (!!) — excellent for long-form generation
+>
+>[[Mixture of Experts (MOE)]] don't activate all the parameters at once. Instead 
+>- They load all "experts" into memory
+>- then only 2-4 of them are used at a time per token
+>
 💡 That means **you get big model performance without full big model cost.**  
 So this **18.4B MoE** model behaves more like an ~**6–7B active** model _per token_ in terms of VRAM use.
 
@@ -83,5 +83,23 @@ You need to
 - Install dependencies
 - Launch WebUI
 
-I need to install python, I'm going to try using the [Python Install Manager](https://apps.microsoft.com/detail/9nq7512cxl7t?hl=en-US&gl=US)
+I need to install python, I'm going to try using the [Python Install Manager](https://apps.microsoft.com/detail/9nq7512cxl7t?hl=en-US&gl=US)Worked. That was easy. 
 
+For `text-generation-webui` to work it matters where you put the model. You need to place it here:
+```bash
+text-generation-webui\user_data\models\
+```
+
+I placed mine here: `C:\LLM\webui\text-generation-webui\user_data\models\Llama-3-DarkChampion`
+
+Then finally start the WebUI with
+```bash
+.\start_windows.bat
+```
+And navigate to: http://localhost:7860
+
+Once there, go to the "model" tab on the left and load your model...
+![[Pasted image 20250714181425.png|1200]]
+
+And that's it!
+![[Pasted image 20250714181503.png|1000]]

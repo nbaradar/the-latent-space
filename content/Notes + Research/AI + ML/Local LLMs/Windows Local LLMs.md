@@ -1,8 +1,8 @@
 ---
 title: Windows Local LLMs
 tags:
-  - lab
   - local_llm
+  - guide
 ---
 >[!note] [[Windows PC Specs|These are my current Desktop Specs]], updated July 2025
 
@@ -92,6 +92,7 @@ text-generation-webui\user_data\models\
 
 I placed mine here: `C:\LLM\webui\text-generation-webui\user_data\models\Llama-3-DarkChampion`
 
+# Start the Model w/ The UI
 Then finally start the WebUI with
 ```bash
 .\start_windows.bat
@@ -103,3 +104,9 @@ Once there, go to the "model" tab on the left and load your model...
 
 And that's it!
 ![[Pasted image 20250714181503.png|1000]]
+
+---
+# Next Steps
+Check out these notes:
+- [[Mini Private AI Server]]
+- 

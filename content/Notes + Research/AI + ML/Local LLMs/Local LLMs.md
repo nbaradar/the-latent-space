@@ -6,7 +6,11 @@ tags:
   - lab
 draft:
 ---
-> This space will contain any learning/research notes pertaining to running LLMs locally on a machine. I am first going to test with my [[MacOS Local LLMs|Macbook]], then switch to my [[Windows Local LLMs|Desktop]] when I need more power. 
+> [!info] This space will contain any learning/research notes pertaining to running LLMs locally on a machine.
+> 
+> Quick Start Guides:
+> - [[MacOS Local LLMs]]
+> - [[Windows Local LLMs]]
 
 ---
 # Overview
@@ -119,6 +123,8 @@ But if a model exceeds your GPU VRAM, `text-generation-webui` or `transformers` 
 - [Youtube: Running LLMs Locally](https://www.youtube.com/watch?v=XwL_cRuXM2E)
 - [OpenOrca FLAN Dataset](https://www.kaggle.com/datasets/thedevastator/open-orca-augmented-flan-dataset)
 - [What is GGUF/GGML](https://medium.com/@phillipgimmi/what-is-gguf-and-ggml-e364834d241c)
+- [CivitAI (Uncensored)](https://civitai.com/)
+	- Online platform and marketplace for generative AI content, primarily focused on AI-generated images and models
 - [Local LLM Interfaces (REDDIT)](https://www.reddit.com/r/LocalLLaMA/comments/1jc3jow/openweb_ui_lm_studio_or_which_interface_is_your/)
 	- KoboldCpp
 	- Open WebUI

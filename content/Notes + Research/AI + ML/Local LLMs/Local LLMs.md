@@ -3,10 +3,10 @@ title: Local LLMs
 tags:
   - local_llm
   - ai/ml
-  - notes
+  - lab
 draft:
 ---
-> This space will contain any learning/research notes pertaining to running LLMs locally on a machine. I am first going to test with my [[MacOS Local LLMs|Macbook]], then switch to my Desktop when I need more power. 
+> This space will contain any learning/research notes pertaining to running LLMs locally on a machine. I am first going to test with my [[MacOS Local LLMs|Macbook]], then switch to my [[Windows Local LLMs|Desktop]] when I need more power. 
 
 ---
 # Overview
@@ -41,7 +41,7 @@ Provides:
 - Dataset: Ready-to-use corpora for training or testing
 - Spaces: Hosting demos using Gradio/Streamlit
 
-You can **download models** from Hugging Face and run them locally with tools like `transformers`, `text-generation-webui`, or `llama.cpp`.
+You can **download models** from Hugging Face and run them locally with tools like the [[transformers library]], [[text-generation-webui]], or [[llama.cpp]].
 
 **Datasets** are used for fine-tuning
 
@@ -72,15 +72,14 @@ Look into `text-generation-webui`
 1. Choose a model on HuggingFace
 2. Download it using 
 	- [[transformers library]] (Python, for full models)
-	- [[Llama.cpp]] or `text-generation-webui` (For quantized models like `.gguf`)
+	- [[llama.cpp]] or `text-generation-webui` (For quantized models like `.gguf`)
 3. Launch it locally using
 	- Python script with [[transformers library]] (For GPU based Models)
-	- [[Llama.cpp]]/llamafile (for CPU/GPU Quantized Models)
+	- [[llama.cpp]]/llamafile (for CPU/GPU Quantized Models)
 	- `text-generation-webui` (browser based UI)
 4. Interact via API, terminal, or WebUI
 
 ---
-
 ## GPU vs CPU for Inference
 What are the difference between cpu vs gpu for running a model [[Windows PC Specs|for your system]]?
 

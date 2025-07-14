@@ -1,5 +1,5 @@
 ---
-title: Llama.cpp
+title: llama.cpp
 tags:
   - lab
   - local_llm

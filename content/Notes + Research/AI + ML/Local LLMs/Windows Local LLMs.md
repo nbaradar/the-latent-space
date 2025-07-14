@@ -52,8 +52,8 @@ Rule of Thumb:
 So based on everything I know, I want to run something easy for now. Like a 16FP 13B param model (which needs 26GB VRAM), but Quantized with Q4_K_M GGUF so .33 of 26GB which is ~8.5GB VRAM. So I should be totally fine and I have overhead. Then after that, I'll move up to Q5.
 
 ## Model Overview
->[!info] Here's [the model I chose]([Llama-3.2-8X3B-MOE-Dark-Champion-Instruct-uncensored-abliterated-18.4B-GGUF](https://huggingface.co/DavidAU/Llama-3.2-8X3B-MOE-Dark-Champion-Instruct-uncensored-abliterated-18.4B-GGUF))
-> [Download Link](https://huggingface.co/DavidAU/Llama-3.2-8X3B-MOE-Dark-Champion-Instruct-uncensored-abliterated-18.4B-GGUF/resolve/main/L3.2-8X3B-MOE-Dark-Champion-Inst-18.4B-uncen-ablit_D_AU-Q4_k_m.gguf?download=true)
+>[!info] Here's [the Model I chose](https://huggingface.co/DavidAU/Llama-3.2-8X3B-MOE-Dark-Champion-Instruct-uncensored-abliterated-18.4B-GGUF)
+> [Download Link for Q4_K_M Quant (11.3GB)](https://huggingface.co/DavidAU/Llama-3.2-8X3B-MOE-Dark-Champion-Instruct-uncensored-abliterated-18.4B-GGUF/resolve/main/L3.2-8X3B-MOE-Dark-Champion-Inst-18.4B-uncen-ablit_D_AU-Q4_k_m.gguf?download=true)
 
 ![[Pasted image 20250714172115.png|200]]
 

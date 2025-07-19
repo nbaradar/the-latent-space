@@ -15,7 +15,7 @@ From here you have 2 options. Either you can run the terminal by running the rem
 	npx https://github.com/google-gemini/gemini-cli
 	```
 2. Install the CLI: Execute these commands in your terminal
-	```
+	```bash
 	npm install -g @google/gemini-cli
 	gemini
 	```

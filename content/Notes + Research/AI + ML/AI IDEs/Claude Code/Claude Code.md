@@ -11,6 +11,7 @@ draft:
 >[Pricing](https://www.anthropic.com/pricing) 
 >- `$17/month` if billed annually
 >- `$20/month` if billed monthly.
+>
 >Also comes with more usage and more models. 
 
 >[!info]- Addtional Resources
@@ -25,3 +26,16 @@ An agentic IDE/CLI provided by [[Anthropic]].
 It seems like the most important thing when it comes to "vibe-coding" is setting up your context and tooling correctly. 
 So your `CLAUDE.md` file, slash commands, and the newly added "hooks" feature.
 
+As of updating this on June 19, 2025 Claude Code is still considered the best code assist tool when it comes to the quality of it's output. 
+
+---
+# [[Claude Code Install|Installation]]
+
+---
+# Configuration
+
+---
+# Tooling
+
+---
+# Additional Tips/Tricks

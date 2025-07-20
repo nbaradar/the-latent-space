@@ -42,7 +42,7 @@ Test sample prompts, design your own prompts, and customize foundation models to
 ## [BrainTrust](https://www.braintrust.dev/)
 Evaluate AI models, I'm not sure if this is free or not but it seems useful. They have a [Public GitHub Repo](https://github.com/braintrustdata/autoevals)
 
-Saving it for later
+Seems really useful, saving for later.
 
 ---
 ## [Warp Terminal (Agentic Development Environment)](https://www.warp.dev/)
@@ -50,5 +50,11 @@ A terminal written in Rust, available for macOS, Windows and Linux. Brands itsel
 
 [Warp 2.0 was announced June 24, 2025](https://www.warp.dev/blog/reimagining-coding-agentic-development-environment)
 >Warp 2.0 has four capabilities in a single app: Code, Agents, Terminal, and Drive. The main interface is our universal input which accepts prompts and terminal commands and lets you kick off any agentic task.
+
+---
+## [DeepWiki](https://deepwiki.com/)
+AI-powered platform that transforms any public GitHub repository into a fully interactive, easy-to-understand wiki. Basically can use an LLM + RAG to chat with a repos documentation. 
+
+Seems really useful, saving for later.
 
 ---

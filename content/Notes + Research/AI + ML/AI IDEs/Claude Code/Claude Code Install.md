@@ -4,7 +4,7 @@ tags:
   - ai/ml
   - anthropic
   - claude
-  - lab
+  - guide
 draft:
 ---
 >[!important]- **You** must **have a** **pro account**
@@ -25,3 +25,25 @@ Then simply install it using npm:
 npm install -g @anthropic-ai/claude-code
 ```
 
+![[Pasted image 20250720153545.png]]
+
+And that's quite literally it. You now have access to ClaudeCode on your machine. Now to USE ClaudeCode, first navigate to the directory where you want to work... (in this example I will navigate to my Obsidian Vault that contains this site so Claude has access to all my notes)
+```bash
+cd "/Users/naderbaradar/Library/Mobile Documents/iCloud~md~obsidian/Documents/quartz-vault/quartz"
+```
+
+And then run ClaudeCode by issuing this command:
+```bash
+claude
+```
+
+And that's it! First it will ask you what color themes you like...
+![[Pasted image 20250720153914.png]]
+
+And then it will ask you to authenticate with your pro/max account. You could also use and API key if you want.
+![[Pasted image 20250720154034.png]]
+
+If you choose to log in with your subscription, you will be directed to Anthropics login page, and then asked to authorize ClaudeCode to your account:
+![[Pasted image 20250720154229.png|500]]
+
+And that's it! [[Claude Code#Additional Tips/Tricks|Click here for additional tips and tricks.]]

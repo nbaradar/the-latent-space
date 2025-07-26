@@ -3,6 +3,7 @@ title: Anthropic
 tags:
   - concept
   - company
+  - anthropic
 ---
 ![[Pasted image 20250620145732.png|400]]
 

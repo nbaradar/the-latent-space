@@ -41,6 +41,9 @@ NOTE:
 
 ---
 # Configuration
+>[!info] [CLI Config Documentation](https://docs.anthropic.com/en/docs/claude-code/settings)
+
+You can change a variety of offered settings by running the /config command when using the interactive REPL (Read-Evaluate-Print Loop)
 
 ---
 # Tooling
@@ -53,3 +56,6 @@ Look at [CCUsage](https://ccusage.com/)
 
 And if you want to know [how it's working in the background](https://deepwiki.com/ryoppippi/ccusage/5.2-data-loading-system): Basically, ClaudeCode generates JSONL files (JSONL is JSON where each new line is a valid JSON object) that track usage data. CCUsage has a Data Processing Pipeline that looks for these files and any modifications to them and tracks them in real time. You can also learn more about how [ClaudeCode implemented OpenTelemetry for Monitoring here](https://docs.anthropic.com/en/docs/claude-code/monitoring-usage).
 
+---
+# Use Cases
+[Check this excellent documentation](https://docs.anthropic.com/en/docs/claude-code/common-workflows) for a set of common workflows and how they work in Claude Code. Anthropic writes the best dev docs by far. 

@@ -28,6 +28,9 @@ draft:
 ## AI Communities:
 - [Hugging Face](https://huggingface.co/)
 - [Kaggle](https://www.kaggle.com/)
+## AI Incubators/Thinktanks:
+- [South Park Commons](https://www.southparkcommons.com/)
+- [AGI House](https://agihouse.org/)
 ## Different AI Services:
 - [Perplexity](https://www.perplexity.ai/) - More up-to-date information and summaries, best for learning
 - [Pi](https://pi.ai/talk) - Specializes in emotional intelligence and conversational intelligence. 

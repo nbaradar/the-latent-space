@@ -29,7 +29,22 @@ It took 20 credits
 
 You can find the live site here: https://nbaradar.github.io/wikipedia-graph/
 
+---
+# Aug 17 Updates
+
 At the time of writing, it's basically choosing random articles as related nodes. I have plenty of credits left. I am going to implement page ranking and display nodes based on how many connecting nodes they have. 
+
+Okay first of all, let's create a list of additional features we will implement:
+- Node Filtering
+	- Currently we are adding nodes alphabetically. This isn't useful. What other systems of filtering can we use?
+		- Page ranking = Sort associated pages based on view count/popularity, then list the top most popular articles as connected nodes
+		- 
+- Increase/Decrease Nodes
+- Increase/Decrease Layers
+- Resize/Pane slider to adjust each pane. (Left to right, so I can increase the wiki article size, OR increase the graph)
+- Rabbit-hunting mode VS Standard
+	- Rabbit hunting = every time you click a new node, it becomes the central node
+	- Standard = Central node stays static regardless of selected connecting nodes
 
 Could add a lot more, like visual customizations and ability to increase/decrease layers and nodes.
 

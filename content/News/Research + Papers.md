@@ -42,3 +42,37 @@ draft:
 
 ## [Early Signs of Steganographic Capabilities in Frontier LLMs](https://arxiv.org/abs/2507.02737)
 > Can frontier models hide secret information and reasoning in their outputs? We find that current models are unable to encode short messages in their outputs without a monitor noticing under standard affordances. They can succeed, however, if given additional affordances such as using an unmonitored scratchpad and coordinating on what encoding scheme to use. We additionally find early signs that models can perform basic encoded reasoning in a simple state-tracking problem. This includes some ability to reason with their own and pre-defined schemes, including encoding schemes such as Hexadecimal. Despite this, they can rarely hide reasoning subtly within a cover task to fool a monitor. Overall, our results indicate that current LLMs exhibit nascent steganographic capabilities. While these capabilities are likely insufficient to bypass well-designed monitors at present, this could change in the future.
+
+## [Small Language Models are the Future of Agentic AI](https://arxiv.org/abs/2506.02153)
+>**What’s the Problem?**  
+>LLMs (like GPT‑4, Gemini, Claude) are great for open-ended conversation and “do‑everything” AI, but deploying them for every automated agent is overkill. Most agentic AI in real life handles _routine, repetitive, and specialized_ tasks—think email triage, form extraction, or structured web scraping. Using a giant LLM is like renting a rocket just to deliver a pizza.
+>
+>**NVIDIA’s Position:**  
+> They argue that **small language models (SLMs)**—models with fewer parameters, think under 10B—are often just as capable for these agentic jobs. The paper’s main points:
+>
+>- **SLMs are Efficient and Powerful Enough:**
+>	- SLMs have reached a level where for many agentic tasks (structured data, API calls, code snippets) they perform at near parity with LLMs—but use far less compute, memory, and energy.
+>	- Real-world experiments show SLMs can match or even outperform LLMs on speed, latency, and operational cost, especially on tasks with narrow scope and clear instructions.
+>- **Best Use: Specialized, Repetitive Tasks**  
+>	- The rise of “agentic AI”—AI systems that chain together multiple steps, APIs, or microservices—means more workloads are predictable and domain-specific.
+>	- SLMs excel at simple planning, parsing, query generation, and even code generation, as long as the job doesn’t require wide-ranging world knowledge.
+>- **Hybrid Systems Are the Future:**
+>	- Don’t throw out LLMs! Instead, pipe requests: let SLMs handle the bulk of agentic work, escalate to a big LLM only for ambiguous, complex, or creative queries.
+>	- They outline a method (“LLM-to-SLM agent conversion algorithm”) for systematically migrating LLM-based agentic systems so teams can shift traffic without breaking things.
+>- **Economic & Environmental Impact:**
+>	- SLMs allow broader deployment—on edge devices, in regulated settings, and at much lower cost.
+>	- They argue that even a _partial shift_ from LLMs to SLMs across the AI industry could dramatically lower operational costs and carbon footprint.
+>- **Barriers and “Open Questions”:**
+>	- Teams are still building for giant models because benchmarks focus on general intelligence, not agentic tasks. The paper calls for new, task-specific benchmarks to measure what really matters in business or workflow automation.
+>	- There’s inertia (invested infrastructure, fear of “downgrading”) that slows SLM adoption, even where it’s objectively better.
+>- **Call to Action:**
+>	- NVIDIA invites feedback and contributions, planning to open-source tools and frameworks for SLM-optimized agents and calling for new best practices in the field.
+>	- The authors stress the shift is not “anti-LLM” but a push for AI architectures to be matched to the right tool for the job.
+>
+>**Why this is a big deal:**
+>- As genAI goes from hype to production, cost, speed, and reliability matter most—and SLMs may be the overlooked workhorses that make agentic AI actually scalable.
+>- The paper could inspire new startups and AI stacks built specifically around SLMs, sparking a “right-sizing” movement in the industry.
+>
+>**Caveats:**
+>- SLMs are not (yet) a replacement for all LLM use cases; the hybrid model is key.
+>- New metrics and community benchmarks are needed to track SLM performance where it matters.

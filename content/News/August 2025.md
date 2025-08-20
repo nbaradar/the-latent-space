@@ -15,8 +15,9 @@ draft:
 # Industry
 ## [OpenAI logged its first $1 Billion Month but is still 'constantly under compute' CFO says](https://www.cnbc.com/2025/08/20/openai-compute-ai.html)
 >- OpenAI CFO Sarah Friar said the company is “constantly under compute,” but hit its first $1 billion revenue month in July.
->- CNBC confirmed last week that the Sam Altman-led AI company was in talks to sell about $6 billion in stock at a roughly $500 billion valuation.
+>- CNBC confirmed last week that the Sam Altman-led AI company was in talks to sell about 6 billion in stock at a roughly 500 billion valuation.
 >- Friar said the company is seeing an acceleration in some paid subscribers for its new ChatGPT-5 models, which faced criticism from some users following its debut.
+
 ![[Pasted image 20250820123507.png|400]]
 
 ## [Claude Opus 4 and 4.1 Can Now End a Rare Subset of Conversations](https://www.anthropic.com/research/end-subset-conversations)

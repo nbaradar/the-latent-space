@@ -27,9 +27,9 @@ draft:
 >- Alibaba’s Ovis2.5, released in 9B and 2B parameter versions, sets a new bar for open-source multimodal language models by integrating a native-resolution vision transformer and deep reasoning capabilities. This architecture enables Ovis2.5 to process visual inputs at their original resolutions, preserving critical details for tasks like chart analysis, OCR, document understanding, and STEM reasoning. The model’s “thinking mode” allows users to trigger enhanced step-by-step reflection and self-correction, boosting accuracy on complex queries and technical challenges.
 >- Ovis2.5 matches or surpasses most open-source competitors on industry benchmarks like OpenCompass, MathVista, and OCRBench V2, while delivering efficient, scalable training and robust performance even in its lightweight 2B version. Praised for its versatile applications—from cloud AI to mobile inference—the model is now openly available on Hugging Face, empowering researchers and developers with high-fidelity multimodal reasoning and visual comprehension that approach proprietary model standards.....
 >
->Full analysis: [https://www.marktechpost.com/2025/08/17/alibaba-ai-team-just-released-ovis-2-5-multimodal-llms-a-major-leap-in-open-source-ai-with-enhanced-visual-perception-and-reasoning-capabilities/](https://www.marktechpost.com/2025/08/17/alibaba-ai-team-just-released-ovis-2-5-multimodal-llms-a-major-leap-in-open-source-ai-with-enhanced-visual-perception-and-reasoning-capabilities/)
->Paper: [https://github.com/AIDC-AI/Ovis/blob/main/docs/Ovis2_5_Tech_Report.pdf](https://github.com/AIDC-AI/Ovis/blob/main/docs/Ovis2_5_Tech_Report.pdf)
->Models on Hugging Face: [https://huggingface.co/collections/AIDC-AI/ovis25-689ec1474633b2aab8809335](https://huggingface.co/collections/AIDC-AI/ovis25-689ec1474633b2aab8809335)
+>[Full analysis](https://www.marktechpost.com/2025/08/17/alibaba-ai-team-just-released-ovis-2-5-multimodal-llms-a-major-leap-in-open-source-ai-with-enhanced-visual-perception-and-reasoning-capabilities/)
+>[Paper](https://github.com/AIDC-AI/Ovis/blob/main/docs/Ovis2_5_Tech_Report.pdf)
+>[Models on Hugging Face](https://huggingface.co/collections/AIDC-AI/ovis25-689ec1474633b2aab8809335)
 
 ![[Pasted image 20250820110850.png|350]]
 

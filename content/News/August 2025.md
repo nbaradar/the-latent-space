@@ -17,7 +17,7 @@ draft:
 > We recently gave Claude Opus 4 and 4.1 the ability to end conversations in our consumer chat interfaces. This ability is intended for use in rare, extreme cases of persistently harmful or abusive user interactions. This feature was developed primarily as part of our exploratory work on potential AI welfare, though it has broader relevance to model alignment and safeguards.
 
 ![[Pasted image 20250820111458.png|400]]
-## [Alibaba AI Team Just Released Ovis 2.5 Multimodal LLMs: A Major Leap in Open-Source AI with Enhanced Visual Perception and Reasoning Capabilities](# Alibaba AI Team Just Released Ovis 2.5 Multimodal LLMs: A Major Leap in Open-Source AI with Enhanced Visual Perception and Reasoning Capabilities)
+## [Alibaba AI Team Just Released Ovis 2.5 Multimodal LLMs: A Major Leap in Open-Source AI with Enhanced Visual Perception and Reasoning Capabilities](https://www.marktechpost.com/2025/08/17/alibaba-ai-team-just-released-ovis-2-5-multimodal-llms-a-major-leap-in-open-source-ai-with-enhanced-visual-perception-and-reasoning-capabilities/)
 >- Alibaba’s Ovis2.5, released in 9B and 2B parameter versions, sets a new bar for open-source multimodal language models by integrating a native-resolution vision transformer and deep reasoning capabilities. This architecture enables Ovis2.5 to process visual inputs at their original resolutions, preserving critical details for tasks like chart analysis, OCR, document understanding, and STEM reasoning. The model’s “thinking mode” allows users to trigger enhanced step-by-step reflection and self-correction, boosting accuracy on complex queries and technical challenges.
 >- Ovis2.5 matches or surpasses most open-source competitors on industry benchmarks like OpenCompass, MathVista, and OCRBench V2, while delivering efficient, scalable training and robust performance even in its lightweight 2B version. Praised for its versatile applications—from cloud AI to mobile inference—the model is now openly available on Hugging Face, empowering researchers and developers with high-fidelity multimodal reasoning and visual comprehension that approach proprietary model standards.....
 >
@@ -35,12 +35,14 @@ draft:
 
 ![[Pasted image 20250820103605.png|350]]
 ## [OpenAI Announces That It's Making GPT-5 More Sycophantic After User Backlash](https://futurism.com/openai-gpt5-more-sycophantic)
-> Test
+> - Beyond reinstating older models to paying subscribers, OpenAI continues to bow to the pressure, [tweeting](https://x.com/OpenAI/status/1956461718097494196) on Friday that it would be "making GPT-5 warmer and friendlier based on feedback that it felt too formal before."
+> - "Changes are subtle, but ChatGPT should feel more approachable now," it added.
 
 ![[Pasted image 20250820104018.png|400]]
 
 ## [Users Were So Addicted to GPT-4o That They Immediately Cajoled OpenAI Into Bringing It Back After It Got Killed](https://futurism.com/users-addicted-gpt-4o-convinced-openai-bring-back)
-> Test
+> - OpenAI release their new GPT-5 model and announced that it would replace all of its previous models
+> - Power users immediately started to beg CEO Sam Altman to bring back preceding models, often for a reason that had little to do with intelligence, artificial or otherwise: they were attached to it on an emotional level.
 
 ![[Pasted image 20250820104127.png|400]]
 

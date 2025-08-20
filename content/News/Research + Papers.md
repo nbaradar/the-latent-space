@@ -44,6 +44,7 @@ draft:
 > Can frontier models hide secret information and reasoning in their outputs? We find that current models are unable to encode short messages in their outputs without a monitor noticing under standard affordances. They can succeed, however, if given additional affordances such as using an unmonitored scratchpad and coordinating on what encoding scheme to use. We additionally find early signs that models can perform basic encoded reasoning in a simple state-tracking problem. This includes some ability to reason with their own and pre-defined schemes, including encoding schemes such as Hexadecimal. Despite this, they can rarely hide reasoning subtly within a cover task to fool a monitor. Overall, our results indicate that current LLMs exhibit nascent steganographic capabilities. While these capabilities are likely insufficient to bypass well-designed monitors at present, this could change in the future.
 
 ## [Small Language Models are the Future of Agentic AI](https://arxiv.org/abs/2506.02153)
+June 2025
 >**What’s the Problem?**  
 >LLMs (like GPT‑4, Gemini, Claude) are great for open-ended conversation and “do‑everything” AI, but deploying them for every automated agent is overkill. Most agentic AI in real life handles _routine, repetitive, and specialized_ tasks—think email triage, form extraction, or structured web scraping. Using a giant LLM is like renting a rocket just to deliver a pizza.
 >

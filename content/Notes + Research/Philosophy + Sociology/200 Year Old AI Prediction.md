@@ -3,7 +3,8 @@ title: 200 Year Old AI Prediction
 tags:
   - thought
 ---
-Samuel Butler was an English novelist born in 1835. His influence on literature, such as it was, came through _The Way of All Flesh_, which Butler completed in the 1880s, but left unpublished to protect his family. 
+![[Pasted image 20250820120454.png|300]]
+[Samuel Butler](https://en.wikipedia.org/wiki/Samuel_Butler_(novelist)) was an English novelist born in 1835. His influence on literature, such as it was, came through [_The Way of All Flesh_](https://en.wikipedia.org/wiki/The_Way_of_All_Flesh), which Butler completed in the 1880s, but left unpublished to protect his family. 
 
 Sue Zemka writes that "Among science fiction writers, _The Book of the Machines_ has a canonical status, for it originates the conceit by which machines develop intelligent capacities and enslave mankind." For example, in [Frank Herbert](https://en.wikipedia.org/wiki/Frank_Herbert "Frank Herbert")'s _[Dune](https://en.wikipedia.org/wiki/Dune_\(novel\) "Dune (novel)")_ the "[Butlerian Jihad](https://en.wikipedia.org/wiki/Butlerian_Jihad)" – "in-universe ancient revolt against 'thinking machines' that resulted in their prohibition" – is named after Butler.
 

@@ -6,7 +6,7 @@ tags:
   - projects
 draft:
 ---
-I am going to create a "Graph View" of Wikipedia as a POC project to test Windsurfs capabilities. 
+I am going to create a "Graph View" of Wikipedia as a POC project to test [[Windsurf]] capabilities. 
 
 [To view usage](https://docs.windsurf.com/windsurf/accounts/usage)
 ![[Pasted image 20250815182600.png]]

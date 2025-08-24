@@ -28,4 +28,4 @@ This is Windsurfs AI-agentic coder. It's features include
 
 ---
 ## Test Project with Windsurf
-I'm going to create a quick [[Wikipedia Graph View]] application using Windsurf to test it out. 
+I'm going to create a quick [[Wikipedia Graph View POC]] application using Windsurf to test it out. 

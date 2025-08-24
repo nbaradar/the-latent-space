@@ -5,6 +5,12 @@ tags:
 draft:
 ---
 # Politics
+## [Deal to get ChatGPT Plus for whole of UK discussed by Open AI boss and minister](https://www.theguardian.com/politics/2025/aug/23/uk-minister-peter-kyle-chatgpt-plus-openai-sam-altman)
+> - Exclusive: Deal that could have cost £2bn was floated at meeting between technology secretary Peter Kyle and Sam Altman
+> - OpenAI recently agreed on a deal with the United Arab Emirates to “enable ChatGPT nationwide” and use the technology in public sectors
+> - The UK government has been keen to attract AI investment from the US, [having struck deals](https://www.theguardian.com/technology/2025/jul/09/uk-governments-deal-with-google-dangerously-naive-say-campaigners) with OpenAI’s rivals Google and Anthropic earlier this year.
+
+![[Pasted image 20250824143725.png|300]]
 ## [OpenAI’s Altman warns the U.S. is underestimating China’s next-gen AI threat](https://www.cnbc.com/2025/08/18/openai-altman-china-ai.html)
 > - OpenAI CEO Sam Altman said the U.S. may be underestimating the complexity and seriousness of China’s progress in artificial intelligence.
 > - His comments come as Washington adjusts its policies designed to curb China’s AI ambitions.
@@ -13,6 +19,12 @@ draft:
 ![[Pasted image 20250820102811.png|400]]
 
 # Industry
+## [Elon Musk says he wants to 'simulate' software companies like Microsoft 'purely' with AI. He's calling it 'Macrohard.'](https://www.businessinsider.com/elon-musk-recreate-microsoft-software-companies-macrohard-with-ai-2025-8)
+>- Elon Musk said that his AI venture, xAI, is working to simulate software companies like Microsoft.
+>- He's said on X that it's a "purely AI software company called Macrohard."
+>- Musk said it should be possible since companies like Microsoft don't make physical hardware.
+
+![[Pasted image 20250824142926.png|374]]
 
 ## [Musk Tried to Enlist Zuckerberg to Help Finance Bid for OpenAI](https://www.bloomberg.com/news/articles/2025-08-22/musk-tried-to-enlist-zuckerberg-to-help-finance-bid-for-openai)
 >- OpenAI said Elon Musk identified Mark Zuckerberg as one of the people with whom he had communicated about potentially financing a deal to purchase the ChatGPT maker.

@@ -4,7 +4,7 @@ tags:
   - ai/ml
   - reference
   - security
-draft: true
+draft: false
 ---
 > [!info] All the notes here are taken from an [interview with Jason Haddix](https://www.youtube.com/watch?v=2Z-9EOyb6HE)
 

@@ -29,5 +29,7 @@ tags:
 ---
 # Additional Tips/Tricks
 
+https://www.reddit.com/r/kiroIDE/comments/1mtyelu/free_alternative_to_kiro_gemini_cli_slash_command/
+
 ---
 # Use Cases

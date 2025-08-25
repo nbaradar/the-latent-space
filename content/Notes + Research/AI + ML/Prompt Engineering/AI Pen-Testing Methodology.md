@@ -1,5 +1,5 @@
 ---
-title: AI Pen-Testing Methadology
+title: AI Pen-Testing Methodology
 tags:
   - ai/ml
   - reference

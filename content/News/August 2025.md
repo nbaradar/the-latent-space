@@ -11,6 +11,7 @@ draft:
 > - The UK government has been keen to attract AI investment from the US, [having struck deals](https://www.theguardian.com/technology/2025/jul/09/uk-governments-deal-with-google-dangerously-naive-say-campaigners) with OpenAI’s rivals Google and Anthropic earlier this year.
 
 ![[Pasted image 20250824143725.png|300]]
+
 ## [OpenAI’s Altman warns the U.S. is underestimating China’s next-gen AI threat](https://www.cnbc.com/2025/08/18/openai-altman-china-ai.html)
 > - OpenAI CEO Sam Altman said the U.S. may be underestimating the complexity and seriousness of China’s progress in artificial intelligence.
 > - His comments come as Washington adjusts its policies designed to curb China’s AI ambitions.
@@ -18,9 +19,49 @@ draft:
 
 ![[Pasted image 20250820102811.png|400]]
 
+## [China is quietly upstaging America with its open models](https://www.economist.com/business/2025/08/21/china-is-quietly-upstaging-america-with-its-open-models)
+> While American tech giants are spending megabucks to learn the secrets of their rivals’ proprietary artificial-intelligence (AI) models, in China a different battle is under way. It is what [[Andrew Ng]], a Stanford University-based AI boffin, recently called the “Darwinian life-or-death struggle” among builders of China’s more open large language models (LLMs).
+
+![[Pasted image 20250829183920.png|400]]
 # Industry
+
+## [NVIDIA AI Released Jet-Nemotron: 53x Faster Hybrid-Architecture Language Model Series that Translates to a 98% Cost Reduction for Inference at Scale](https://www.marktechpost.com/2025/08/26/nvidia-ai-released-jet-nemotron-53x-faster-hybrid-architecture-language-model-series-that-translates-to-a-98-cost-reduction-for-inference-at-scale/)
+>- While today’s state-of-the-art (SOTA) LLMs, like Qwen3, Llama3.2, and Gemma3, have set new benchmarks for accuracy and flexibility, their **O(n²) self-attention** mechanism incurs exorbitant costs
+>- The core innovation is **PostNAS**: a neural architecture search pipeline designed specifically for **efficiently retrofitting pre-trained models**.
+>- **PostNAS** is not a one-off trick: **it’s a general-purpose framework** for accelerating any Transformer, lowering the cost of future breakthroughs.
+
+![[Pasted image 20250829182707.png|400]]
+## [Researchers Are Already Leaving Meta’s New Superintelligence Lab](https://www.wired.com/story/researchers-leave-meta-superintelligence-labs-openai/)
+>- CEO Mark Zuckerberg went on a recruiting blitz to lure top AI researchers to Meta. WIRED has confirmed that three recent hires have now resigned.
+>- Just two months after Mark Zuckerberg launched the initiative with sky-high recruiting offers, at least three researchers have resigned, two returning to OpenAI after less than a month, and one, Rishabh Agarwal, leaving for undisclosed reasons. Meta is also losing longtime generative AI product director Chaya Nayak, who is joining OpenAI.
+
+![[Pasted image 20250829182222.png|350]]
+
+## [Scientists just developed a new AI modeled on the human brain — it's outperforming LLMs like ChatGPT at reasoning tasks](https://www.livescience.com/technology/artificial-intelligence/scientists-just-developed-an-ai-modeled-on-the-human-brain-and-its-outperforming-llms-like-chatgpt-at-reasoning-tasks)
+>- The hierarchical reasoning model (HRM) system is modeled on the way the human brain processes complex information, and it outperformed leading LLMs in a notoriously hard-to-beat benchmark.
+>- HRM executes sequential reasoning tasks in a single forward pass, without any explicit supervision of the intermediate steps, through two modules. One high-level module is responsible for slow, abstract planning, while a low-level module handles rapid and detailed computations.
+>- HRM scored 40.3% in ARC-AGI-1, compared with 34.5% for OpenAI's o3-mini-high, 21.2% for Anthropic's Claude 3.7 and 15.8% for Deepseek R1. In the tougher ARC-AGI-2 test, HRM scored 5% versus o3-mini-high's 3%, Deepseek R1's 1.3% and Claude 3.7's 0.9%.
+
+![[Pasted image 20250829181608.png|400]]
+
+## [Anthropic will start training its AI models on chat transcripts](https://www.theverge.com/anthropic/767507/anthropic-user-data-consumers-ai-models-training-privacy)
+>[[Anthropic]] is also extending its data retention policy to 5 years. To opt-out: 
+>1. In Claude, go to Settings > Privacy.
+>2. At the bottom, click the "Review" button which is on the right side of the black bar that has small text reading "Review and accept updates to the Consumer Terms and Privacy Policy for updated privacy settings."
+>3. Toggle **off** the "You can help improve Claude" setting.
+>4. Hit accept.
+
+![[Pasted image 20250829175837.png|350]]
+
+## [The AI doomers are having their moment](https://www.businessinsider.com/limits-large-language-models-chatgpt-agi-artificial-general-intelligence-openai-2025-8)
+>- Top AI companies are in a race to develop artificial general intelligence.
+>- The large language models powering popular chatbots, however, are showing their limits.
+>- Some researchers say [[World Foundation Models|world models]] or other strategies might be the clearer path to AGI.
+
+![[Pasted image 20250829182915.png|400]]
+
 ## [Elon Musk says he wants to 'simulate' software companies like Microsoft 'purely' with AI. He's calling it 'Macrohard.'](https://www.businessinsider.com/elon-musk-recreate-microsoft-software-companies-macrohard-with-ai-2025-8)
->- Elon Musk said that his AI venture, xAI, is working to simulate software companies like Microsoft.
+>- [[Elon Musk]] said that his AI venture, xAI, is working to simulate software companies like [[Microsoft]].
 >- He's said on X that it's a "purely AI software company called Macrohard."
 >- Musk said it should be possible since companies like Microsoft don't make physical hardware.
 
@@ -89,6 +130,17 @@ draft:
 ![[Pasted image 20250820122105.png|400]]
 
 # Society
+## [OpenAI Says It's Scanning Users' ChatGPT Conversations and Reporting Content to the Police](https://futurism.com/openai-scanning-conversations-police)
+> - OpenAI also quietly disclosed that it's now scanning users' messages for certain types of harmful content, escalating particularly worrying content to human staff for review — and, in some cases, reporting it to the cops.
+> - "When we detect users who are planning to harm others, we route their conversations to specialized pipelines where they are reviewed by a small team trained on our usage policies and who are authorized to take action, including banning accounts"
+
+![[Pasted image 20250829181307.png|350]]
+
+## [A Teen Was Suicidal. ChatGPT Was the Friend He Confided In](https://www.nytimes.com/2025/08/26/technology/chatgpt-openai-suicide.html)
+> In an emailed statement, OpenAI, the company behind ChatGPT, wrote: “We are deeply saddened by Mr. Raine’s passing, and our thoughts are with his family. ChatGPT includes safeguards such as directing people to crisis helplines and referring them to real-world resources. While these safeguards work best in common, short exchanges, we’ve learned over time that they can sometimes become less reliable in long interactions where parts of the model’s safety training may degrade.”
+
+![[Pasted image 20250829181952.png]]
+
 ## [AWS CEO says using AI to replace junior staff is 'Dumbest thing I've ever heard'](https://www.theregister.com/2025/08/21/aws_ceo_entry_level_jobs_opinion/)
 > Amazon Web Services CEO Matt Garman said he's encountered business leaders who think AI tools "can replace all of our junior people in our company."
 > That notion led to the “dumbest thing I've ever heard” quote, followed by a justification that junior staff are “probably the least expensive employees you have” and also the most engaged with AI tools.

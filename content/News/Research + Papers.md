@@ -44,7 +44,7 @@ draft:
 > Can frontier models hide secret information and reasoning in their outputs? We find that current models are unable to encode short messages in their outputs without a monitor noticing under standard affordances. They can succeed, however, if given additional affordances such as using an unmonitored scratchpad and coordinating on what encoding scheme to use. We additionally find early signs that models can perform basic encoded reasoning in a simple state-tracking problem. This includes some ability to reason with their own and pre-defined schemes, including encoding schemes such as Hexadecimal. Despite this, they can rarely hide reasoning subtly within a cover task to fool a monitor. Overall, our results indicate that current LLMs exhibit nascent steganographic capabilities. While these capabilities are likely insufficient to bypass well-designed monitors at present, this could change in the future.
 
 ## [Small Language Models are the Future of Agentic AI](https://arxiv.org/abs/2506.02153)
-June 2025
+**June 2025**
 >**What’s the Problem?**  
 >LLMs (like GPT‑4, Gemini, Claude) are great for open-ended conversation and “do‑everything” AI, but deploying them for every automated agent is overkill. Most agentic AI in real life handles _routine, repetitive, and specialized_ tasks—think email triage, form extraction, or structured web scraping. Using a giant LLM is like renting a rocket just to deliver a pizza.
 >
@@ -77,3 +77,13 @@ June 2025
 >**Caveats:**
 >- SLMs are not (yet) a replacement for all LLM use cases; the hybrid model is key.
 >- New metrics and community benchmarks are needed to track SLM performance where it matters.
+
+## [Meta AI Introduces DeepConf: First AI Method to Achieve 99.9% on AIME 2025 with Open-Source Models Using GPT-OSS-120B ](https://www.marktechpost.com/2025/08/27/meta-ai-introduces-deepconf-first-ai-method-to-achieve-99-9-on-aime-2025-with-open-source-models-using-gpt-oss-120b/)
+**August 2025**
+>**Why DeepConf?**
+> Parallel thinking (self-consistency with majority voting) is the de facto standard for boosting LLM reasoning: generate multiple candidate solutions, then pick the most common answer. While effective, this method has **diminishing returns**—accuracy plateaus or even declines as more paths are sampled, because low-quality reasoning traces can dilute the vote. Moreover, generating hundreds or thousands of traces per query is costly, both in time and compute. DeepConf tackles these challenges by **exploiting the LLM’s own confidence signals**.
+>
+> Meta AI’s DeepConf represents a **leap forward** in LLM reasoning, delivering both peak accuracy and unprecedented efficiency. By dynamically leveraging the model’s internal confidence, DeepConf achieves what was previously out of reach for open-source models: **near-perfect results on elite reasoning tasks, with a fraction of the computational cost**.
+> 
+> [PAPER](https://arxiv.org/pdf/2508.15260)
+> [PROJECT PAGE](https://jiaweizzhao.github.io/deepconf/)

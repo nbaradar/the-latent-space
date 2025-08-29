@@ -9,6 +9,7 @@ draft:
 >[!info]- Relevant Links 
 > [Website](https://windsurf.com/)
 > [Dev Docs](https://docs.windsurf.com/windsurf/getting-started)
+> [July 2025: Windsurf Acquires Cognition](https://windsurf.com/blog/windsurfs-next-chapter)
 
 Windsurf is an entire IDE solution that can use many different LLM models to accomplish different software development tasks. Windsurf includes the [Editor](https://windsurf.com/editor) itself and [plugins](https://windsurf.com/plugins) for other IDEs if you would rather not use their Editor. 
 

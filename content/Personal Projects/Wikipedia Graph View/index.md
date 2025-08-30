@@ -1,10 +1,14 @@
 ---
 title: Wikipedia Graph View
+tags:
+  - projects
 ---
 # Wikipedia Graph View
+>[!note] Dev Notes
+>[[Wikipedia Graph View POC]]
+>[[Wikipedia Graph View Development]]
 
 ![[Pasted image 20250824200528.png|600]]
-![[Pasted image 20250824200707.png|800]]
 ## Project Vision
   Wikipedia Graph Explorer is a modern, interactive web application that transforms the traditional Wikipedia browsing experience into an
   immersive visual journey through interconnected knowledge. Rather than following linear links from article to article, users can explore
@@ -49,6 +53,8 @@ title: Wikipedia Graph View
   - Progressive enhancement - works without JavaScript, enhanced with it
   - Comprehensive caching reduces API calls by 60-90%
   - Modular architecture makes the codebase maintainable and extensible
+
+![[Pasted image 20250824200707.png|800]]
 ## The Vision in Action
   Imagine starting with "Climate Change" and visually discovering its connections to "Medieval Warm Period," then noticing that links to
   "Vikings," which connects to "Navigation" and surprisingly to "Mathematics." Instead of losing this path in a traditional rabbit hole, the

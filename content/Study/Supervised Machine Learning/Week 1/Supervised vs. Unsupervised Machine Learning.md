@@ -4,6 +4,7 @@ tags:
   - study
 draft:
 ---
+> [!example] [[Overview of Machine Learning|<- Previous Lesson]] | [[Linear Regression Models|Next Lesson ->]]
 ## Supervised Learning: Regression
 **[[Supervised Learning|Supervised Machine Learning]]** refers to algorithms that learn `x` -> `y` or `input` -> `output` mappings. 
 
@@ -101,4 +102,3 @@ For example, clustering is used in Google News. They use Unsupervised Learning t
 
 There is no employee at Google telling the algorithm to find the words `panda` and `twin` and `zoo` and put them into the same cluster. Instead, the algorithm finds out without supervision what articles should be added to a cluster on any given day.
 
-[[Regression Model|Next Lesson ->]]

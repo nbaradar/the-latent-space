@@ -4,7 +4,8 @@ tags:
   - study
 draft:
 ---
-**What is [[Machine Learning]]?** 
+> [!example] [[Supervised vs. Unsupervised Machine Learning|Next Lesson ->]]
+## **What is [[Machine Learning]]?** 
 The science of getting computers to learn without being explicitly programmed. It is a subfield of AI (Artificial Intelligence), and is now widely used today.
 
 >[!note] Made an account on DeepLearning.AI
@@ -38,4 +39,4 @@ Types of Machine Learning Algorithms
 - Recommender Systems
 - Reinforcement Learning
 
-[[Supervised vs. Unsupervised Machine Learning|Next Lesson ->]]
+

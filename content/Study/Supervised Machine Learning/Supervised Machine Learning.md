@@ -10,6 +10,6 @@ tags:
 Week 1:
 - [[Overview of Machine Learning]]
 - [[Supervised vs. Unsupervised Machine Learning]]
-- [[Regression Model]]
+- [[Linear Regression Models]]
 
 Week 2:

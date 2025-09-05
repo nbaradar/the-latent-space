@@ -130,6 +130,13 @@ draft:
 ![[Pasted image 20250820122105.png|400]]
 
 # Society
+## [How ChatGPT fueled delusional man who killed mom, himself in posh Conn. town](https://nypost.com/2025/08/29/business/ex-yahoo-exec-killed-his-mom-after-chatgpt-fed-his-paranoia-report/)
+>- A disturbed former Yahoo manager killed his mother and then himself after months of delusional interactions with his AI chatbot “best friend” — which fueled his paranoid belief that his mom was plotting against him
+>- Three weeks after their final message, Greenwich police uncovered the gruesome murder-suicide scene in the posh tri-state suburb.
+>- OpenAI said it has reached out to investigators. “We are deeply saddened by this tragic event,” a company spokeswoman told The Post.
+
+![[Pasted image 20250830153030.png|300]]
+
 ## [OpenAI Says It's Scanning Users' ChatGPT Conversations and Reporting Content to the Police](https://futurism.com/openai-scanning-conversations-police)
 > - OpenAI also quietly disclosed that it's now scanning users' messages for certain types of harmful content, escalating particularly worrying content to human staff for review — and, in some cases, reporting it to the cops.
 > - "When we detect users who are planning to harm others, we route their conversations to specialized pipelines where they are reviewed by a small team trained on our usage policies and who are authorized to take action, including banning accounts"

@@ -2,6 +2,7 @@
 title: Notation Guide
 tags:
   - study
+  - coursera-sml
 draft:
 ---
 

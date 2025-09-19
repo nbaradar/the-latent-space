@@ -2,6 +2,7 @@
 title: Supervised Machine Learning
 tags:
   - study
+  - coursera-sml
 ---
 ![[Pasted image 20250619192310.png|300]]
 
@@ -11,5 +12,6 @@ Week 1:
 - [[Overview of Machine Learning]]
 - [[Supervised vs. Unsupervised Machine Learning]]
 - [[Linear Regression Models]]
+- [[Cost Function]]
 
 Week 2:

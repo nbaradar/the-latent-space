@@ -3,6 +3,7 @@ title: Microsoft
 tags:
   - concept
   - company
+  - microsoft
 draft:
 ---
 ![[Pasted image 20250829180118.png|400]]

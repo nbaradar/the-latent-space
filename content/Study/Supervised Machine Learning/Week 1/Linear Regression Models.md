@@ -2,9 +2,10 @@
 title: Linear Regression Models
 tags:
   - study
+  - coursera-sml
 draft:
 ---
-> [!example] [[Supervised vs. Unsupervised Machine Learning|<- Previous Lesson]] | [[Cost Function|Next Lesson ->]]
+> [!example] [[Supervised vs. Unsupervised Machine Learning|<- Previous Lesson]] | [[Supervised Machine Learning|Home]] | [[Cost Function|Next Lesson ->]]
 ## Linear Regression Model
 Most widely used learning algorithm in the world today. It just means fitting a straight line to your data. An example real-world problem is house sizes and prices.
 
@@ -79,3 +80,4 @@ If currently we are just using the size of a house as our feature to predict the
 >[!question]- Which of the following is the output or "target" variable? -> *ŷ*, *y*, *m*, *x*?
 >>Answer: ***y***
 
+> [!example] [[Supervised vs. Unsupervised Machine Learning|<- Previous Lesson]] | [[Supervised Machine Learning|Home]] | [[Cost Function|Next Lesson ->]]

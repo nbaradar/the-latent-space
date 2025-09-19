@@ -2,6 +2,7 @@
 title: August 2025
 tags:
   - signal
+  - news
 draft:
 ---
 # Politics

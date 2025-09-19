@@ -3,7 +3,8 @@ title: Wikipedia Graph View
 tags:
   - projects
 ---
-# Wikipedia Graph View
+# [Wikipedia Graph View](https://nbaradar.github.io/wikipedia-graph/)
+
 >[!note] Dev Notes
 >[[Wikipedia Graph View POC]]
 >[[Wikipedia Graph View Development]]

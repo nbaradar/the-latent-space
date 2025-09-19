@@ -4,7 +4,7 @@ tags:
   - study
 draft:
 ---
-With both terms now having become industry buzzwords being thrown around ambiguously, let's define the relation between [[LLM Tooling]] and an [[LLM Agent]].
+With both terms now having become industry buzzwords being thrown around ambiguously, let's define the relation between [[LLM Tooling]] and an [[AI Agent]].
 
 Think of LLM Tools as functions that an LLM can use. So if you ask an LLM "What is the weather today in Tokyo" it may end up looking for this function tool:
 ```java
@@ -14,7 +14,7 @@ public static void getWeatherData(String location){
 }
 ```
 
-An LLM Agent then uses these function calls (Tooling) during their workflow. So if an LLM agent was tasked with writing a weather report of the top 10 cities in the world every day and then analyze the trends over the past 7 days, 14 days, and 30 days, it would take much more than just a `getWeatherData` call to complete that entire workflow. We would need to....
+An LLM [[AI Agent]] then uses these function calls (Tooling) during their workflow. So if an LLM agent was tasked with writing a weather report of the top 10 cities in the world every day and then analyze the trends over the past 7 days, 14 days, and 30 days, it would take much more than just a `getWeatherData` call to complete that entire workflow. We would need to....
 - Gather weather data 10x
 - Consult historical weather data
 - Compare the data using different statistical methods

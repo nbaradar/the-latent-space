@@ -5,6 +5,9 @@ tags:
   - ai/ml
 draft:
 ---
+>[!example]- Useful Resources
+>[Efficient Vector Search in RAG Applications](https://pub.towardsai.net/unlocking-the-power-of-efficient-vector-search-in-rag-applications-c2e3a0c551d5)
+
 **Retrieval-Augmented Generation (RAG)** is a technique where **external knowledge is retrieved dynamically and combined with an LLM query** to enhance the quality of the generated response. It’s particularly effective when the LLM itself does not have enough context or when its general-purpose knowledge needs to be supplemented with specific or up-to-date information.
 
 >[!abstract] Example: Law Firm

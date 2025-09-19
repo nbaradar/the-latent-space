@@ -1,5 +1,5 @@
 ---
-title: MCP Servers
+title: Public MCP Servers
 tags:
   - mcp
   - ai/ml
@@ -7,7 +7,7 @@ tags:
   - reference
 draft:
 ---
-A list of useful MCP servers that are publicly available for consumption. Will update periodically.
+A list of useful MCP servers that are publicly available for consumption. I will update this later to be more useful. 
 
 | Server                                                           | Provider  | Description                                                                                                                                                                                                               |
 | ---------------------------------------------------------------- | --------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |

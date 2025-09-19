@@ -2,6 +2,7 @@
 title: Research + Papers
 tags:
   - signal
+  - research
 draft:
 ---
 ## [Cultural Fingerprints in AI; A Comparative Analysis of Ethical Guardrails in Large Language Models Across US, Chinese, and French Implementations](https://danielkliewer.com/blog/2024-12-30-Cultural-Fingerprints)

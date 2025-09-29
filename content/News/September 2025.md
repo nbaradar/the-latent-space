@@ -40,6 +40,11 @@ tags:
 ![[Pasted image 20250916114137.png|400]]
 
 # Industry
+## [Introducing Claude Sonnet 4.5](https://www.anthropic.com/news/claude-sonnet-4-5)
+> - Claude Sonnet 4.5 represents a significant leap forward on computer use. On OSWorld benchmark (tests AI models on real-world computer tasks) Sonnet 4.5 now leads at 61.4%. Just four months ago, Sonnet 4 held the lead at 42.2%. 
+> - Our [Claude for Chrome](https://www.anthropic.com/news/claude-for-chrome) extension puts these upgraded capabilities to use. In [this demo](https://www.youtube.com/watch?v=oXfVkbb7MCg), we show Claude working directly in a browser, navigating sites, filling spreadsheets, and completing tasks.
+
+![[Pasted image 20250929133926.png|600]]
 ## [MIT Holds Inaugural GenAI Consortium Symposium](https://news.mit.edu/2025/what-does-future-hold-generative-ai-0919)
 > - Hundreds of researchers, business leaders, educators, and students gathered at MIT’s Kresge Auditorium for the inaugural MIT Generative AI Impact Consortium (MGAIC) Symposium on Sept. 17
 > - Several MIT faculty members also spoke about their latest research projects, including the use of AI to reduce noise in ecological image data, designing new AI systems that mitigate bias and hallucinations, and enabling LLMs to learn more about the visual world.

@@ -5,6 +5,10 @@ tags:
   - research
 draft:
 ---
+## [Attention Is All You Need](https://arxiv.org/abs/1706.03762)
+>[!important] THIS IS A LANDMARK PAPER FOR MACHINE LEARNING (introduces [[Transformer]] architecture)
+
+> Proposes a new architecture, the [[Transformer]], that could achieve state-of-the-art results in natural language processing by relying solely on "self-attention" mechanisms, completely doing away with the sequential processing used in older recurrent neural networks (RNNs)
 ## [Cultural Fingerprints in AI; A Comparative Analysis of Ethical Guardrails in Large Language Models Across US, Chinese, and French Implementations](https://danielkliewer.com/blog/2024-12-30-Cultural-Fingerprints)
 > This dissertation explores the comparative analysis of ethical guardrails in Large Language Models (LLMs) from different cultural contexts, specifically examining LLaMA (US), QwQ (China), and Mistral (France). The research investigates how cultural, political, and social norms influence the definition and implementation of "misinformation" safeguards in these models. Through systematic testing of model responses to controversial topics and cross-cultural narratives, this study reveals how national perspectives and values are embedded in AI systems' guardrails.
 

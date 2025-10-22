@@ -26,9 +26,9 @@ Once players reached end-game, the cracks widened. There was no incentive loop, 
 I start voicing my opinions on reddit, albeit with more bite than I should have (I said people were acting like hostages to the game and need to stop being so sensitive). But my intention was always to push for improvement. Unfortunately I was banned from the subreddit after making some dissenting comments and "killing the vibe."
 
 ### **Putting the Lobster in the Pot -> Devs start to make small adjustments**
-Instead of addressing the core endgame problems, the developers began _slowly raising_ the temperature of the pot. They moved key resources out of contested PvP zones, catering to players who preferred to avoid conflict. It felt like they were slowly boiling the lobster—removing any meaningful friction or stakes that made the endgame worth engaging with.
+Instead of addressing the core endgame problems, the developers began _slowly raising_ the temperature of the pot. They moved key resources out of contested PvP zones, catering to players who preferred to avoid conflict. It felt like they were slowly boiling the lobster and removing any meaningful friction or stakes that made the endgame worth engaging with.
 
-Titanium and Stravidium were moved to the "non combat" zones near the entrance of the deep dessert. Now the only contested resource was the spice melange. Devs kept pandering to the most lazy players with the most hours. The people who just want to grind a game while watching TV.
+Titanium and Stravidium were moved to the "non combat" zones near the entrance of the deep dessert. Now the only contested resource was the spice melange. Devs kept pandering to the loudest players with the most hours. But these players happened to prioritize their own convenience above all else. The type of player who wants to grind a game while watching TV.
 
 ### **Community Rationalizes Temperature -> The Lobster Gets Boiled**
 What struck me wasn’t just the design failure, it was how the community responded to it. Many players began rationalizing the state of the game. The game had become an identity and a community. Criticism around the game was perceived negatively as dismissal or cynical take on the game.
@@ -43,11 +43,11 @@ Criticism became personal rather than constructive, and the subreddit turned int
 Now? The game is practically dead. I see constant subreddit posts of people leaving the game. Announcing it like a eulogy:
 "It's been great knowing you guys. May Shai-Hulud provide safe passage into the afterlife and blah blah blah"
 
-Did anyone write an email to the devs before quitting? Did anyone sit down to really analyze the health of the game and how it can be improved for the largest swathe of players? Not just those who spend HOURS building bases. Did the subreddit let other players voice criticism and suggestions without BANNING them from the subreddit?
+Did any of these players write an email to the devs before quitting? Did anyone sit down to really analyze the health of the game and how it can be improved for the largest swathe of players? Not just those who spend HOURS building bases. Did the subreddit let other players voice criticism and suggestions without BANNING them from the subreddit?
 
 All this made me realize that thousands of smart capable players tied their identity to defending this game. They don't even realize how much they've tied their ego to this game and what the game means to them. Are they using it to escape? What are they grinding towards? They don't want to step back and address its structural flaws. 
 
-Now that those voices are quelled and gone, the game is a husk. Silence accelerated the game decay. What's tragic is that so many of the most active players are clearly smart and invested. I see their constant theorycrafting and mix-maxing post. But when the game began faltering, that intellect and energy didn't translate into meaningful feedback. The culture leaned toward defending the game instead of helping it grow. And without that pressure, the devs had little reason to change course. 
+Now that those voices are quelled and gone, the game is a husk. Silence accelerated the game decay. What's tragic is that so many of the most active players are clearly smart and invested. I see their constant theory-crafting and min-maxing posts. But when the game began faltering, that intellect and energy didn't translate into meaningful feedback. The culture leaned toward defending the game instead of helping it grow. And without that pressure, the devs had little reason to change course. 
 
 ---
 ## Learned Helplessness

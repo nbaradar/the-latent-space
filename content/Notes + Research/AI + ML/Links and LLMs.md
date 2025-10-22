@@ -17,6 +17,7 @@ draft:
 > - [3 Strats to Overcome Token Limits](https://www.bretcameron.com/blog/three-strategies-to-overcome-open-ai-token-limits)
 > - [Top 10 AI agent papers](https://hub.athina.ai/top-10-ai-agent-papers-from-january-2025-shaping-their-future/)
 ## Leaderboards for LLM Models:
+- [AlphaArena (Stock Market Benchmark)](https://nof1.ai/)
 - [BigCodeBench](https://bigcode-bench.github.io/)
 - [Artifical Analysis](https://artificialanalysis.ai/models)
 - [LiveCodeBench](https://livecodebench.github.io/leaderboard.html)
@@ -41,6 +42,8 @@ draft:
 - [Phind](https://www.phind.com/search?home=true) - Good alternative to google for engineering questions
 - [Cognition](https://www.cognition.ai/get-started) - Devin AI is a software engineer assistant. Still in early access
 
+---
+UPDATE 10/2025: This is so ridiculously outdated. I will potentially update this in the future.
 ## Different Models and the advantages of each: 
 
 | Model/LLM                                                                                                              | Company  | Advantage?                 |

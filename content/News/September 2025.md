@@ -3,6 +3,7 @@ title: September 2025
 tags:
   - signal
   - news
+draft:
 ---
 # Politics
 ## [Nvidia CEO says he's 'disappointed' after report China has banned its AI chips](https://www.cnbc.com/amp/2025/09/17/nvidia-ceo-disappointed-after-reports-china-has-banned-its-ai-chips.html)

@@ -4,6 +4,7 @@ tags:
   - meta
 ---
 Just a quick to-do list for this site:
+- [ ] Fix mobile formatting - site looks messed up from mobile client
 - [ ] Automate a means to always auto-generate wiki style links any time a page with the "#concept" tag matches a word. So for instance, if I write a summary about a new Microsoft news article, it should auto-generate links so that users can hover over the story summary for concepts they may not be aware of. Don't do this for other tags, only makes sense for concept tag 
 - [ ] Add Analytics
 	- Use this free tool: https://umami.is/

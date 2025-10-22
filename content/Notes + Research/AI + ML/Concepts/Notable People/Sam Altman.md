@@ -9,6 +9,10 @@ draft:
 
 The co-founder and CEO of [[OpenAI]] since 2019, and considered a leading figure in the [AI boom](https://en.wikipedia.org/wiki/AI_boom). Dropped out of Stanford University and founded his company [Loopt](https://en.wikipedia.org/wiki/Loopt) 2 years later (social networking service). After raising more than $30 million in venture capital for Loopt, Sam joined Y Combinator and was its president from 2014 to 2019. 
 
+Other companies he's involved in:
+- [World (Crypto)](https://world.org/)
+- [Helion (Nuclear Fission)](https://www.helionenergy.com/)
+
 ---
 # Interviews
 - [Sam Altman: The Future of AI](https://www.youtube.com/watch?v=mZUG0pr5hBo)

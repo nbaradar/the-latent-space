@@ -5,6 +5,8 @@ tags:
   - linux
   - vmware
   - lab
+  - arch
+  - macos
 draft:
 ---
 >[!Important] To skip to actual instructions [[Omarchy Mac VM Install#Running with UTM/QEMU|skip to section 3]]

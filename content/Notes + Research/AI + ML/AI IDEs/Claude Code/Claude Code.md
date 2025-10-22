@@ -115,6 +115,12 @@ All memory files are automatically loaded into Claude Code’s context when laun
 >- **Use structure to organize**: Format each individual memory as a bullet point and group related memories under descriptive markdown headings.
 >- CLAUDE.md memories can be used for both instructions shared with your team and for your individual preferences.
 
+### Claude Agent Skills 
+>[!info] [Announcement Blog](https://www.anthropic.com/news/skills)
+
+>[!info] [Dev Docs](https://docs.claude.com/en/docs/claude-code/skills)
+
+
 ### Using Claude Code w/ [[Gemini CLI]]s Larger Context Window
 Here's how you can [use Gemini CLIs HUGE ContextWindow within Claude Code](https://www.reddit.com/r/ChatGPTCoding/comments/1lm3fxq/gemini_cli_is_awesome_but_only_when_you_make/):
 

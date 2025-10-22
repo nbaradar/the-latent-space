@@ -13,6 +13,7 @@ More information can be found on his [website](https://karpathy.ai/) and I sugge
 
 ---
 ## Interviews
+- [Andrej Karpathy: “We’re summoning ghosts, not building animals”](https://www.youtube.com/watch?v=lXUZvyajciY)
 - [Andrej Karpathy: Tesla AI, Self-Driving, Optimus, Aliens, and AGI | Lex Fridman Podcast #333](https://www.youtube.com/watch?v=cdiD-9MMpb0)
 - [Andrej Karpathy: Software Is Changing](https://www.youtube.com/watch?v=LCEmiRjPEtQ)
 	- Ancillary Resource: [Software 2.0 Medium Article](https://karpathy.medium.com/software-2-0-a64152b37c35)

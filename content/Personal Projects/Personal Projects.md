@@ -12,6 +12,7 @@ tags:
 | [[MultiQuery\|MultiQuery]]                     | Dec 2024       | [POC](https://github.com/nbaradar/multiquery_poc) (Terminal)<br>[WebApp](https://github.com/nbaradar/multiquery_webapp) (React) | **ContextCore SubSystem**<br>Send user-provided queries (asynchronously) to multiple LLMs w/ one interface |
 | [[EchoForge\|EchoForge]]                       | April 2025     | [POC](https://github.com/nbaradar/echoforge)(React)                                                                             | **ContextCore SubSystem**<br>Memory capture sub-system within ContextCore                                  |
 | [[Wikipedia Graph View\|Wikipedia Graph View]] | Aug 2025       | [POC](https://github.com/nbaradar/wikipedia-graph)                                                                              | A visualization tool that displays Wikipedia articles as connected graph nodes                             |
+| [[PKM MCP Server (Obsidian)]]                  | Oct 2025       | [POC](https://github.com/nbaradar/obsidian-mcp-server)                                                                          | Local MCP server that allows user to perform CRUD operations on multiple obsidian vaults                   |
 # Potential Ideas
 - Weather Data Analysis
 	- Could do something fun like trends on flooding at billy goat in relation to weather patterns. 

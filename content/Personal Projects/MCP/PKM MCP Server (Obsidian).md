@@ -9,6 +9,8 @@ draft:
 ---
 > [!info] Reference: [[MCP Overview]]
 
+>[!tip] Update: [GitHub Repo for this MCP Server](https://github.com/nbaradar/obsidian-mcp-server) 
+
 Notes I take while I create an MCP server that can hook up to my personal obsidian vault (`nader_obsidian_vault`). This is just a general vault with random notes in it. Going to use Claude Desktop as the client for now.
 
 Later I will make more sophisticated MCP servers that connected to themed vaults like "mental health." Sort of like a "Project" in ChatGPT but more powerful/dynamic. Will need to build my own client most likely, unless OpenAI has released a client. 
@@ -88,6 +90,7 @@ And it works!
 ![[Pasted image 20251024185004.png]]
 ![[Pasted image 20251024185145.png]]
 
+---
 ## Remote v1 Server
 So that's the end of development for v1. But I still want to connect it to ChatGPT. And unfortunately to do that, I need to create a REMOTE server
 

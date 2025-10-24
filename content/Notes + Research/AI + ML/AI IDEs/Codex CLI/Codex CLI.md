@@ -28,7 +28,16 @@ Providers you can use:
 
 ---
 # [[Codex CLI Install|Installation]]
-
+### Upgrade Codex
+You can upgrade Codex with your preferred package manager:
+#### Upgrade with npm
+```
+npm install -g @openai/codex@latest
+```
+#### Upgrade with Homebrew
+```
+brew upgrade codex
+```
 # [[Codex CLI Commands|Commands]]
 
 ---

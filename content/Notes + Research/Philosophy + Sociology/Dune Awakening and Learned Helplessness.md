@@ -1,11 +1,11 @@
 ---
-title: The Death of Games is Fanbase Learned Helplessness
+title: Dune Awakening and Learned Helplessness
 tags:
   - thought
 draft:
 ---
 ![[Pasted image 20251022131910.png|400]]
-## Dune Awakening: Boiling the Lobster (or Worm) Alive
+## Boiling the Lobster (or Worm) Alive
 I want to share my experience with Dune Awakening. Not just to vent, but to highlight how it signals a greater issue in the gaming space. I was genuinely excited for this game and LOVED it for the immersion and world-building aspects. It was everything a Dune fan could have hoped for, which is why it's been frustrating to watch it slowly hollow out over time. 
 
 So what is Dune Awakening? It's a game based on the Dune franchise that was marketed as an MMO, but turned out to be a single player RPG/CRAFTING/SURVIVAL game with multiplayer elements layered on top. So what happened? The MMO promise set expectations that the actual gameplay didn’t meet, especially once players hit the so-called “endgame.”

@@ -7,7 +7,7 @@ tags:
   - reference
 draft:
 ---
-A list of useful MCP servers that are publicly available for consumption. I will update this later to be more useful. 
+# [Servers](https://modelcontextprotocol.io/examples)
 
 | Server                                                           | Provider  | Description                                                                                                                                                                                                               |
 | ---------------------------------------------------------------- | --------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -18,3 +18,5 @@ A list of useful MCP servers that are publicly available for consumption. I will
 >[!info] DevOps MCP Servers
 >Also here's a curated list of [**DevOps focused MCP servers**](https://github.com/rohitg00/awesome-devops-mcp-servers?tab=readme-ov-file) on GitHub
 
+---
+# [Clients](https://modelcontextprotocol.io/clients)

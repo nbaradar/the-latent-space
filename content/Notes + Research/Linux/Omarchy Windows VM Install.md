@@ -45,7 +45,7 @@ Once you are satisfied, go ahead and run the [following command](https://wiki.ar
 archinstall
 ```
 
-> [!important] if you are noticing an issue with input handling
+> [!bug] if you are noticing an issue with input handling
 > `archinstall` uses a TUI (Text User Interface) that has a known quirk with VMWare. 
 > 
 > In shell, VMWare passes raw key events, but in TUI it switches from terminal to raw/alternate screen mode, which then means VMWare uses it's enhanced keyboard, which can sometimes inject ghost scancodes. 

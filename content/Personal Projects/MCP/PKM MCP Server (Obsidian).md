@@ -107,6 +107,7 @@ Let's create a token efficient full-text search so we can look through the entir
 | Return snippets (200 chars)     | ~1,500              | Fast      | High     |
 | Return paths only               | ~100                | Very fast | Medium   |
 | Two-phase (overview → snippets) | ~300                | Fast      | High     |
+
 Instead of returning full files, instead just return contextual snippets around matches for the search term
 **Bad approach (high tokens):**
 ```json

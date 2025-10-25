@@ -4,4 +4,4 @@ draft:
 tags:
   - concept
 ---
-[[LLM-Tooling-VS-LLM-Agent.html]]
+[[LLM Tooling VS VS LLM Agent]]

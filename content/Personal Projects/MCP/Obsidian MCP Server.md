@@ -258,6 +258,8 @@ Now let's see if the note looks good
 
 Perfect, thats exactly what we want. 
 
+>[!important] [[Obsidian MCP Server - v1.2 Testing]]
+
 ---
 # MCP Server vTODO - Enhanced File Modifications (Phase 2)
 I'll implement this later. 
@@ -298,4 +300,6 @@ Look inside of the Concepts folder and then automatically search through all not
 NOTE: Actually this can just be a standalone script. It doesn't need to be a tool. Tools should be like a complete task or a workflow. 
 ### Token Counting for Operations
 Some way to indicate how many tokens an operation took. Could even be debug logs for now. (`/Users/naderbaradar/Library/Logs/Claude`)
+[tiktoken](https://github.com/openai/tiktoken?tab=readme-ov-file)
 
+---

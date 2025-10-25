@@ -16,6 +16,14 @@ draft:
 ![[Pasted image 20251018133644.png|400]]
 
 # Society
+## [Hundreds of Public Figures, AI Experts Call for Superintelligence Ban](https://www.nationalreview.com/news/hundreds-of-leading-political-figures-ai-experts-call-for-superintelligence-ban/)
+> - A group of over 700 prominent political leaders, artificial intelligence experts, Nobel laureates, and other public figures have signed onto a statement calling for the ban of superintelligence.
+> - The [statement](https://superintelligence-statement.org/) calls for a ban on superintelligence until it is safe and controllable, and has public support.
+> - A [poll found](https://futureoflife.org/recent-news/americans-want-regulation-or-prohibition-of-superhuman-ai/) that 64 percent of Americans believe super intelligence should not be developed until there is a consensus that it is safe and reliable. 73 percent support robust AI regulation. Only 5 percent support the current landscape of largely unregulated AI.
+
+![[Pasted image 20251025145049.png|400]]
+
+
 ## [Wikipedia says AI Causing Dangerous Decline in Traffic](https://www.404media.co/wikipedia-says-ai-is-causing-a-dangerous-decline-in-human-visitors/)
 > - Wikimedia Foundation says that it’s seeing a significant decline in human traffic due to use of generative AI chatbots that were trained on its articles and search engines that summarize them without actually clicking through to the site.
 > - “With fewer visits to Wikipedia, fewer volunteers may grow and enrich the content, and fewer individual donors may support this work.”

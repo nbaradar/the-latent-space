@@ -29,6 +29,10 @@ draft:
 ## AI Communities:
 - [Hugging Face](https://huggingface.co/)
 - [Kaggle](https://www.kaggle.com/)
+
+## AI Hackathons/Events
+- [DevPost - AI Hackathons](https://devpost.com/c/artificial-intelligence)
+- 
 ## AI Incubators/Thinktanks:
 - [South Park Commons](https://www.southparkcommons.com/)
 - [AGI House](https://agihouse.org/)

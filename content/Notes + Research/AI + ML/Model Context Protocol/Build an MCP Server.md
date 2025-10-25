@@ -8,7 +8,7 @@ draft:
 ---
 > [!info] Reference: [[MCP Overview]]
 
-In preparation for [[PKM MCP Server (Obsidian)]], I'm going to follow the [official Anthropic guide to build my first MCP server](https://modelcontextprotocol.io/docs/develop/build-server#python).
+In preparation for building an [[Obsidian MCP Server]], I'm going to follow the [official Anthropic guide to build my first MCP server](https://modelcontextprotocol.io/docs/develop/build-server#python).
 
 This will be a very simple server with two tools: `get_alerts` and `get_forecast`. We will connect it to the Claude for Desktop client. MCP supports 3 [[MCP Overview#Primitives|Primitives]], but we will only be implementing **Tools**
 

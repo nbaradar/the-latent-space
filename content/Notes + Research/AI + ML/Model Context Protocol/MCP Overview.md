@@ -25,7 +25,7 @@ You can also think of this analogy:
 # Main Components
 There are 2 main components 
 - **MCP Clients:** These are like the AI app that want to access custom date. So Claude Desktop comes with it's own MCP client that can access servers. If you create your own custom chatbot for a company you'd need to also implement an MCP client for that custom chatbot
-- **MCP Servers:** These are the custom resources themselves. But more than that, these servers are basically a way to interact with different data/apps. 
+- **MCP Servers:** These are the custom resources themselves. But more than that, these servers are basically a way to interact with different data/apps. [[Build an MCP Server|Guide on building a simple MCP Server to retrieve live weather.]]
 
 MCP Servers contain:
 - **Resources:** data, filesystem, database, etc
@@ -68,7 +68,6 @@ MCP primitives are the most important concept within MCP. They define what clien
 ### Notifications
 Data layer protocol also supports notifications which enable dynamic updates between servers and clients. For example, if a servers available tools have changed. 
 
-
 ---
 ## Example Use Case
 So think of having a local workflow where you want to use MCP to accomplish email tasks through Claude Desktop.
@@ -91,7 +90,7 @@ What will your MCP server contain?
 Then once you go into Claude Desktop and configure it to use your custom MCP server, it will list the tools and resources it sees. You can add those to your prompt.
 
 ---
-# Reference Guide:
+# Reference Guide
 ## Transport/Networking
 MCP uses JSON-RPC to encode messages. JSON-RPC messages **MUST** be UTF-8 encoded.
 
@@ -101,3 +100,29 @@ MCP can use two transport methods:
 - [Streamable HTTP](https://modelcontextprotocol.io/specification/2025-06-18/basic/transports#streamable-http): Server operates as an independent process that can handle multiple client connections.
 	- **Streamable HTTP transport**: Uses HTTP POST for client-to-server messages with optional Server-Sent Events for streaming capabilities. This transport enables remote server communication and supports standard HTTP authentication methods including bearer tokens, API keys, and custom headers. MCP recommends using OAuth to obtain authentication tokens.
 	- SSE ([Server Sent Events](https://en.wikipedia.org/wiki/Server-sent_events)): Optionally, the server can make use of SSE for multiple server messages
+
+---
+# Tips and Tricks
+## Tool Annotations
+[Tool Annotations](https://modelcontextprotocol.io/specification/2025-06-18/schema#toolannotations) are additional properties describing a Tool to clients. This metadata is used by the MCP Client during tool selection
+- destructiveHint
+- idempotentHint
+- openWorldHint
+- readOnlyHint
+- title
+## Token Efficiency
+You should combine related tool calls into a single tool with "modes." 
+In other words, combine related operations into parameters 
+
+Instead of:
+```python
+append_to_file(path, content)
+prepend_to_file(path, content)
+overwrite_file(path, content)
+insert_at_heading(path, heading, content)
+```
+Do this:
+```python
+update_file(path, content, mode="append|prepend|overwrite|insert", heading=None)
+```
+

@@ -3,7 +3,7 @@ title: Site TODO List
 tags:
   - meta
 ---
-Just a quick to-do list for this site:
+# Outstanding Tasks
 - [ ] Fix mobile formatting - site looks messed up from mobile client
 - [ ] Automate a means to always auto-generate wiki style links any time a page with the "#concept" tag matches a word. So for instance, if I write a summary about a new Microsoft news article, it should auto-generate links so that users can hover over the story summary for concepts they may not be aware of. Don't do this for other tags, only makes sense for concept tag 
 - [ ] Add Analytics
@@ -31,3 +31,18 @@ Just a quick to-do list for this site:
     1. Add a collapsible “Categories” section in your Quartz sidebar (via `quartz.layout.ts` or `quartz.config.ts`), linking directly to each tag index.
     2. Generate simple index pages (e.g. `concept/index.md`, `study/index.md`) so category landing pages are one click away.
 - [ ] SEO & descriptions — consider adding a brief `description:` field in the front‑matter of key pages (especially your homepage and upcoming “hire-me” page) to improve discoverability.
+
+---
+# Quartz Sites for Inspiration:
+- https://github.com/plastic-labs/blog: Looks like some sort of AI lab. Really cool styling
+- https://tjapit.com/: Wow this guy went all out, his garden has some REALLY cool stuff. 
+- https://quartz.eilleeenz.com/: Another really well designed site with tons of customization (and a comment section)
+- https://luciradis.arczenpulse.dev/: Look at this for how to implement comment section
+Wait I just realized Quartz supports comments officially lol. It's probably not hard: https://quartz.jzhao.xyz/features/comments
+
+- https://ravenpedia.xyz/: This site has an interesting way of organizing info into slides. Might be useful for ContextCore and subsystems
+- https://fxnotes.xyz/notes/64-bit/: This guy had a cool idea of adding an "Edit Source" button at the top of pages that open a PR to the markdown file
+	- He also has cool styling on tags and changed the bottom links
+- https://smit4450.github.io/Legends-of-Ril/: I like how he replaced the background image and some of the styling. Might be useful
+- https://www.pelayoarbues.com/: This guy has a "See More" button on his Recent Posts section. 
+- 

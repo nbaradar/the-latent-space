@@ -291,7 +291,7 @@ Users should also be able to refine tags during conversation as well
 > "Actually, use the deep-learning tag for the Reinforcment Learning note"
 
 ---
-## TASKS FOR LATER
+# TASKS FOR LATER
 ### ~~Add Tools to Modify a File (Token Efficiency)~~
 Make sure the tool enables the model to insert if the user says "can you update right after the section on blah"
 ### Markdown Validation 

@@ -277,6 +277,16 @@ Fix issues found from previous testing:
 
 Everything else is basically already implemented through fixing the issues. Frontmatter will be implemented separately 
 
+## MCP Server v1.2.2 - Minor Updates
+- Improve Internal Documentation (Comments and Docstrings)
+- Improve MCP Tool Calling 
+	- Add this text to tools that need a vault param: `If `vault` is omitted the active vault is used (see `set_active_vault`). Use `list_vaults` to discover names.`
+	- **Without this text, Claude might:
+		- Call tools with wrong vault repeatedly
+		- Not understand the active vault concept
+		- Need to retrieve internal code to understand behavior
+- Fix Minor issue with Inconsistent Spacing in `append_to_section`. Details in [[v1.2 Testing#Minor Issue Found Inconsistent Spacing in `append_to_section`]]
+
 ---
 # MCP Server v1.3 - Frontmatter Manipulation
 

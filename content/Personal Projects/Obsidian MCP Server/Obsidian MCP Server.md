@@ -1245,6 +1245,26 @@ After doing some extensive research and rewrites and caluclations here's where I
 ---
 # MCP Server v1.3 - Improve Vault Navigation
 Currently theres no way to navigate the vault efficiently. Token usage is awful. 
+
+Here's an actual test with the following query and how many tokens it cost:
+```text
+Find the most recent note i wrote in my Mental Health folder in my personal vault
+```
+
+| Step | Tool Call                                         | Tokens Used | Running Total |
+| ---- | ------------------------------------------------- | ----------- | ------------- |
+| 1    | `list_vaults()`                                   | ~115        | 115           |
+| 2    | `set_active_vault()`                              | ~115        | 230           |
+| 3    | `list_obsidian_notes()`                           | ~936        | 1,166         |
+| 4    | `search_obsidian_notes()`                         | ~283        | 1,449         |
+| 5    | `retrieve_obsidian_note()` (Reflections)          | ~5,841      | 7,290         |
+| 6    | `retrieve_obsidian_note()` (Personal Integration) | ~2,753      | **10,043**    |
+Key Problems Exposed
+1. **No timestamp data**: I had to retrieve full note contents to determine "most recent"
+2. **Inefficient filtering**: Got all 54 notes in vault when I only needed 10
+3. **Must retrieve multiple files**: Without metadata, I'd need to check all 10 Mental Health notes (~30,000+ tokens total)
+4. **No native "most recent" operation**: Have to fetch everything and sort client-side
+
 Can we improve navigation by adding new tools for spatial navigation (whats in this folder) and temporal filtering (recent notes). Also how do we explore vault structure?
 1. add `include_metadata` flag to existing `list_obsidian_notes()`
 2. add `list_notes_in_folder()` with metada
@@ -1261,27 +1281,117 @@ Find the most recent note i wrote in my Mental Health folder in my personal vaul
 |**Current**|1 + N|~15,000+|List entire vault (1000 paths × ~15 tokens) + retrieve N candidates|
 |**With Folders**|3|~800|List folders (~200) + List 50 notes with metadata (~500) + Retrieve 1 note (~100)|
 **Savings: ~95% token reduction for targeted queries**
-##### Current Implementation Costs
-Here's an actual test with the following query and how many tokens it cost:
-```text
-Find the most recent note i wrote in my Mental Health folder in my personal vault
+
+## MCP Server v1.3 - Metadata Implementation
+
+Let's start by implementing the "`include_metadata()`" flag. You can use the python libraries `pathlib` and `os.stat()`
+This has to be a flag, because the token overhead of retrieving metadata might not always be worth it. For example:
+``` python
+# User: "What notes do I have about Python?"
+search_obsidian_notes("Python", include_metadata=False)
+# → 800 tokens (paths only)
+
+# User: "Find most recent Python note"
+search_obsidian_notes("Python", include_metadata=True, sort_by="modified")
+# → 1,400 tokens (metadata needed)
 ```
 
-| Step | Tool Call                                         | Tokens Used | Running Total |
-| ---- | ------------------------------------------------- | ----------- | ------------- |
-| 1    | `list_vaults()`                                   | ~115        | 115           |
-| 2    | `set_active_vault()`                              | ~115        | 230           |
-| 3    | `list_obsidian_notes()`                           | ~936        | 1,166         |
-| 4    | `search_obsidian_notes()`                         | ~283        | 1,449         |
-| 5    | `retrieve_obsidian_note()` (Reflections)          | ~5,841      | 7,290         |
-| 6    | `retrieve_obsidian_note()` (Personal Integration) | ~2,753      | **10,043**    |
-##### Key Problems Exposed
-1. **No timestamp data**: I had to retrieve full note contents to determine "most recent"
-2. **Inefficient filtering**: Got all 54 notes in vault when I only needed 10
-3. **Must retrieve multiple files**: Without metadata, I'd need to check all 10 Mental Health notes (~30,000+ tokens total)
-4. **No native "most recent" operation**: Have to fetch everything and sort client-side
+We should include this to existing tools that search for things. Additionally, we should create a "sort_by" parameter so that we can actually use the metadata in the tool call instead of just returning it all to the LLM.
 
+So we need to add the "include_metadata()" param to `list_notes()` AND `search_notes()`
+Could add simple logic for metadata retrieval:
+```python
+if include_metadata: 
+	stat = path.stat() 
+	notes.append({ 
+		"path": relative.as_posix(), 
+		"modified": datetime.fromtimestamp(stat.st_mtime).isoformat(), 
+		"created": datetime.fromtimestamp(stat.st_ctime).isoformat(), 
+		"size": stat.st_size, 
+	}) 
+else: 
+	notes.append(relative.as_posix())
+```
 
+The param should default to current behavior:
+`include_metadata: bool = False` (defaults to current behavior)
+
+Additionally, we need to implement the "sort_by" param:
+`sort_by: Optional[str] = None` (defaults to alphabetical)
+```python
+# Sort by modified time if metadata included, otherwise alphabetically 
+if include_metadata: 
+	notes.sort(key=lambda x: x["modified"], reverse=True) 
+else: 
+	notes.sort()
+```
+
+Okay done implementing. Here's everything I added:
+- New Helper Functions
+	- get_note_metadata: Extract filesystem metadata for a note in a cross-platform friendly way
+	- resolve_folder_path: Resolve a folder path within the vault, enforcing sandbox constraints
+	- list_notes_in_folder_core: List notes within a specific vault folder with optional metadata.
+- Updates Helper Functions
+	- list_notes -> include_metadata param added
+	- search_notes -> include_metadata, sort_by added
+- New Tool Calls
+	- list_notes_in_folder -> List notes in a specific folder (token-efficient, targeted)
+- Update Tool Calls with new params
+	- list_obsidian_notes -> include_metadata param added
+	- search_obsidian_notes -> include_metadata, sort_by added
+
+>[!question] [[v1.3 Testing#Metadata Testing]]
+
+Wow the testing shows HUGE token efficiency improvement. I think I'm actually building something useful? Look at this:
+## Token Efficiency Wins: 90-99% Savings
+
+|Query Type|Before|After|Savings|
+|---|---|---|---|
+|**"Find most recent note"**|60,300 tokens|450 tokens|**99.3%** ⭐|
+|**"Find largest files"**|30,300 tokens|850 tokens|**97.2%**|
+|**"Browse folder recursively"**|144,000 tokens|2,400 tokens|**98.3%**|
+
+If you want a more detailed report on token savings, you can refer to [[v1.3 Metadata Token Savings Analysis]]
+
+I don't think I need to implement the other tools (list_folders / get_folder_stats) since list_notes_in_folder can already give the stats with metadata. 
+ALSO, we return path names so when you search for notes, the folder name is included in the path.
+Remember, [YAGNI](https://en.wikipedia.org/wiki/You_aren%27t_gonna_need_it)
+## MCP Server v1.3.1 - New move_obsidian_note() Tool
+Going to make a tool call that actually uses 2 helper functions:
+- `move_note`
+- `update_backlinks`
+
+```python
+def move_note( old_title: str, new_title: str, vault: VaultMetadata, update_links: bool = True, ) -> dict[str, Any]:
+```
+```python
+def _update_backlinks( vault: VaultMetadata, old_title: str, new_title: str, ) -> int:
+```
+
+So move_note will contain the logic to change path names on a note, which will also need to call update_backlinks 
+
+`update_backlinks` will be a little complicated. For now (MVP) we need to 
+- Update wikilinks `[[old]]` → `[[new]]`
+- Update markdown links `[](old.md)` → `[](new.md)`
+Then afterwards add these advanced features
+- Handle aliases in wikilinks `[[old|alias]]`
+- Update relative links `../folder/old`
+- Update embedded images `![[old.png]]`
+
+So the current implementation steps will be:
+- Add `move_note()` helper function
+- Add `_update_backlinks()` helper function
+- Add `move_obsidian_note()` MCP tool wrapper
+- Update AGENTS.md with move/rename patterns
+
+And now we have:
+✅ **Single tool `move_obsidian_note()`** handles both rename and move 
+✅ **Two helper functions** (`move_note`, `_update_backlinks`) for clean separation 
+✅ **Default link updates** for vault consistency 
+✅ **Handles both link formats** (wikilinks + markdown) 
+✅ **User feedback** via `links_updated` count
+
+>[!question] [[v1.3 Testing#New move_obsidian_note() Tool Testing]]
 
 ---
 # MCP Server v1.4 - Frontmatter Manipulation
@@ -1328,6 +1438,10 @@ Some way to indicate how many tokens an operation took. Could even be debug logs
 Script could just check for vaults based on patterns (could expose through tool call). Then ask user if they are vaults or not. 
 User then decides which are vaults and which arent. Then update the vault.yaml with the vaults based on the users descriptions. 
 Maybe make multiple helper functions and 1 tool call? Not sure.
+
+### Backlink Maintenance?
+find_broken_links(vault)  # Vault maintenance tool
+repair_links(vault)       # Auto-fix broken links
 
 ---
 # Additional Notes

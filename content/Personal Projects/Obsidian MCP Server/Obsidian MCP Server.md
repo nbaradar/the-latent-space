@@ -262,9 +262,7 @@ Now let's see if the note looks good
 Perfect, thats exactly what we want. 
 
 >[!question] [[v1.2 Testing]]
-
----
-# MCP Server v1.2.1 - Enhanced File Modifications (Phase 2)
+## MCP Server v1.2.1 - Enhanced File Modifications (Phase 2)
 I'll implement this later. 
 4 Advanced operations for phase 2
 - ⚠️ **insert_before_heading** - Useful but less common than `insert_after_heading`
@@ -1244,62 +1242,15 @@ After doing some extensive research and rewrites and caluclations here's where I
 >
 >```
 
-
 ---
-# MCP Server v1.3 - Frontmatter Manipulation
-
-
----
-# MCP Server v1.4 - Tagging Automation Tool
-Next let's implement a tool that can automatically tag notes based on the content of the note and available tagging options. So an example query would look like
-> "tag my notes about machine learning" → Claude reads notes → decides on tags → applies them. 
-> "go through notes in the "obsidian" folder and make sure they are all tagged with at least 1 of the seven main tag categories" → Claude reads notes → decides on tags → applies them. 
-
-Users should also be able to refine tags during conversation as well
-> "Actually, use the deep-learning tag for the Reinforcment Learning note"
-
----
-# TASKS FOR LATER
-### ~~Add Tools to Modify a File (Token Efficiency)~~
-Make sure the tool enables the model to insert if the user says "can you update right after the section on blah"
-### Markdown Validation 
-Use a prompt resource with system instructions on the markdown spec
-### Tool Annotations
-Should add [[MCP Overview#[Tool Annotations](https //modelcontextprotocol.io/specification/2025-06-18/schema toolannotations)|tool annotations]] to all your tools
-### Pydantic Input Validation - Recommended
-The `mcp_builder` skill strongly recommends using [[Pydantic]] models for input validation rather than plain parameters. This provides:
-- Automatic validation
-- Better error messages
-- Schema generation for MCP
-- Field constraints and descriptions
-### Backlink Automation
-Look inside of the Concepts folder and then automatically search through all notes and create backlinks where necessary. 
-NOTE: Actually this can just be a standalone script. It doesn't need to be a tool. Tools should be like a complete task or a workflow. 
-### Token Counting for Operations
-Some way to indicate how many tokens an operation took. Could even be debug logs for now. (`/Users/naderbaradar/Library/Logs/Claude`)
-[tiktoken](https://github.com/openai/tiktoken?tab=readme-ov-file)
-### SQLite indexing
-
-### Vault-aware prompts/resources 
-
-### Cross-vault search
-
-### Vault comparison tools 
-
-### Vault-specific templates
-
-### Auto-detect Vaults / Register and Remove Vaults
-Script could just check for vaults based on patterns (could expose through tool call). Then ask user if they are vaults or not. 
-User then decides which are vaults and which arent. Then update the vault.yaml with the vaults based on the users descriptions. 
-Maybe make multiple helper functions and 1 tool call? Not sure.
-### Improve Vault Navigation
+# MCP Server v1.3 - Improve Vault Navigation
 Currently theres no way to navigate the vault efficiently. Token usage is awful. 
 Can we improve navigation by adding new tools for spatial navigation (whats in this folder) and temporal filtering (recent notes). Also how do we explore vault structure?
 1. add `include_metadata` flag to existing `list_obsidian_notes()`
 2. add `list_notes_in_folder()` with metada
 3. add `list_folders()` for browsing
 4. add `get_folder_stats()` summary without full listing
-#### Token Impact Analysis
+##### Token Impact Analysis
 **Scenario: 1,000 note vault, 50 notes in "Mental Health" folder**
 ```text
 Find the most recent note i wrote in my Mental Health folder in my personal vault
@@ -1310,7 +1261,7 @@ Find the most recent note i wrote in my Mental Health folder in my personal vaul
 |**Current**|1 + N|~15,000+|List entire vault (1000 paths × ~15 tokens) + retrieve N candidates|
 |**With Folders**|3|~800|List folders (~200) + List 50 notes with metadata (~500) + Retrieve 1 note (~100)|
 **Savings: ~95% token reduction for targeted queries**
-#### Current Implementation Costs
+##### Current Implementation Costs
 Here's an actual test with the following query and how many tokens it cost:
 ```text
 Find the most recent note i wrote in my Mental Health folder in my personal vault
@@ -1329,6 +1280,54 @@ Find the most recent note i wrote in my Mental Health folder in my personal vaul
 2. **Inefficient filtering**: Got all 54 notes in vault when I only needed 10
 3. **Must retrieve multiple files**: Without metadata, I'd need to check all 10 Mental Health notes (~30,000+ tokens total)
 4. **No native "most recent" operation**: Have to fetch everything and sort client-side
+
+
+
+---
+# MCP Server v1.4 - Frontmatter Manipulation
+## MCP Server 1.4.1 - Tagging Automation Tool
+Next let's implement a tool that can automatically tag notes based on the content of the note and available tagging options. So an example query would look like
+> "tag my notes about machine learning" → Claude reads notes → decides on tags → applies them. 
+> "go through notes in the "obsidian" folder and make sure they are all tagged with at least 1 of the seven main tag categories" → Claude reads notes → decides on tags → applies them. 
+
+Users should also be able to refine tags during conversation as well
+> "Actually, use the deep-learning tag for the Reinforcment Learning note"
+
+---
+# MCP Server 1.5 - Pydantic Input Validation
+The `mcp_builder` skill strongly recommends using [[Pydantic]] models for input validation rather than plain parameters. This provides:
+- Automatic validation
+- Better error messages
+- Schema generation for MCP
+- Field constraints and descriptions
+
+---
+# MCP Server 1.6 - Vault-Aware Prompt Resources
+
+## MCP Server 1.6.1 - Vault-Specific Templates
+
+---
+# Brainstorming Features 
+### Markdown Validation 
+Use a prompt resource with system instructions on the markdown spec
+### Tool Annotations
+Should add [[MCP Overview#[Tool Annotations](https //modelcontextprotocol.io/specification/2025-06-18/schema toolannotations)|tool annotations]] to all your tools
+### Backlink Automation
+Look inside of the Concepts folder and then automatically search through all notes and create backlinks where necessary. 
+NOTE: Actually this can just be a standalone script. It doesn't need to be a tool. Tools should be like a complete task or a workflow. 
+### Token Counting for Operations
+Some way to indicate how many tokens an operation took. Could even be debug logs for now. (`/Users/naderbaradar/Library/Logs/Claude`)
+[tiktoken](https://github.com/openai/tiktoken?tab=readme-ov-file)
+### SQLite indexing
+
+### Cross-vault search
+
+### Vault comparison tools 
+
+### Auto-detect Vaults / Register and Remove Vaults
+Script could just check for vaults based on patterns (could expose through tool call). Then ask user if they are vaults or not. 
+User then decides which are vaults and which arent. Then update the vault.yaml with the vaults based on the users descriptions. 
+Maybe make multiple helper functions and 1 tool call? Not sure.
 
 ---
 # Additional Notes
@@ -1354,3 +1353,5 @@ Find the most recent note i wrote in my Mental Health folder in my personal vaul
 - ✅ Token-efficient snippet search
 - ✅ FastMCP (Python, modern)
 - ✅ Direct filesystem access
+
+

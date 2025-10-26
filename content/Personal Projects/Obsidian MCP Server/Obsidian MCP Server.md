@@ -90,9 +90,10 @@ And it works!!
 ![[Pasted image 20251024185145.png|700]]
 
 ---
+# Open AI MCP Client
+At the moment they [only support local MCP Server for business plan users](https://help.openai.com/en/articles/12584461-developer-mode-and-full-mcp-connectors-in-chatgpt-beta). Otherwise you have to connect to a Remote MCP Server
 
 >[!warning]  TODO: Remote Server
->So that's the end of development for v1. But I still want to connect it to ChatGPT. And unfortunately to do that, I need to create a REMOTE server
 >
 >https://platform.openai.com/docs/mcp
 >
@@ -329,6 +330,11 @@ Some way to indicate how many tokens an operation took. Could even be debug logs
 ### Vault comparison tools 
 
 ### Vault-specific templates
+
+### Auto-detect Vaults / Register and Remove Vaults
+Script could just check for vaults based on patterns (could expose through tool call). Then ask user if they are vaults or not. 
+User then decides which are vaults and which arent. Then update the vault.yaml with the vaults based on the users descriptions. 
+Maybe make multiple helper functions and 1 tool call? Not sure.
 
 ---
 # Additional Notes

@@ -32,6 +32,7 @@ https://www.thelmbook.com/
 [Google ML Courses](https://www.reddit.com/r/learnmachinelearning/comments/1i6h35r/fully_free_google_ml_courses/?share_id=0eOES-2ISEKzadNMvyL-A&utm_content=2&utm_medium=ios_app&utm_name=ioscss&utm_source=share&utm_term=1)
 ### Blogs/Forums
 [fast.ai](https://www.fast.ai/)
+https://www.philschmid.de/ - Senior AI @ Deepmind
 ### Youtube Videos/Lectures
 [Standford: Building LLMs](https://www.youtube.com/watch?v=9vM4p9NN0Ts)
 ### Academia

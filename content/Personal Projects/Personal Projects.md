@@ -16,7 +16,9 @@ tags:
 # Potential Ideas
 - Weather Data Analysis
 	- Could do something fun like trends on flooding at billy goat in relation to weather patterns. 
-- MCP on this obsidian vault to use prompting to update the site. 
-	- Can you create an agent that auto publishes articles related to things you see online but then replaces keywords with any `concept` notes you have to make it part of your database of knowledge?
+- LatentSpace publisher
+	- Publish to the news section based on my saved reddit posts
+- ChatGPT Mental Health MCP Client
+	- Replicate my valve framework in a codified way so people can safely use LLMs for mental health
 - Poker LLM Coach
 	- Analyze your poker hands and tell you what to focus on. Track and update progress.

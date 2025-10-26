@@ -258,10 +258,10 @@ Now let's see if the note looks good
 
 Perfect, thats exactly what we want. 
 
->[!important] [[Obsidian MCP Server - v1.2 Testing]]
+>[!question] [[v1.2 Testing]]
 
 ---
-# MCP Server vTODO - Enhanced File Modifications (Phase 2)
+# MCP Server v1.2.1 - Enhanced File Modifications (Phase 2)
 I'll implement this later. 
 4 Advanced operations for phase 2
 - ⚠️ **insert_before_heading** - Useful but less common than `insert_after_heading`
@@ -269,8 +269,17 @@ I'll implement this later.
 - ⚠️ **move_section** - Complex to implement correctly (what about nested headings?)
 - ⚠️ **update_frontmatter** - Valuable but needs careful YAML parsing/validation
 
+Fix issues found from previous testing:
+- [x] [[v1.2 Testing#Issue 1 Missing Newline After `replace_section`]]
+- [x] [[v1.2 Testing#Issue 2 Extra Content in Nested Heading Test]]
+
+>[!question] [[v1.2 Testing#v1.2.1 Testing, after fixing issues 1 and 2]]
+
+Everything else is basically already implemented through fixing the issues. Frontmatter will be implemented separately 
+
 ---
 # MCP Server v1.3 - Frontmatter Manipulation
+
 
 ---
 # MCP Server v1.4 - Tagging Automation Tool
@@ -301,5 +310,37 @@ NOTE: Actually this can just be a standalone script. It doesn't need to be a too
 ### Token Counting for Operations
 Some way to indicate how many tokens an operation took. Could even be debug logs for now. (`/Users/naderbaradar/Library/Logs/Claude`)
 [tiktoken](https://github.com/openai/tiktoken?tab=readme-ov-file)
+### SQLite indexing
+
+### Vault-aware prompts/resources 
+
+### Cross-vault search
+
+### Vault comparison tools 
+
+### Vault-specific templates
 
 ---
+# Additional Notes
+**Your Gaps vs. ObsidianPilot:**
+- ❌ No SQLite indexing (your search is slower)
+- ❌ No regex search
+- ❌ No property/frontmatter advanced search
+- ❌ No link management (backlinks, broken links)
+- ❌ No image support
+- ❌ Not published on PyPI
+- ❌ No hierarchical tag support
+- ❌ Smaller feature set overall
+
+**Your Gaps vs. Enterprise Servers:**
+- ❌ No HTTP transport (only STDIO)
+- ❌ No auth mechanisms
+- ❌ No TypeScript option
+
+**Your Strengths:**
+- ✅ Multi-vault session management (unique!)
+- ✅ Clean YAML config (vaults.yaml)
+- ✅ Heading-aware section operations
+- ✅ Token-efficient snippet search
+- ✅ FastMCP (Python, modern)
+- ✅ Direct filesystem access

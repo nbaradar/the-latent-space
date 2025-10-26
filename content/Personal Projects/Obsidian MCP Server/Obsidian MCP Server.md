@@ -1393,6 +1393,8 @@ And now we have:
 
 >[!question] [[v1.3 Testing#New move_obsidian_note() Tool Testing]]
 
+>[!tip] [[v1.3 Release Changelog - Metadata & Navigation Overhaul]]
+
 ---
 # MCP Server v1.4 - Frontmatter Manipulation
 ## MCP Server 1.4.1 - Tagging Automation Tool
@@ -1438,7 +1440,6 @@ Some way to indicate how many tokens an operation took. Could even be debug logs
 Script could just check for vaults based on patterns (could expose through tool call). Then ask user if they are vaults or not. 
 User then decides which are vaults and which arent. Then update the vault.yaml with the vaults based on the users descriptions. 
 Maybe make multiple helper functions and 1 tool call? Not sure.
-
 ### Backlink Maintenance?
 find_broken_links(vault)  # Vault maintenance tool
 repair_links(vault)       # Auto-fix broken links

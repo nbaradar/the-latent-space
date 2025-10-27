@@ -4,7 +4,7 @@ tags:
   - meta
 ---
 # Outstanding Tasks
-- [ ] Fix mobile formatting - site looks messed up from mobile client
+- [x] Fix mobile formatting - site looks messed up from mobile client
 - [ ] Automate a means to always auto-generate wiki style links any time a page with the "#concept" tag matches a word. So for instance, if I write a summary about a new Microsoft news article, it should auto-generate links so that users can hover over the story summary for concepts they may not be aware of. Don't do this for other tags, only makes sense for concept tag 
 - [ ] Add Analytics
 	- Use this free tool: https://umami.is/
@@ -45,4 +45,5 @@ Wait I just realized Quartz supports comments officially lol. It's probably not 
 	- He also has cool styling on tags and changed the bottom links
 - https://smit4450.github.io/Legends-of-Ril/: I like how he replaced the background image and some of the styling. Might be useful
 - https://www.pelayoarbues.com/: This guy has a "See More" button on his Recent Posts section. 
+- https://elaraks.github.io/dampcapital/
 - 

@@ -1446,7 +1446,7 @@ repair_links(vault)       # Auto-fix broken links
 
 ---
 # Additional Notes
-**Your Gaps vs. ObsidianPilot:**
+**Your Gaps vs. [ObsidianPilot](https://www.obsidiancopilot.com/en):**
 - ❌ No SQLite indexing (your search is slower)
 - ❌ No regex search
 - ❌ No property/frontmatter advanced search

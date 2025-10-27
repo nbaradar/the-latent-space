@@ -25,28 +25,36 @@ export const defaultContentPageLayout: PageLayout = {
     Component.ContentMeta(),
     Component.TagList(),
   ],
+
   left: [
     Component.PageTitle(),
     Component.MobileOnly(Component.Spacer()),
     Component.Flex({
       components: [
-        {
-          Component: Component.Search(),
-          grow: true,
-        },
+        { Component: Component.Search(), grow: true },
         { Component: Component.Darkmode() },
         { Component: Component.ReaderMode() },
       ],
     }),
-    Component.Explorer(),
-    Component.RecentNotes({ showTags: false , limit: 3}),
+
+    // Explorer: desktop AND mobile (mobile version shows at top)
+    Component.DesktopOnly(Component.Explorer()),
+    Component.MobileOnly(Component.Explorer()),
+
+    // Desktop-only recent notes in the left sidebar (optional)
+    Component.DesktopOnly(Component.RecentNotes({ showTags: false, limit: 3 })),
   ],
+
   right: [
-    Component.Graph(),
+    Component.DesktopOnly(Component.Graph()),
     Component.DesktopOnly(Component.TableOfContents()),
     Component.Backlinks(),
+
+    // Mobile-only recent notes: we'll stack this at the BOTTOM on phones
+    Component.MobileOnly(Component.RecentNotes({ showTags: false, limit: 3 })),
   ],
 }
+
 
 // components for pages that display lists of pages  (e.g. tags or folders)
 export const defaultListPageLayout: PageLayout = {

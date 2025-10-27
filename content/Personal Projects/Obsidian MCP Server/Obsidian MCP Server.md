@@ -1397,6 +1397,160 @@ And now we have:
 
 ---
 # MCP Server v1.4 - Frontmatter Manipulation
+We need to either create tools that can handle frontmatter OR update existing tools to be able to handle frontmatter using additional helper methods. I think it would probably be more efficient to create additional helper methods. 
+
+We can load only the YAML block when possible to reduce token usage. and fall back to whole note rewrites only when a full body edit is unavoidable. 
+
+**Use [python-frontmatter](https://github.com/eyeseast/python-frontmatter)
+
+I think it's probably best to make dedicated tools since some users may not want frontmatter with the rest of their notes.
+We can add 4 tools:
+- read_obsidian_frontmatter()
+- update_obsidian_frontmatter()
+- replace_obsidian_frontmatter()
+- delete_obsidian_frontmatter()
+
+and 3 new helpers:
+- `_parse_frontmatter(text: str) -> tuple[dict, str]`
+- `_serialize_frontmatter(metadata: dict, content: str) -> str`
+- `_ensure_valid_yaml(metadata: dict) -> None`
+
+In terms of token efficiency, 
+First `read_frontmatter` returns only metadata about the note
+Then users can call `retrieve_obsidian_note` separately if they need content. 
+
+`update_frontmatter` should use merge semantics (most common use cases)
+`replace_frontmatter` for explicit overwrites (less common)
+
+>[!tip]- Future Integrations
+>- **Tag automation** (v1.4.1)
+>   - `read_frontmatter` → check tags
+>    - `update_frontmatter` → add/remove tags
+>    - Can build higher-level tools like `add_tag_to_note`
+>- **Template system** (v1.6.1)
+>   - Templates can specify required frontmatter fields
+>    - `create_obsidian_note` can validate against template frontmatter
+>- **Search enhancement**
+>    - Future: `search_by_frontmatter(tag="project", status="active")`
+>    - Build on top of these primitives
+
+### Error Handling Strategy
+**Frontmatter-specific errors:**
+- Malformed YAML → Return clear error with line number if possible
+- Missing frontmatter → Not an error (return empty dict for reads)
+- Invalid field types → Validate before write, reject with helpful message
+- Encoding issues → Surface UTF-8 errors clearly
+
+**Follows MCP pattern:**
+python
+```python
+try:
+    result = update_frontmatter(...)
+    return {"status": "success", ...}
+except yaml.YAMLError as e:
+    return {
+        "status": "error",
+        "error_type": "invalid_yaml",
+        "message": f"Frontmatter contains invalid YAML: {e}"
+    }
+```
+
+**Sandbox enforcement:**
+- All frontmatter tools go through same `_resolve_note_path` validation
+
+**Additional validation:**
+- Reject frontmatter that would break Obsidian (e.g., invalid date formats)
+- Sanitize special YAML characters in user input
+- Limit frontmatter size (e.g., 10KB max to prevent abuse)
+
+>[!example]- Tool Signatures
+>```python
+>@mcp.tool()
+>async def read_obsidian_frontmatter(
+>    title: str,
+>    vault: Optional[str] = None,
+>    ctx: Context | None = None,
+>) -> dict[str, Any]:
+>    """Read frontmatter from note as structured metadata.
+>    
+>    Returns only the YAML frontmatter (token-efficient). Returns empty
+>    dict if note has no frontmatter.
+>    
+>    Returns:
+>        {
+>            "vault": str,
+>            "note": str,
+>            "frontmatter": dict,  # Parsed YAML
+>            "has_frontmatter": bool
+>        }
+>    """
+>
+>@mcp.tool()
+>async def update_obsidian_frontmatter(
+>    title: str,
+>    frontmatter: dict,
+>    vault: Optional[str] = None,
+>    ctx: Context | None = None,
+>) -> dict[str, Any]:
+>    """Update frontmatter fields (merge semantics).
+>    
+>    Merges provided fields into existing frontmatter. Creates frontmatter
+>    block if missing. Preserves fields not mentioned in update.
+>    
+>    Args:
+>        frontmatter: Dict of fields to update/add
+>            Example: {"tags": ["project", "active"], "status": "in-progress"}
+>    
+>    Returns:
+>        {
+>            "vault": str,
+>            "note": str,
+>            "status": "updated",
+>            "fields_updated": list[str]
+>        }
+>    """
+>
+>@mcp.tool()
+>async def replace_obsidian_frontmatter(
+>    title: str,
+>    frontmatter: dict,
+>    vault: Optional[str] = None,
+>    ctx: Context | None = None,
+>) -> dict[str, Any]:
+>    """Replace entire frontmatter block (destructive).
+>    
+>    Overwrites all existing frontmatter with provided dict. Use when you
+>    need exact frontmatter state (e.g., removing fields).
+>    
+>    Args:
+>        frontmatter: Complete frontmatter dict
+>            Example: {"title": "New Note", "date": "2025-10-26"}
+>    """
+>
+>@mcp.tool()
+>async def delete_obsidian_frontmatter(
+>    title: str,
+>    vault: Optional[str] = None,
+>    ctx: Context | None = None,
+>) -> dict[str, Any]:
+>    """Remove entire frontmatter block from note.
+>    
+>    Deletes frontmatter while preserving note content. Use when converting
+>    notes to plain markdown or removing all metadata.
+>    """
+>```
+
+### Documentation Updates Needed
+1. **README.md** - Add frontmatter tools to table
+2. **AGENTS.md** - Document implementation decisions
+3. **Tool docstrings** - Include examples of common workflows
+### Summary 
+- Install `python-frontmatter` via uv
+- Add helper functions for parsing/serialization
+- Implement the 4 MCP tools
+- Add validation and error handling
+- Write tests for edge cases
+- Update documentation
 ## MCP Server 1.4.1 - Tagging Automation Tool
 Next let's implement a tool that can automatically tag notes based on the content of the note and available tagging options. So an example query would look like
 > "tag my notes about machine learning" → Claude reads notes → decides on tags → applies them. 
@@ -1404,6 +1558,10 @@ Next let's implement a tool that can automatically tag notes based on the conten
 
 Users should also be able to refine tags during conversation as well
 > "Actually, use the deep-learning tag for the Reinforcment Learning note"
+
+>[!question] [[v1.4 Testing]]
+
+>[!tip] [[v1.4 Release Changelog - Frontmatter Manipulation]]
 
 ---
 # MCP Server 1.5 - Pydantic Input Validation
@@ -1446,6 +1604,41 @@ repair_links(vault)       # Auto-fix broken links
 
 ---
 # Additional Notes
+## Current Tools
+### Management
+
+| Tool               | Purpose                                              |
+| ------------------ | ---------------------------------------------------- |
+| `list_vaults`      | Discover configured vaults and current session state |
+| `set_active_vault` | Switch active vault for subsequent operations        |
+### Core Operations
+
+| Tool                       | Purpose                                         |
+| -------------------------- | ----------------------------------------------- |
+| `create_obsidian_note`     | Create new markdown file                        |
+| `retrieve_obsidian_note`   | Read full note contents                         |
+| `replace_obsidian_note`    | Overwrite entire file                           |
+| `append_to_obsidian_note`  | Add content to end                              |
+| `prepend_to_obsidian_note` | Add content to beginning                        |
+| `delete_obsidian_note`     | Remove file                                     |
+| `move_obsidian_note`       | Move or rename note (optional backlink updates) |
+### Structured Editing
+
+| Tool                                 | Purpose                                                  |
+| ------------------------------------ | -------------------------------------------------------- |
+| `insert_after_heading_obsidian_note` | Insert content below a heading                           |
+| `append_to_section_obsidian_note`    | Append content to a heading’s section before subsections |
+| `replace_section_obsidian_note`      | Replace content under a heading                          |
+| `delete_section_obsidian_note`       | Remove heading and its section                           |
+### Discovery
+
+| Tool                      | Purpose                                                |
+| ------------------------- | ------------------------------------------------------ |
+| `list_obsidian_notes`     | List all notes, optionally include metadata            |
+| `search_obsidian_notes`   | Search note titles (supports metadata + sorting)       |
+| `list_notes_in_folder`    | Targeted folder listing (metadata + recursion support) |
+| `search_obsidian_content` | Token-efficient content search                         |
+## Feature Comparison
 **Your Gaps vs. [ObsidianPilot](https://www.obsidiancopilot.com/en):**
 - ❌ No SQLite indexing (your search is slower)
 - ❌ No regex search
@@ -1468,5 +1661,4 @@ repair_links(vault)       # Auto-fix broken links
 - ✅ Token-efficient snippet search
 - ✅ FastMCP (Python, modern)
 - ✅ Direct filesystem access
-
 

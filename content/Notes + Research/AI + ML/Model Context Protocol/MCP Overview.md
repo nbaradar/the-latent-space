@@ -10,6 +10,7 @@ draft:
 >[MCP Documentation](https://modelcontextprotocol.io/introduction)
 >[Official MCP Github Servers and Libraries](https://github.com/modelcontextprotocol)
 >[Anthropic: Writing tools for agents with MCP](https://www.anthropic.com/engineering/writing-tools-for-agents)
+>[Great Blogpost on how to build Remote MCP Server](https://simplescraper.io/blog/how-to-mcp)
 # Overview 
 The **[[Model Context Protocol]]**, created by [[Anthropic]], is a **protocol** that enables an LLM to communicate with/leverage external data and tools. 
 

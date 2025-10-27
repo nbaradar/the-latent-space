@@ -1,5 +1,5 @@
 ---
-title: Obsidian
+title: Obsidian Features
 tags:
   - obsidian
   - reference

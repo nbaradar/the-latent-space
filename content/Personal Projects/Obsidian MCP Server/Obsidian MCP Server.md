@@ -784,7 +784,15 @@ except yaml.YAMLError as e:
 - Add validation and error handling
 - Write tests for edge cases
 - Update documentation
+
+>[!question] [[v1.4 Testing]]
+
+>[!tip] [[v1.4 Release Changelog - Frontmatter Manipulation]]
 ## MCP Server 1.4.1 - Tagging Automation Tool
+>[!note] New Debugging Method
+>Before I move on, I want to mention that I began using MCP Inspector for debugging. 
+>More info:[[MCP Overview#Debugging w/ MCP Inspector]]
+
 Next let's implement a tool that can automatically tag notes based on the content of the note and available tagging options. So an example query would look like
 > "tag my notes about machine learning" → Claude reads notes → decides on tags → applies them. 
 > "go through notes in the "obsidian" folder and make sure they are all tagged with at least 1 of the seven main tag categories" → Claude reads notes → decides on tags → applies them. 
@@ -792,9 +800,6 @@ Next let's implement a tool that can automatically tag notes based on the conten
 Users should also be able to refine tags during conversation as well
 > "Actually, use the deep-learning tag for the Reinforcment Learning note"
 
->[!question] [[v1.4 Testing]]
-
->[!tip] [[v1.4 Release Changelog - Frontmatter Manipulation]]
 
 ---
 # MCP Server 1.5 - Pydantic Input Validation
@@ -834,6 +839,19 @@ Maybe make multiple helper functions and 1 tool call? Not sure.
 ### Backlink Maintenance?
 find_broken_links(vault)  # Vault maintenance tool
 repair_links(vault)       # Auto-fix broken links
+### Reducing ContextWindow Size (Agent Skills/Progressive Disclosure)
+Anthropic released "Agent Skills" which uses [progressive disclosure](https://www.interaction-design.org/literature/topics/progressive-disclosure?srsltid=AfmBOooK6rsB9eBGXaN8ZBHESr_CUGd0bYzWUtxHF8hcJMjoWXmepx-8) to expose tool definitions. Everyone thinks this will replace MCP since it reduces your token usage significantly. Skills make it so the LLM is no longer inundated with ALL tool call definitions and documentations on every MCP call. I don't see why you can't just implement that yourself on your server. 
+
+Doing some research, I found this:
+https://arxiv.org/pdf/2510.05968#:~:text=MCP%20specification%20version%202025%2D06,query%20formation%20from%20data%20transmission
+
+- **Initial Tool Call:** The AI agent (client) initially calls an MCP tool with minimal parameters. Instead of returning a large data payload directly, the tool returns a `resource_link`. This link includes a URI, a description, and metadata (like MIME type and size) that informs the client about the _availability_ and _characteristics_ of the data without sending the full content immediately.
+- **Progressive Retrieval:** The client application or the user can then decide if they need the additional context referenced by the `resource_link`. If they do, the client makes a separate, explicit request to "read" the resource using its URI.
+- **Contextual Provision:** The actual data is only retrieved and provided to the LLM's context if the client/user explicitly requests it, effectively implementing the principle of progressive disclosure. This keeps the initial interaction lightweight and focused on core tasks.
+  
+Also found this from official [Anthropic Documentation](https://support.claude.com/en/articles/12512176-what-are-skills):
+**Skills vs. MCP (Model Context Protocol)**
+MCP connects Claude to external services and data sources. Skills provide procedural knowledge—instructions for how to complete specific tasks or workflows. You can use both together: MCP connections give Claude access to tools, while Skills teach Claude how to use those tools effectively.
 
 ---
 # Additional Notes
@@ -871,6 +889,8 @@ repair_links(vault)       # Auto-fix broken links
 | `search_obsidian_notes`   | Search note titles (supports metadata + sorting)       |
 | `list_notes_in_folder`    | Targeted folder listing (metadata + recursion support) |
 | `search_obsidian_content` | Token-efficient content search                         |
+
+---
 ## Feature Comparison
 **Your Gaps vs. [ObsidianPilot](https://www.obsidiancopilot.com/en):**
 - ❌ No SQLite indexing (your search is slower)

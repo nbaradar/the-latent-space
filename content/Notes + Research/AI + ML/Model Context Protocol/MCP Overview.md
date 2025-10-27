@@ -41,31 +41,53 @@ The key participants in the MCP architecture are:
 **For example**: **Visual Studio Code acts as an MCP host.** When Visual Studio Code establishes a connection to an **MCP server, such as the [Sentry MCP server](https://docs.sentry.io/product/sentry-mcp/)**, the Visual Studio Code runtime **instantiates an MCP client object that maintains the connection** to the Sentry MCP server.
 ## Layers
 There are 2 layers in MCP
-### Data Layer:
+### Data Layer
 Defines the JSON-RPC protocol for client-server communication. This includes... 
 - **Lifecycle Management:** Connection initialization, capability negotiation, and connection termination between clients and servers
 - **Server Features:** Core server functionality including tools for AI actions, resources for context data, and prompts for interaction templates
 - **Client Features:** Enables servers to ask the client to sample from the host LLM, elicit input from the user, and log messages to the client.
 - **Utility Features:** Additional features like notifications and progress tracking for long operations
-### Transport Layer:
+### Transport Layer
 Defines communication methods that enable data exchange between MCP clients and MCP servers. This includes transport-specific connection establishment, message framing, and authorization. See [[MCP Overview#Transport/Networking|Below]] for more detail.  
 ## Data Layer Protocol
 ### [Lifecycle Management](https://modelcontextprotocol.io/specification/2025-06-18/basic/lifecycle)
 1. **Initialization**: Capability negotiation and protocol version agreement
 2. **Operation**: Normal protocol communication
 3. **Shutdown**: Graceful termination of the connection
-### Primitives 
+## Primitives 
 MCP primitives are the most important concept within MCP. They define what clients and servers can offer each other.
-
-[**Server Primitives**](https://modelcontextprotocol.io/docs/learn/server-concepts)
-- **Tools**: Executable functions that AI applications can invoke to perform actions (e.g., file operations, API calls, database queries)
-- **Resources**: Data sources that provide contextual information to AI applications (e.g., file contents, database records, API responses)
-- **Prompts**: Reusable templates that help structure interactions with language models (e.g., system prompts, few-shot examples)
-
-[**Client Primitives**](https://modelcontextprotocol.io/docs/learn/client-concepts)
+### [**Server Primitives**](https://modelcontextprotocol.io/docs/learn/server-concepts)
+- [**Tools**](https://modelcontextprotocol.io/specification/2025-06-18/server/tools): Executable functions that AI applications can invoke to perform actions (e.g., file operations, API calls, database queries)
+- **[Resources](https://modelcontextprotocol.io/specification/2025-06-18/server/resources)**: Data sources that provide contextual information to AI applications (e.g., file contents, database records, API responses)
+- **[Prompts](https://modelcontextprotocol.io/specification/2025-06-18/server/prompts)**: Reusable templates that help structure interactions with language models (e.g., system prompts, few-shot examples)
+#### Tools
+A tool definition includes:
+- `name`: Unique identifier for the tool
+- `title`: Optional human-readable name of the tool for display purposes.
+- `description`: Human-readable description of functionality
+- `inputSchema`: JSON Schema defining expected parameters
+- `outputSchema`: Optional JSON Schema defining expected output structure
+- `annotations`: optional properties describing tool behavior
+#### Resources 
+A resource definition includes:
+- `uri`: Unique identifier for the resource
+- `name`: The name of the resource.
+- `title`: Optional human-readable name of the resource for display purposes.
+- `description`: Optional description
+- `mimeType`: Optional MIME type
+- `size`: Optional size in bytes
+#### Prompts
+A prompt definition includes:
+- `name`: Unique identifier for the prompt
+- `title`: Optional human-readable name of the prompt for display purposes.
+- `description`: Optional human-readable description
+- `arguments`: Optional list of arguments for customization
+### [**Client Primitives**](https://modelcontextprotocol.io/docs/learn/client-concepts)
 - **Sampling**: Allows servers to request language model completions from the client’s AI application. This is useful when servers’ authors want access to a language model, but want to stay model independent and not include a language model SDK in their MCP server. They can use the `sampling/complete` method to request a language model completion from the client’s AI application.
 - **Elicitation**: Allows servers to request additional information from users. This is useful when servers’ authors want to get more information from the user, or ask for confirmation of an action. They can use the `elicitation/request` method to request additional information from the user.
 - **Logging**: Enables servers to send log messages to clients for debugging and monitoring purposes.
+
+>[!warning] For trust & safety and security, clients **MUST** consider tool annotations to be untrusted unless they come from trusted servers.
 ### Notifications
 Data layer protocol also supports notifications which enable dynamic updates between servers and clients. For example, if a servers available tools have changed. 
 
@@ -127,3 +149,17 @@ Do this:
 update_file(path, content, mode="append|prepend|overwrite|insert", heading=None)
 ```
 
+## Debugging w/ MCP Inspector
+>[!info] [Documentation](https://modelcontextprotocol.io/docs/tools/inspector)
+
+[Open Source Library](https://github.com/modelcontextprotocol/inspector) that is a visual testing tool for MCP servers. The Inspector runs directly through `npx` without requiring installation. (NPX is designed to execute Node.js packages directly without requiring them to be permanently installed).
+
+To inspect a locally developed python server:
+```shell
+npx @modelcontextprotocol/inspector \
+  uv \
+  --directory path/to/server \
+  run \
+  package-name \
+  args...
+```

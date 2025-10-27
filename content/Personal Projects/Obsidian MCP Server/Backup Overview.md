@@ -317,165 +317,932 @@ According to the mcp_builder skill (official by Anthropic) tool calls should hav
 After doing some extensive research and rewrites and caluclations here's where I've landed
 ### Final Token Counts
 
-
 | Version             | Total Tokens | Per Tool | Assessment       |
 | ------------------- | ------------ | -------- | ---------------- |
 | Current (minimal)   | 580          | 39       | ❌ Too minimal    |
 | My first attempt    | 10,114       | 674      | ❌ Too verbose    |
 | MCP-Builder target  | 8,160        | 544      | ✅ Good benchmark |
 | **✅ Final version** | **3,970**    | **265**  | **✅ Optimal!**   |
-
 >[!example]- What the docstrings look like if you're curious
->```python
-># MCP-Compliant Tool Docstrings for Obsidian Vault Server
-># Following MCP-Builder recommended verbosity: ~500 tokens per tool
->#
-># Format follows MCP best practices:
-># 1. One-line summary
-># 2. 2-3 sentence detailed explanation
-># 3. Clear parameter descriptions with examples
-># 4. Return schema
-># 5. Use-when / Don't-use-when (2-3 examples each)
-># 6. Error handling guidance
+>```
+> MCP-Compliant Tool Docstrings for Obsidian Vault Server
+> Following MCP-Builder recommended verbosity: ~500 tokens per tool
+> 
+> Format follows MCP best practices:
+> 1. One-line summary
+> 2. 2-3 sentence detailed explanation
+> 3. Clear parameter descriptions with examples
+> 4. Return schema
+> 5. Use-when / Don't-use-when (2-3 examples each)
+> 6. Error handling guidance
+> 
+> # ==============================================================================
+> # VAULT MANAGEMENT
+> # ==============================================================================
+> 
+> @mcp.tool()
+> async def list_vaults(ctx: Context | None = None) -> dict[str, Any]:
+> 	"""List configured Obsidian vaults and current session state.
+> 
+> Returns metadata for all configured vaults including the default vault
+> 
+> and currently active vault for this session. Primary entry point for
+> 
+> vault discovery.
+> 
+> Returns:
+> 
+> {
+> 
+> "default": str, # System default vault name
+> 
+> "active": str, # Currently active vault (or None)
+> 
+> "vaults": [
+> 
+> {
+> 
+> "name": str,
+> 
+> "path": str,
+> 
+> "description": str,
+> 
+> "exists": bool
+> 
+> }
+> 
+> ]
+> 
+> }
+> 
+> Examples:
+> 
+> - Use when: Starting conversation, need to see available vaults
+> 
+> - Use when: User mentions vault by name, verify it exists
+> 
+> - Don't use: Already know vault name and just need to switch
+> 
+> Error Handling:
+> 
+> - Config file missing â†’ Error with expected config path
+> 
+> - Invalid config format â†’ Error describing expected YAML structure
+> 
+> """
+> 
+> @mcp.tool()
+> 
+> async def set_active_vault(vault: str, ctx: Context) -> dict[str, Any]:
+> 
+> """Set the active vault for this conversation session.
+> 
+> All subsequent tool calls that omit the vault parameter will use the
+> 
+> active vault. Session state persists for the conversation lifetime.
+> 
+> Args:
+> 
+> vault (str): Friendly vault name from vaults.yaml
+> 
+> Examples: "nader", "work", "personal"
+> 
+> Use list_vaults() to discover valid names
+> 
+> Returns:
+> 
+> {"vault": str, "path": str, "status": "active"}
+> 
+> Examples:
+> 
+> - Use when: User says "switch to my work vault"
+> 
+> - Use when: Starting multi-operation workflow in one vault
+> 
+> - Don't use: Single operation in another vault (pass vault param directly)
+> 
+> Error Handling:
+> 
+> - Unknown vault â†’ Error listing available vaults, suggest list_vaults()
+> 
+> - Vault path inaccessible â†’ Error with specific path that failed
+> 
+> """
+> 
+> # ==============================================================================
+> 
+> # DISCOVERY & SEARCH
+> 
+> # ==============================================================================
+> 
+> @mcp.tool()
+> 
+> async def list_obsidian_notes(
+> 
+> vault: Optional[str] = None,
+> 
+> ctx: Context | None = None,
+> 
+> ) -> dict[str, Any]:
+> 
+> """List ALL notes in vault (complete inventory, high token cost).
+> 
+> Returns every note path in the vault as a sorted flat list. For large
+> 
+> vaults (100+ notes), this consumes 1000+ tokens. Use search_obsidian_notes()
+> 
+> for filtered results instead.
+> 
+> Args:
+> 
+> vault (str, optional): Vault name (omit to use active vault)
+> 
+> Returns:
+> 
+> {
+> 
+> "vault": str,
+> 
+> "notes": [str, ...] # Paths without .md, forward-slash separated
+> 
+> }
+> 
+> Token Cost: Small vault (10 notes) ~200 tokens, Large vault (200 notes) ~2000+ tokens
+> 
+> Examples:
+> 
+> - Use when: Need complete vault overview, vault is small (<50 notes)
+> 
+> - Don't use: Looking for specific notes â†’ Use search_obsidian_notes("query")
+> 
+> - Don't use: Need timestamps/metadata â†’ Coming in future version
+> 
+> - Don't use: Large vault â†’ Use search_obsidian_notes() to filter first
+> 
+> Error Handling:
+> 
+> - Vault not accessible â†’ Error with vault path, use list_vaults()
+> 
+> - Empty vault â†’ Returns {"vault": "...", "notes": []}
+> 
+> """
+> 
+> @mcp.tool()
+> 
+> async def search_obsidian_notes(
+> 
+> query: str,
+> 
+> vault: Optional[str] = None,
+> 
+> ctx: Context | None = None,
+> 
+> ) -> dict[str, Any]:
+> 
+> """Find notes matching search pattern (efficient, token-optimized).
+> 
+> Case-insensitive substring search across note paths/titles. Returns only
+> 
+> matching notes, making this 70-90% more token-efficient than listing all
+> 
+> notes when you have search criteria.
+> 
+> Args:
+> 
+> query (str): Search string (case-insensitive)
+> 
+> Examples: "Mental Health", "2025", "Project"
+> 
+> Searches full path including folders
+> 
+> vault (str, optional): Vault name (omit to use active vault)
+> 
+> Returns:
+> 
+> {"vault": str, "query": str, "matches": [str, ...]}
+> 
+> Token Cost: ~200-500 tokens (scales with matches, not vault size)
+> 
+> Examples:
+> 
+> - Use when: Looking for notes in folder â†’ query="Mental Health"
+> 
+> - Use when: Finding notes with keywords â†’ query="2025"
+> 
+> - Use FIRST before list_obsidian_notes() to avoid unnecessary tokens
+> 
+> - Don't use: Searching note content â†’ Use search_obsidian_content()
+> 
+> - Don't use: Need metadata (timestamps, size) â†’ Coming in future version
+> 
+> Error Handling:
+> 
+> - Empty query â†’ Error: "Search query cannot be empty"
+> 
+> - No matches â†’ Returns {"matches": []}
+> 
+> - Vault not accessible â†’ Error with vault path
+> 
+> """
+> 
+> @mcp.tool()
+> 
+> async def search_obsidian_content(
+> 
+> query: str,
+> 
+> vault: Optional[str] = None,
+> 
+> ctx: Context | None = None,
+> 
+> ) -> dict[str, Any]:
+> 
+> """Search note contents and return contextual snippets (token-efficient).
+> 
+> Searches inside note files and returns up to 3 snippets per file (200 chars
+> 
+> each, 100 chars context on each side). Returns top 10 files by match count.
+> 
+> Designed for preview before full retrieval.
+> 
+> Args:
+> 
+> query (str): Search string (case-insensitive)
+> 
+> Examples: "machine learning", "API design"
+> 
+> vault (str, optional): Vault name (omit to use active vault)
+> 
+> Returns:
+> 
+> {
+> 
+> "vault": str,
+> 
+> "query": str,
+> 
+> "results": [
+> 
+> {
+> 
+> "path": str,
+> 
+> "match_count": int,
+> 
+> "snippets": [str, str, str] # Up to 3 snippets
+> 
+> }
+> 
+> ] # Up to 10 files, sorted by match_count
+> 
+> }
+> 
+> Token Cost: ~800-1500 tokens (vs ~30,000+ to retrieve all matches)
+> 
+> Examples:
+> 
+> - Use when: Searching for concepts/topics in notes
+> 
+> - Use when: Preview before retrieval (saves 90%+ tokens)
+> 
+> - Workflow: search_obsidian_content() â†’ review snippets â†’ retrieve_obsidian_note()
+> 
+> - Don't use: Searching titles/paths â†’ Use search_obsidian_notes()
+> 
+> - Don't use: Need complete text â†’ Use retrieve_obsidian_note() after finding
+> 
+> Error Handling:
+> 
+> - Empty query â†’ Error: "Search query cannot be empty"
+> 
+> - No matches â†’ Returns {"results": []}
+> 
+> - File read errors â†’ Skips file, continues with others
+> 
+> """
+> 
+> # ==============================================================================
+> 
+> # READ OPERATIONS
+> 
+> # ==============================================================================
+> 
+> @mcp.tool()
+> 
+> async def retrieve_obsidian_note(
+> 
+> title: str,
+> 
+> vault: Optional[str] = None,
+> 
+> ctx: Context | None = None,
+> 
+> ) -> dict[str, Any]:
+> 
+> """Retrieve complete note content (full markdown).
+> 
+> Returns entire markdown content of a note. Can be expensive for large
+> 
+> notes (5000+ tokens). Consider search_obsidian_content() first for preview.
+> 
+> Args:
+> 
+> title (str): Note identifier (path without .md extension)
+> 
+> Examples: "Daily Notes/2025-10-26"
+> 
+> "Mental Health/Reflections Oct 26 2025"
+> 
+> Forward slashes for folders, case-sensitive
+> 
+> vault (str, optional): Vault name (omit to use active vault)
+> 
+> Returns:
+> 
+> {
+> 
+> "vault": str,
+> 
+> "note": str,
+> 
+> "path": str,
+> 
+> "content": str # Complete markdown content
+> 
+> }
+> 
+> Token Cost: Small (500 words) ~1000 tokens, Large (5000+ words) ~8000+ tokens
+> 
+> Examples:
+> 
+> - Use when: Need to read full note content
+> 
+> - Use when: After search to get complete details
+> 
+> - Workflow: search_obsidian_notes() â†’ retrieve_obsidian_note()
+> 
+> - Don't use: Just checking if note exists â†’ Use search_obsidian_notes()
+> 
+> - Don't use: Preview only â†’ Use search_obsidian_content() for snippets
+> 
+> Error Handling:
+> 
+> - Note not found â†’ Error with note path, use search_obsidian_notes()
+> 
+> - Invalid title (../) â†’ Error: "Note title cannot contain '..'"
+> 
+> - Vault not accessible â†’ Error with vault path
+> 
+> """
+> 
+> # ==============================================================================
+> 
+> # CREATE OPERATIONS
+> 
+> # ==============================================================================
+> 
+> @mcp.tool()
+> 
+> async def create_obsidian_note(
+> 
+> title: str,
+> 
+> content: str,
+> 
+> vault: Optional[str] = None,
+> 
+> ctx: Context | None = None,
+> 
+> ) -> dict[str, Any]:
+> 
+> """Create new note with markdown content (fails if exists).
+> 
+> Creates markdown file in vault. Automatically creates parent folders if
+> 
+> needed. Fails if note already exists.
+> 
+> Args:
+> 
+> title (str): Note identifier (path without .md extension)
+> 
+> Examples: "Daily Notes/2025-10-27", "Projects/New Project"
+> 
+> Folders created automatically
+> 
+> content (str): Full markdown content
+> 
+> vault (str, optional): Vault name (omit to use active vault)
+> 
+> Returns:
+> 
+> {"vault": str, "note": str, "path": str, "status": "created"}
+> 
+> Examples:
+> 
+> - Use when: Creating new note from scratch
+> 
+> - Use when: User asks to "create", "make", or "start" a note
+> 
+> - Don't use: Updating existing â†’ Use replace/append_to_obsidian_note()
+> 
+> - Don't use: Note might exist â†’ Check with search_obsidian_notes() first
+> 
+> Error Handling:
+> 
+> - Note exists â†’ Error, suggest retrieve_obsidian_note() or replace_obsidian_note()
+> 
+> - Invalid title â†’ Error describing issue
+> 
+> - Filesystem permission error â†’ Error with details
+> 
+> """
+> 
+> # ==============================================================================
+> 
+> # UPDATE OPERATIONS
+> 
+> # ==============================================================================
+> 
+> @mcp.tool()
+> 
+> async def replace_obsidian_note(
+> 
+> title: str,
+> 
+> content: str,
+> 
+> vault: Optional[str] = None,
+> 
+> ctx: Context | None = None,
+> 
+> ) -> dict[str, Any]:
+> 
+> """Replace entire note content (overwrites everything).
+> 
+> Completely replaces note content with new markdown. Use for rewriting or
+> 
+> major restructuring. For adding content, use append/prepend instead.
+> 
+> Args:
+> 
+> title (str): Note identifier (path without .md extension)
+> 
+> content (str): New complete markdown content
+> 
+> vault (str, optional): Vault name (omit to use active vault)
+> 
+> Returns:
+> 
+> {"vault": str, "note": str, "path": str, "status": "replaced"}
+> 
+> Examples:
+> 
+> - Use when: Rewriting entire note from scratch
+> 
+> - Use when: Major restructuring of note
+> 
+> - Don't use: Adding content â†’ Use append_to_obsidian_note()
+> 
+> - Don't use: Editing specific section â†’ Use replace_section_obsidian_note()
+> 
+> - Don't use: Note doesn't exist â†’ Use create_obsidian_note()
+> 
+> Error Handling:
+> 
+> - Note not found â†’ Error, suggest create_obsidian_note() instead
+> 
+> - Invalid title â†’ Error describing issue
+> 
+> """
+> 
+> @mcp.tool()
+> 
+> async def append_to_obsidian_note(
+> 
+> title: str,
+> 
+> content: str,
+> 
+> vault: Optional[str] = None,
+> 
+> ctx: Context | None = None,
+> 
+> ) -> dict[str, Any]:
+> 
+> """Append content to end of note (most efficient for additions).
+> 
+> Adds content to note end, automatically inserting newline separator if
+> 
+> needed. Most token-efficient way to add content without reading entire note.
+> 
+> Args:
+> 
+> title (str): Note identifier
+> 
+> content (str): Markdown to append
+> 
+> vault (str, optional): Vault name (omit to use active vault)
+> 
+> Returns:
+> 
+> {"vault": str, "note": str, "path": str, "status": "appended"}
+> 
+> Token Cost: ~200-400 tokens (scales with appended content only)
+> 
+> Examples:
+> 
+> - Use when: Adding entries to logs/journals
+> 
+> - Use when: Appending tasks to lists
+> 
+> - Efficiency: append = ~300 tokens vs retrieve-modify-replace = ~8000+ tokens
+> 
+> - Don't use: Adding to beginning â†’ Use prepend_to_obsidian_note()
+> 
+> - Don't use: Inserting at specific location â†’ Use insert_after_heading
+> 
+> Error Handling:
+> 
+> - Note not found â†’ Error, suggest create_obsidian_note() instead
+> 
+> """
+> 
+> @mcp.tool()
+> 
+> async def prepend_to_obsidian_note(
+> 
+> title: str,
+> 
+> content: str,
+> 
+> vault: Optional[str] = None,
+> 
+> ctx: Context | None = None,
+> 
+> ) -> dict[str, Any]:
+> 
+> """Prepend content to beginning of note.
+> 
+> Adds content before existing note content with automatic newline handling.
+> 
+> Useful for frontmatter, summaries, or reverse chronological entries.
+> 
+> Args:
+> 
+> title (str): Note identifier
+> 
+> content (str): Markdown to prepend
+> 
+> vault (str, optional): Vault name (omit to use active vault)
+> 
+> Returns:
+> 
+> {"vault": str, "note": str, "path": str, "status": "prepended"}
+> 
+> Examples:
+> 
+> - Use when: Adding frontmatter/metadata at top
+> 
+> - Use when: Latest entries at top (reverse chronological)
+> 
+> - Don't use: Adding to end â†’ Use append_to_obsidian_note()
+> 
+> - Don't use: Most cases (append is more common)
+> 
+> Error Handling:
+> 
+> - Note not found â†’ Error, suggest create_obsidian_note()
+> 
+> """
+> 
+> # ==============================================================================
+> 
+> # STRUCTURED EDITING (HEADING-BASED)
+> 
+> # ==============================================================================
+> 
+> @mcp.tool()
+> 
+> async def insert_after_heading_obsidian_note(
+> 
+> title: str,
+> 
+> content: str,
+> 
+> heading: str,
+> 
+> vault: Optional[str] = None,
+> 
+> ctx: Context | None = None,
+> 
+> ) -> dict[str, Any]:
+> 
+> """Insert content immediately after a heading.
+> 
+> Finds heading (case-insensitive) and inserts content right after it,
+> 
+> before any existing content or subsections.
+> 
+> Args:
+> 
+> title (str): Note identifier
+> 
+> content (str): Markdown to insert
+> 
+> heading (str): Heading text (case-insensitive, without # markers)
+> 
+> Examples: "Tasks", "Meeting Notes", "Summary"
+> 
+> Matches first occurrence at any level
+> 
+> vault (str, optional): Vault name (omit to use active vault)
+> 
+> Returns:
+> 
+> {"vault": str, "note": str, "path": str, "heading": str, "status": "inserted_after_heading"}
+> 
+> Examples:
+> 
+> - Use when: Adding content right after heading
+> 
+> - Use when: Adding intro text to section
+> 
+> - Don't use: Adding at end of section â†’ Use append_to_section_obsidian_note()
+> 
+> - Don't use: Replacing section â†’ Use replace_section_obsidian_note()
+> 
+> Error Handling:
+> 
+> - Note not found â†’ Error with note path
+> 
+> - Heading not found â†’ Error, suggest retrieve_obsidian_note() to see structure
+> 
+> """
+> 
+> @mcp.tool()
+> 
+> async def append_to_section_obsidian_note(
+> 
+> title: str,
+> 
+> content: str,
+> 
+> heading: str,
+> 
+> vault: Optional[str] = None,
+> 
+> ctx: Context | None = None,
+> 
+> ) -> dict[str, Any]:
+> 
+> """Append content to end of section (before subsections).
+> 
+> Adds content to end of heading's direct section content, placing it right
+> 
+> before any subsections. Different from insert_after_heading which puts
+> 
+> content immediately after heading line.
+> 
+> Args:
+> 
+> title (str): Note identifier
+> 
+> content (str): Markdown to append
+> 
+> heading (str): Heading text (case-insensitive, without # markers)
+> 
+> vault (str, optional): Vault name (omit to use active vault)
+> 
+> Returns:
+> 
+> {"vault": str, "note": str, "path": str, "heading": str, "status": "section_appended"}
+> 
+> Examples:
+> 
+> - Use when: Adding to end of section content
+> 
+> - Use when: Building up section content incrementally
+> 
+> - Don't use: Adding right after heading â†’ Use insert_after_heading
+> 
+> - Don't use: Replacing section â†’ Use replace_section_obsidian_note()
+> 
+> Error Handling:
+> 
+> - Note not found â†’ Error with note path
+> 
+> - Heading not found â†’ Error with heading name
+> 
+> """
+> 
+> @mcp.tool()
+> 
+> async def replace_section_obsidian_note(
+> 
+> title: str,
+> 
+> content: str,
+> 
+> heading: str,
+> 
+> vault: Optional[str] = None,
+> 
+> ctx: Context | None = None,
+> 
+> ) -> dict[str, Any]:
+> 
+> """Replace content under heading (until next same-level heading).
+> 
+> Replaces everything under a heading until next heading of equal or higher
+> 
+> level. Preserves the heading itself. Use for rewriting entire sections.
+> 
+> Args:
+> 
+> title (str): Note identifier
+> 
+> content (str): New content for section body
+> 
+> heading (str): Heading text (case-insensitive, without # markers)
+> 
+> vault (str, optional): Vault name (omit to use active vault)
+> 
+> Returns:
+> 
+> {"vault": str, "note": str, "path": str, "heading": str, "status": "section_replaced"}
+> 
+> Examples:
+> 
+> - Use when: Rewriting entire section content
+> 
+> - Use when: Updating outdated section
+> 
+> - Don't use: Adding to section â†’ Use append_to_section_obsidian_note()
+> 
+> - Don't use: Removing section â†’ Use delete_section_obsidian_note()
+> 
+> Error Handling:
+> 
+> - Note not found â†’ Error with note path
+> 
+> - Heading not found â†’ Error, use retrieve_obsidian_note() to see structure
+> 
+> """
+> 
+> @mcp.tool()
+> 
+> async def delete_section_obsidian_note(
+> 
+> title: str,
+> 
+> heading: str,
+> 
+> vault: Optional[str] = None,
+> 
+> ctx: Context | None = None,
+> 
+> ) -> dict[str, Any]:
+> 
+> """Delete heading and its section (removes heading and all content).
+> 
+> Removes heading and everything under it until next heading of equal or
+> 
+> higher level. Heading itself is also deleted.
+> 
+> Args:
+> 
+> title (str): Note identifier
+> 
+> heading (str): Heading text (case-insensitive, without # markers)
+> 
+> vault (str, optional): Vault name (omit to use active vault)
+> 
+> Returns:
+> 
+> {"vault": str, "note": str, "path": str, "heading": str, "status": "section_deleted"}
+> 
+> Examples:
+> 
+> - Use when: Removing obsolete sections
+> 
+> - Use when: Cleaning up outdated content
+> 
+> - Don't use: Clearing content but keeping heading â†’ Use replace_section with empty content
+> 
+> - Don't use: Deleting entire note â†’ Use delete_obsidian_note()
+> 
+> Error Handling:
+> 
+> - Note not found â†’ Error with note path
+> 
+> - Heading not found â†’ Error with heading name
+> 
+> """
+> 
+> # ==============================================================================
+> 
+> # DELETE OPERATIONS
+> 
+> # ==============================================================================
+> 
+> @mcp.tool()
+> 
+> async def delete_obsidian_note(
+> 
+> title: str,
+> 
+> vault: Optional[str] = None,
+> 
+> ctx: Context | None = None,
+> 
+> ) -> dict[str, Any]:
+> 
+> """Delete note completely (permanently removes file).
+> 
+> Permanently removes note file from vault. Cannot be undone through this
+> 
+> tool. Always confirm with user before calling.
+> 
+> Args:
+> 
+> title (str): Note identifier (path without .md extension)
+> 
+> vault (str, optional): Vault name (omit to use active vault)
+> 
+> Returns:
+> 
+> {"vault": str, "note": str, "path": str, "status": "deleted"}
+> 
+> Examples:
+> 
+> - Use when: User explicitly asks to delete note
+> 
+> - Always confirm with user before deleting
+> 
+> - Don't use: Removing section â†’ Use delete_section_obsidian_note()
+> 
+> - Don't use: Clearing content â†’ Use replace_obsidian_note() with minimal content
+> 
+> Error Handling:
+> 
+> - Note not found â†’ Error, use search_obsidian_notes() to find correct title
+> 
+> - Filesystem permission error â†’ Error with details
+> 
+> """
+> 
+> # ==============================================================================
+> 
+> # TOKEN ESTIMATES FOR REFERENCE
+> 
+> # ==============================================================================
+> 
+> """
+> 
+> APPROXIMATE TOKEN COSTS (for documentation):
+> 
+> Tool Docstrings (sent once per session):
+> 
+> - Current minimal: ~580 tokens total
+>     
+> - MCP-recommended: ~7,500 tokens total (~500 per tool)
+>     
+> - This implementation: ~7,200 tokens total (~480 per tool)
+>     
+> 
+> Common Operations:
+> 
+> - list_obsidian_notes(): 200-2000+ tokens (vault size dependent)
+>     
+> - search_obsidian_notes(): 200-500 tokens
+>     
+> - search_obsidian_content(): 800-1500 tokens
+>     
+> - retrieve_obsidian_note(): 1000-8000+ tokens (note size dependent)
+>     
+> - append_to_obsidian_note(): 200-400 tokens
+>     
+> - Structured edits: 300-600 tokens
+>     
+> 
+> Efficiency Examples:
+> 
+> - Find + retrieve note: search (300) + retrieve (6000) = 6,300 tokens âœ“
+>     
+> - List all + retrieve: list (1000) + retrieve (6000) = 7,000 tokens âœ—
+>     
+> - Content search + retrieve: search (1500) + retrieve (6000) = 7,500 tokens âœ“
+>     
+> - Retrieve + modify + replace: (6000 + 3000) = 9,000 tokens âœ—
+>     
+> - Direct append: 300 tokens âœ“
+>     
+>     """
 >
-># ==============================================================================
-># VAULT MANAGEMENT
-># ==============================================================================
->
->@mcp.tool()
->async def list_vaults(ctx: Context | None = None) -> dict[str, Any]:
->    """List configured Obsidian vaults and current session state.
->    
->    Returns metadata for all configured vaults including the default vault
->    and currently active vault for this session. Primary entry point for
->    vault discovery.
->    
->    Returns:
->        {
->            "default": str,    # System default vault name
->            "active": str,     # Currently active vault (or None)
->            "vaults": [
->                {
->                    "name": str,
->                    "path": str,
->                    "description": str,
->                    "exists": bool
->                }
->            ]
->        }
->    
->    Examples:
->        - Use when: Starting conversation, need to see available vaults
->        - Use when: User mentions vault by name, verify it exists
->        - Don't use: Already know vault name and just need to switch
->    
->    Error Handling:
->        - Config file missing → Error with expected config path
->        - Invalid config format → Error describing expected YAML structure
->    """
->
->@mcp.tool()
->async def set_active_vault(vault: str, ctx: Context) -> dict[str, Any]:
->    """Set the active vault for this conversation session.
->    
->    All subsequent tool calls that omit the vault parameter will use the
->    active vault. Session state persists for the conversation lifetime.
->    
->    Args:
->        vault (str): Friendly vault name from vaults.yaml
->            Examples: "nader", "work", "personal"
->            Use list_vaults() to discover valid names
->    
->    Returns:
->        {"vault": str, "path": str, "status": "active"}
->    
->    Examples:
->        - Use when: User says "switch to my work vault"
->        - Use when: Starting multi-operation workflow in one vault
->        - Don't use: Single operation in another vault (pass vault param directly)
->    
->    Error Handling:
->        - Unknown vault → Error listing available vaults, suggest list_vaults()
->        - Vault path inaccessible → Error with specific path that failed
->    """
->
-># ==============================================================================
-># DISCOVERY & SEARCH
-># ==============================================================================
->
->@mcp.tool()
->async def list_obsidian_notes(
->    vault: Optional[str] = None,
->    ctx: Context | None = None,
->) -> dict[str, Any]:
->    """List ALL notes in vault (complete inventory, high token cost).
->    
->    Returns every note path in the vault as a sorted flat list. For large
->    vaults (100+ notes), this consumes 1000+ tokens. Use search_obsidian_notes()
->    for filtered results instead.
->    
->    Args:
->        vault (str, optional): Vault name (omit to use active vault)
->    
->    Returns:
->        {
->            "vault": str,
->            "notes": [str, ...]  # Paths without .md, forward-slash separated
->        }
->    
->    Token Cost: Small vault (10 notes) ~200 tokens, Large vault (200 notes) ~2000+ tokens
->    
->    Examples:
->        - Use when: Need complete vault overview, vault is small (<50 notes)
->        - Don't use: Looking for specific notes → Use search_obsidian_notes("query")
->        - Don't use: Need timestamps/metadata → Coming in future version
->        - Don't use: Large vault → Use search_obsidian_notes() to filter first
->    
->    Error Handling:
->        - Vault not accessible → Error with vault path, use list_vaults()
->        - Empty vault → Returns {"vault": "...", "notes": []}
->    """
->
->@mcp.tool()
->async def search_obsidian_notes(
->    query: str,
->    vault: Optional[str] = None,
->    ctx: Context | None = None,
->) -> dict[str, Any]:
->    """Find notes matching search pattern (efficient, token-optimized).
->    
->    Case-insensitive substring search across note paths/titles. Returns only
->    matching notes, making this 70-90% more token-efficient than listing all
->    notes when you have search criteria.
->    
->    Args:
->        query (str): Search string (case-insensitive)
->            Examples: "Mental Health", "2025", "Project"
->            Searches full path including folders
->        vault (str, optional): Vault name (omit to use active vault)
->    
->    Returns:
->        {"vault": str, "query": str, "matches": [str, ...]}
->    
->    Token Cost: ~200-500 tokens (scales with matches, not vault size)
->    
->    Examples:
->        - Use when: Looking for notes in folder → query="Mental Health"
->        - Use when: Finding notes with keywords → query="2025"
->        - Use FIRST before list_obsidian_notes() to avoid unnecessary tokens
->        - Don't use: Searching note content → Use search_obsidian_content()
->        - Don't use: Need metadata (timestamps, size) → Coming in future version
->    
->    Error Handling:
->        - Empty query → Error: "Search query cannot be empty"
->        - No matches → Returns {"matches": []}
->        - Vault not accessible → Error with vault path
->    """
->
-># Additional tools follow the same pattern...
-># (Truncated for brevity - full implementation contains all 15 tools)
 >```
 
+---
 # MCP Server v1.3 - Improve Vault Navigation
 Currently theres no way to navigate the vault efficiently. Token usage is awful. 
 

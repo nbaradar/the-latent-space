@@ -855,6 +855,10 @@ MCP connects Claude to external services and data sources. Skills provide proced
 
 ---
 # Additional Notes
+## Links/References
+[Reddit post on Local MCP Server + ChatGPT](https://www.reddit.com/r/mcp/comments/1o4o82m/a_short_guide_on_how_to_use_local_mcps_with/)
+[Docker MCP Toolkit](https://docs.docker.com/ai/mcp-catalog-and-toolkit/toolkit/#how-the-mcp-toolkit-works)
+
 ## Current Tools
 ### Management
 

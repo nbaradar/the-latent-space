@@ -1,9 +1,11 @@
 ---
-title: Build an MCP Server
+title: Build a MCP Server
 tags:
   - mcp
   - ai/ml
   - lab
+  - anthropic
+  - agents
 draft:
 ---
 > [!info] Reference: [[MCP Overview]]

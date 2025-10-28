@@ -9,13 +9,13 @@ tags:
   - anthropic
 draft:
 ---
->[!tip] How to [[Build a MCP Server]] with FastMCP
+>[!tip] Tutorial: [[Build a MCP Server]] with FastMCP
 
->[!note] Used in my [[Obsidian MCP Server]] project
+>[!note] My [[Obsidian MCP Server]] project
 
 ![[Pasted image 20251027195637.png|400]]
 # Overview
-[FastMCP](https://gofastmcp.com/getting-started/welcome) is the standard framework for building [[Model Context Protocol]] applications with Python. With FastMCP, you don't need to deal with protocol details. You can just decorate [[MCP Overview#Primitives|MCP Primitives]] with annotations for most use cases.
+[FastMCP](https://gofastmcp.com/getting-started/welcome) ([Github Repo](https://github.com/jlowin/fastmcp)) is the standard framework for building [[Model Context Protocol]] applications with Python. With FastMCP, you don't need to deal with protocol details. You can just decorate [[MCP Overview#Primitives|MCP Primitives]] with annotations for most use cases.
 
 The central piece of a FastMCP application is the `FastMCP` server class. This class acts as the main container for your application’s tools, resources, and prompts, and manages communication with MCP clients.
 ```python

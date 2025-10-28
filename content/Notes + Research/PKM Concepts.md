@@ -29,7 +29,12 @@ NOTE (SINGLE UNIT, EACH PAGE IS A 'NOTE')
 ├── Thought: Personal journal entry or writing. Usually an opinion
 ├── Reference: Cheatsheets and Links, and other resources
 ├── Guide: A guide/tutorial. Usually comes from finalized Lab notes
-├── Meta: Notes about your site/PKM concepts. Updates, goals, decisions, etc.
+└── Meta: Notes about your site/PKM concepts. Updates, goals, decisions, etc.
+
+SECONDARY TAGS (optional, can have multiple): 
+├── #project: Any note that belongs to a personal project 
+├── #ai, #ml, #python, #obsidian: Subject matter tags 
+└── [other topic tags as needed]
 ```
 
 ---

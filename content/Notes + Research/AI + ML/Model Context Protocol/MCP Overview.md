@@ -150,7 +150,9 @@ update_file(path, content, mode="append|prepend|overwrite|insert", heading=None)
 ```
 
 ## Debugging w/ MCP Inspector
->[!info] [Documentation](https://modelcontextprotocol.io/docs/tools/inspector)
+>[!info] Documentation
+>[MCP Inspector Docs](https://modelcontextprotocol.io/docs/tools/inspector)
+>[MCP Debugging Methods](https://modelcontextprotocol.io/legacy/tools/debugging)
 
 [Open Source Library](https://github.com/modelcontextprotocol/inspector) that is a visual testing tool for MCP servers. The Inspector runs directly through `npx` without requiring installation. (NPX is designed to execute Node.js packages directly without requiring them to be permanently installed).
 
@@ -163,3 +165,30 @@ npx @modelcontextprotocol/inspector \
   package-name \
   args...
 ```
+
+So for example, if my `claude_desktop_config.json` looks like this:
+```json
+{
+  "mcpServers": {
+    "obsidian_vault": {
+      "command": "/Users/naderbaradar/.local/bin/uv",
+      "args": [
+        "--directory",
+        "/Users/naderbaradar/development_workspace/mcp/servers/obsidian_vault",
+        "run",
+        "obsidian_vault.py"
+      ]
+    }
+  }
+}     
+```
+
+Then my initialization command (without args) would look like this:
+```bash
+npx @modelcontextprotocol/inspector -- \
+  /Users/naderbaradar/.local/bin/uv \
+  --directory /Users/naderbaradar/development_workspace/mcp/servers/obsidian_vault \
+  run \
+  obsidian_vault.py 
+```
+

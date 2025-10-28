@@ -788,9 +788,12 @@ except yaml.YAMLError as e:
 
 >[!tip] [[v1.4 Release Changelog - Frontmatter Manipulation]]
 ## MCP Server 1.4.1 - Tagging Automation Tool
->[!note] New Debugging Method
->Before I move on, I want to mention that I began using MCP Inspector for debugging. 
->More info:[[MCP Overview#Debugging w/ MCP Inspector]]
+>[!note]- Debugging Methods w/ [[MCP Overview#Debugging w/ MCP Inspector|MCP Inspector]] 
+>Before I move on, I want to mention that I began using [[MCP Overview#Debugging w/ MCP Inspector|MCP Inspector]] for debugging. 
+>
+>![[Pasted image 20251028104304.png]]
+>
+>Dang this would have saved me so much of my LLM usage during testing! Oh well
 
 Next let's implement a tool that can automatically tag notes based on the content of the note and available tagging options. So an example query would look like
 > "tag my notes about machine learning" → Claude reads notes → decides on tags → applies them. 
@@ -827,7 +830,7 @@ Some way to indicate how many tokens an operation took. Could even be debug logs
 [tiktoken](https://github.com/openai/tiktoken?tab=readme-ov-file)
 ### SQLite indexing
 
-### Cross-vault search
+### Cross-Vault Search
 
 ### Vault comparison tools 
 
@@ -856,6 +859,7 @@ MCP connects Claude to external services and data sources. Skills provide proced
 # Additional Notes
 ## Links/References
 [Reddit post on Local MCP Server + ChatGPT](https://www.reddit.com/r/mcp/comments/1o4o82m/a_short_guide_on_how_to_use_local_mcps_with/)
+[llms.txt format](https://llmstxt.org/)
 [Docker MCP Toolkit](https://docs.docker.com/ai/mcp-catalog-and-toolkit/toolkit/#how-the-mcp-toolkit-works)
 [Agentic Workflows in Obsidian]( https://missingham.net/Research-Notes/Agentic-Workflows-in-Obsidian)
 

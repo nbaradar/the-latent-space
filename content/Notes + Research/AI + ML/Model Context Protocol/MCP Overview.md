@@ -154,6 +154,7 @@ update_file(path, content, mode="append|prepend|overwrite|insert", heading=None)
 >[MCP Inspector Docs](https://modelcontextprotocol.io/docs/tools/inspector)
 >[MCP Debugging Methods](https://modelcontextprotocol.io/legacy/tools/debugging)
 
+![[Pasted image 20251028142433.png]]
 [Open Source Library](https://github.com/modelcontextprotocol/inspector) that is a visual testing tool for MCP servers. The Inspector runs directly through `npx` without requiring installation. (NPX is designed to execute Node.js packages directly without requiring them to be permanently installed).
 
 To inspect a locally developed python server:

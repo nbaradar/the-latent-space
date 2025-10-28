@@ -787,7 +787,7 @@ except yaml.YAMLError as e:
 >[!question] [[v1.4 Testing]]
 
 >[!tip] [[v1.4 Release Changelog - Frontmatter Manipulation]]
-## MCP Server 1.4.1 - Tagging Automation Tool
+## MCP Server 1.4.1 - Tag Operations + Automation
 >[!note]- Debugging Methods w/ [[MCP Overview#Debugging w/ MCP Inspector|MCP Inspector]] 
 >Before I move on, I want to mention that I began using [[MCP Overview#Debugging w/ MCP Inspector|MCP Inspector]] for debugging. 
 >
@@ -795,13 +795,116 @@ except yaml.YAMLError as e:
 >
 >Dang this would have saved me so much of my LLM usage during testing! Oh well
 
-Next let's implement a tool that can automatically tag notes based on the content of the note and available tagging options. So an example query would look like
+Next let's implement tagging features onto our server. What do we need? Well just from brainstorming I'd really like to be able to execute this workflow:
 > "tag my notes about machine learning" → Claude reads notes → decides on tags → applies them. 
 > "go through notes in the "obsidian" folder and make sure they are all tagged with at least 1 of the seven main tag categories" → Claude reads notes → decides on tags → applies them. 
 
 Users should also be able to refine tags during conversation as well
 > "Actually, use the deep-learning tag for the Reinforcment Learning note"
 
+What basic tools would I need to create this more intricate workflow? I think i'd need:
+- add_tag_to_note
+- remote_tag_from_note
+- search_notes_by_tag
+
+First let's decide if it's even worth it to add these, because I don't want to create tool bloat. We already have over 20 tools, and we have CRUD operations on Frontmatter as is. 
+
+Technically the MCP server already gives LLMs the capability to add/remove/search tags. But the READ operation returns the ENTIRE frontmatter every time. 
+
+I think for searching tags, this is extremely inefficient since tag search will probably be used commonly. So we should probably implement a search_notes_by_tag function no matter what. This is a pretty common tool call and I think will benefit users w/ overall token reduction. 
+
+| Operation             | Current Approach                                          | With `search_notes_by_tag`           | Savings                              |
+| --------------------- | --------------------------------------------------------- | ------------------------------------ | ------------------------------------ |
+| Find tagged notes     | list_notes (2000-5000 tokens) + filter all frontmatter    | search_notes_by_tag (200-800 tokens) | **~1500-4000 tokens per search** ✅   |
+| Add single tag        | read_frontmatter (150-450) + update_frontmatter (150-450) | Dedicated tool (150-150)             | **0-300 tokens per operation** 🤷    |
+| Tool context overhead | 0 tokens                                                  | +200 tokens (search only)            | **Worth it for frequent searches** ✅ |
+
+As for add/remove tags, the token usage really corresponds with frontmatter size. So the more frontmatter content, the more tokens you save.
+BUT adding the tools themselves COST tokens every time you load. I don't know if it's worth adding that extra context. 
+
+So think of it like this, if you want to add/remove tags, you would just call READ + UPDATE frontmatter. 
+Adding the tools would cost about 600 tokens of context upfront. 
+But it also saved you about 500 tokens per operation
+
+So you're not actually saving unless you do a TON of tag modification operations on notes with HUGE frontmatter. 
+
+|Frontmatter Complexity|read_frontmatter tokens|add_tag_to_note tokens|Savings|
+|---|---|---|---|
+|**Minimal** (title + tags)|~150|~150|**0 tokens** ❌|
+|**Small** (5 fields)|~200|~150|**50 tokens**|
+|**Medium** (10 fields)|~300|~150|**150 tokens**|
+|**Large** (15+ fields)|~450|~150|**300 tokens** ✅|
+
+**Key insight:** If most of your notes have minimal frontmatter (just title and tags), the dedicated tools save almost nothing. But with Large frontmatter token saving increase
+
+So it's not necessarily pointless to have the tool, but it's also very specialized. 
+
+How can we solve for this to make the MCP server flexible enough where if a user NEEDS those power tools, they can enable them. Otherwise they just never load up when the MCP server starts. 
+What if you created a MODE flag for advanced users. Is that even possible? So if the MCP server is started with MODE != advanced, does that mean it wont load those tools and it wont return tool docs to the client?
+```python
+# Basic tier
+@mcp.tool()
+async def search_by_tag(...):  # Always available
+
+# Advanced tier (only load if --advanced flag)
+if MODE == "advanced":
+    @mcp.tool()
+    async def add_tag_to_note(...):
+    
+    @mcp.tool()
+    async def remove_tag_from_note(...):
+```
+
+I'd have to test and see if this is even possible and how it would work. 
+
+Well Claude did not like my idea:
+🚫 **Skip the Advanced Mode Pattern**
+**Why not implement conditional tool loading:**
+1. **Added complexity**: Dynamic tool registration complicates testing, documentation, and client debugging.
+2. **Configuration burden**: Users would need to understand mode flags, restart servers, modify configs — friction that undermines MCP's plug-and-play philosophy.
+3. **Not standard MCP pattern**: The MCP guidelines don't describe this pattern, and clients expect consistent tool listings.
+4. **Premature optimization**: You currently have ~20 tools, which is well within reasonable limits. The Slack MCP server has 25+ tools, GitHub has 30+.
+
+It also gave me some decent alternatives:
+**Option 1: Composition via existing tools** Your documentation could provide a "recipes" section showing efficient tag workflows:
+```python
+# Recipe: Batch tag addition for ML notes
+# 1. search_notes_by_tag(["untagged"])
+# 2. For each note: read_obsidian_frontmatter()
+# 3. For each note: update_obsidian_frontmatter({"tags": existing + ["ml"]})
+```
+**Option 2: Separate MCP server** (if truly needed later) Create `obsidian-power-mcp` with advanced tag manipulation, template management, etc. Users can install both servers and enable/disable as needed.
+**Option 3: Combined operations tool** (only if pattern emerges) If you notice users ALWAYS do "search by tag → read frontmatter → update tags", create a single atomic tool that does all three efficiently. But wait for the usage pattern to emerge first.
+
+Alright for implementing search tool we need
+- New tool: `search_notes_by_tag`
+- New Helper: `search_notes_by_tags`
+
+The helper function should have
+- Case insensitive matching
+- flexible formats (can take a list OR a string)
+	- `[ml, ai, research]`
+	- `"machine-learning"`
+- AND/OR Search Models
+	- implement a `match_all` param 
+		- True = OR mode (include all notes that contain any of the searched tags)
+		- False = AND mode (include all notes that contain ALL of the searched tags)
+- Optional Metadata
+	- `include_metadata=true` will include metadata detail on notes
+
+>[!warning] I'm going to write Unit/Regression tests starting with this release
+> `/obsidian_vault/tests/test_tag_search.py`
+> More info on [[Python Testing]]
+
+>[!question] [[v1.4.1 Testing]]
+
+>[!bug] FOUND BUG!
+> NOTES WITH DOTS IN THEIR TITLES GET TRUNCATED!!!
+> `_normalize_note_identifier` is stripping content from files. So for example, I told Claude to look for my file `v1.4 Release Changelog - Frontmatter Manipulation.md` and it kept treating the `.4` as a file extension!
+>
+> I will fix this in another release (1.4.2 Bug Fix)
+
+>[!tip] [[v1.4.1 Release Changelog - Tag Search Tooling Refinement]]
 
 ---
 # MCP Server 1.5 - Pydantic Input Validation

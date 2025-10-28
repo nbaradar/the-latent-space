@@ -26,7 +26,7 @@ You can also think of this analogy:
 # Main Components
 There are 2 main components 
 - **MCP Clients:** These are like the AI app that want to access custom date. So Claude Desktop comes with it's own MCP client that can access servers. If you create your own custom chatbot for a company you'd need to also implement an MCP client for that custom chatbot
-- **MCP Servers:** These are the custom resources themselves. But more than that, these servers are basically a way to interact with different data/apps. [[Build an MCP Server|Guide on building a simple MCP Server to retrieve live weather.]]
+- **MCP Servers:** These are the custom resources themselves. But more than that, these servers are basically a way to interact with different data/apps. [[Build a MCP Server|Guide on building a simple MCP Server to retrieve live weather.]]
 
 MCP Servers contain:
 - **Resources:** data, filesystem, database, etc

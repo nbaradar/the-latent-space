@@ -59,14 +59,16 @@ uv add "mcp[cli]" httpx
 touch weather.py
 ```
 
-## [FastMCP](https://gofastmcp.com/getting-started/welcome)
+## FastMCP
+>[!tip] For more info on [[FastMCP]]
+
 While continuing the guide, I noticed:
 ```python
 # Initialize FastMCP server 
 mcp = FastMCP("weather")
 ```
 
-The FastMCP class uses Python type hints and docstrings to automatically generate tool definitions, making it easy to create and maintain MCP tools.
+The [[FastMCP]] class uses Python type hints and docstrings to automatically generate tool definitions, making it easy to create and maintain [[Model Context Protocol]] tools.
 
 ## Helper Functions
 We added 2 helper functions for querying and formatting data

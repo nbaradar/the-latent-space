@@ -8,7 +8,7 @@ tags:
   - projects
 draft:
 ---
-> [!info] Reference: [[MCP Overview]] | [[Build an MCP Server]]
+> [!info] Reference: [[MCP Overview]] | [[Build a MCP Server]]
 
 >[!tip]- Update: [GitHub Repo for this MCP Server](https://github.com/nbaradar/obsidian-mcp-server) 
 >- https://missingham.net/Research-Notes/Agentic-Workflows-in-Obsidian
@@ -19,7 +19,7 @@ Later I will make more sophisticated MCP servers that connected to themed vaults
 
 ---
 # MCP Server v1.0 - CRUD Operations, Vault Selection, Session Management
-I'm going to build this server with the Python SDK. Also remember that you can use the "uv" python package manager and "FastMCP" to make your life easier.
+I'm going to build this server with the Python SDK. Also remember that you can use the "uv" python package manager and [[FastMCP]] to make your life easier.
 
 So what does my server need at a minimum for now? I don't think prompts are necessary yet. Maybe later. 
 - Resources: The markdown files in my obsidian vault
@@ -60,7 +60,7 @@ I don't like how inflexible this is. I have a lot of different vaults I want to 
 
 Okay, I'm going to implement config-driven multi vault support. 
 - Session Tracking of Vault inside of MCP sessions Context Object. 
-	- MCP tool call arrives with a [Context](https://gofastmcp.com/servers/context) object. This is through FastMCP
+	- MCP tool call arrives with a [Context](https://gofastmcp.com/servers/context) object. This is through [[FastMCP]]
 	- When we call `set_active_vault`, we will remember the preference for subsequent requests.
 - Vault "Allow List" through a config file with detail for the MCP client
 - Active vault tracking 
@@ -912,6 +912,6 @@ MCP connects Claude to external services and data sources. Skills provide proced
 - ✅ Clean YAML config (vaults.yaml)
 - ✅ Heading-aware section operations
 - ✅ Token-efficient snippet search
-- ✅ FastMCP (Python, modern)
+- ✅ [[FastMCP]] (Python, modern)
 - ✅ Direct filesystem access
 

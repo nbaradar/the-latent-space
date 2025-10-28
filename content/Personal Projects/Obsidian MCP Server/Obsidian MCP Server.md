@@ -11,9 +11,8 @@ draft:
 > [!info] Reference: [[MCP Overview]] | [[Build a MCP Server]]
 
 >[!tip]- Update: [GitHub Repo for this MCP Server](https://github.com/nbaradar/obsidian-mcp-server) 
->- https://missingham.net/Research-Notes/Agentic-Workflows-in-Obsidian
 
-Notes I take while I create an MCP server that can hook up to my personal obsidian vault (`nader_obsidian_vault`). This is just a general vault with random notes in it. Going to use Claude Desktop as the client for now.
+Notes I take while I create an MCP server that can hook up to my personal obsidian vaults. Going to use Claude Desktop as the client for now.
 
 Later I will make more sophisticated MCP servers that connected to themed vaults like "mental health." Sort of like a "Project" in ChatGPT but more powerful/dynamic. Will need to build my own client most likely, unless OpenAI has released a client. 
 
@@ -858,6 +857,7 @@ MCP connects Claude to external services and data sources. Skills provide proced
 ## Links/References
 [Reddit post on Local MCP Server + ChatGPT](https://www.reddit.com/r/mcp/comments/1o4o82m/a_short_guide_on_how_to_use_local_mcps_with/)
 [Docker MCP Toolkit](https://docs.docker.com/ai/mcp-catalog-and-toolkit/toolkit/#how-the-mcp-toolkit-works)
+[Agentic Workflows in Obsidian]( https://missingham.net/Research-Notes/Agentic-Workflows-in-Obsidian)
 
 ## Current Tools
 ### Management

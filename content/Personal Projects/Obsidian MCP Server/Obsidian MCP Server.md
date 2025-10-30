@@ -1,13 +1,27 @@
 ---
-title: Obsidian MCP Server
+date: 2025-10-25
+description: A detailed implementation of an MCP server for Obsidian vaults with focus on token efficiency and structured operations
+draft: false
+enableToc: true
+keywords:
+  - model context protocol
+  - obsidian integration
+  - token optimization
+  - python server
+lastmod: 2025-10-28
 tags:
   - obsidian
   - mcp
   - lab
   - ai/ml
   - projects
-draft:
+  - python
+  - fastmcp
+  - agents
+  - token-optimization
+title: Obsidian MCP Server
 ---
+
 > [!info] Reference: [[MCP Overview]] | [[Build a MCP Server]]
 
 >[!tip]- Update: [GitHub Repo for this MCP Server](https://github.com/nbaradar/obsidian-mcp-server) 
@@ -475,6 +489,7 @@ After doing some extensive research and rewrites and caluclations here's where I
 ># (Truncated for brevity - full implementation contains all 15 tools)
 >```
 
+---
 # MCP Server v1.3 - Improve Vault Navigation
 Currently theres no way to navigate the vault efficiently. Token usage is awful. 
 
@@ -1025,4 +1040,3 @@ MCP connects Claude to external services and data sources. Skills provide proced
 - ✅ Token-efficient snippet search
 - ✅ [[FastMCP]] (Python, modern)
 - ✅ Direct filesystem access
-

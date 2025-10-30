@@ -149,6 +149,10 @@ Do this:
 update_file(path, content, mode="append|prepend|overwrite|insert", heading=None)
 ```
 
+## Security Hardening
+https://hiddenlayer.com/innovation-hub/mcp-model-context-pitfalls-in-an-agentic-world/
+MCP is very vulnerable to prompt injection and improper tool calling. 
+
 ## Debugging w/ MCP Inspector
 >[!info] Documentation
 >[MCP Inspector Docs](https://modelcontextprotocol.io/docs/tools/inspector)

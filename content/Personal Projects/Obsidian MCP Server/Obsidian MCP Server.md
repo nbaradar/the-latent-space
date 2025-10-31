@@ -915,11 +915,21 @@ The helper function should have
 
 >[!bug] FOUND BUG!
 > NOTES WITH DOTS IN THEIR TITLES GET TRUNCATED!!!
-> `_normalize_note_identifier` is stripping content from files. So for example, I told Claude to look for my file `v1.4 Release Changelog - Frontmatter Manipulation.md` and it kept treating the `.4` as a file extension!
+> `_normalize_note_identifier` is stripping content from files. The problem is it's stripping everything past the dot, even if it's not a file extension. So for example, I told Claude to look for my file `v1.4 Release Changelog - Frontmatter Manipulation.md` and it kept treating the `.4` as a file extension!
 >
 > I will fix this in another release (1.4.2 Bug Fix)
 
 >[!tip] [[v1.4.1 Release Changelog - Tag Search Tooling Refinement]]
+
+---
+## MCP Server 1.4.2 BUGFIX - `_normalize_note_identifier` Bugfix
+Pretty simple fix, I'm just checking for `.md` with a conditional
+```python
+if cleaned.lower().endswith(".md"):
+```
+
+Testing:
+![[Pasted image 20251030205521.png|700]]
 
 ---
 # MCP Server 1.5 - Pydantic Input Validation

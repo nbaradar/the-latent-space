@@ -1,8 +1,10 @@
 ---
-title: Wikipedia Graph View
 tags:
-  - projects
+- projects
+- project
+title: Wikipedia Graph View
 ---
+
 # Wikipedia Graph View
 
 >[!note] Dev Notes

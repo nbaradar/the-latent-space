@@ -1,11 +1,13 @@
 ---
-title: ContextStore
+draft: null
 tags:
-  - projects
-  - contextcore
-  - contextstore
-draft:
+- projects
+- contextcore
+- contextstore
+- project
+title: ContextStore
 ---
+
 The database for ContextCore. The reason I have this listed as a "subsystem" of ContextCore is because it's core to the vision: A PRIVATE database that is owned by the user. 
 
 Right now it consists of: 

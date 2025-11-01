@@ -1,24 +1,26 @@
 ---
-date: 2025-10-25
-description: A detailed implementation of an MCP server for Obsidian vaults with focus on token efficiency and structured operations
+date: '2025-10-25'
+description: A detailed implementation of an MCP server for Obsidian vaults with focus
+  on token efficiency and structured operations
 draft: false
 enableToc: true
 keywords:
-  - model context protocol
-  - obsidian integration
-  - token optimization
-  - python server
-lastmod: 2025-10-28
+- model context protocol
+- obsidian integration
+- token optimization
+- python server
+lastmod: '2025-10-28'
 tags:
-  - obsidian
-  - mcp
-  - lab
-  - ai/ml
-  - projects
-  - python
-  - fastmcp
-  - agents
-  - token-optimization
+- obsidian
+- mcp
+- lab
+- ai/ml
+- projects
+- python
+- fastmcp
+- agents
+- token-optimization
+- project
 title: Obsidian MCP Server
 ---
 

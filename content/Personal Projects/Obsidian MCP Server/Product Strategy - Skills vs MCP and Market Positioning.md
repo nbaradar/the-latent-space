@@ -1,14 +1,15 @@
 ---
-title: "Product Strategy: Skills vs MCP and Market Positioning"
-date: 2025-10-27
-tags:
-  - mcp
-  - lab
-  - ai/ml
-  - projects
-  - obsidian-mcp-server
-  - product-strategy
+date: '2025-10-27'
 status: active
+tags:
+- mcp
+- lab
+- ai/ml
+- projects
+- obsidian-mcp-server
+- product-strategy
+- project
+title: 'Product Strategy: Skills vs MCP and Market Positioning'
 ---
 
 # Product Strategy: Skills vs MCP and Market Positioning

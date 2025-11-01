@@ -1,11 +1,13 @@
 ---
-title: Wikipedia Graph View Development
+draft: null
 tags:
-  - lab
-  - windsurf
-  - projects
-draft:
+- lab
+- windsurf
+- projects
+- project
+title: Wikipedia Graph View Development
 ---
+
 >[!important] POC Notes can be found here: 
 > [[Wikipedia Graph View POC|<- Wikipedia Graph View POC]]
 # Setting up Claude Code
@@ -146,4 +148,4 @@ Right now, lines are generated first, then nodes are slowly generated and appear
 We should generate the nodes first and as they slowly appear then generate the lines. Not wait for the lines to finish and then generate nodes. 
 If anything they should both start at the same time and it would match well. 
 
-## Option to color code nodes based on some type of categorization? 
+## Option to color code nodes based on some type of categorization?

@@ -1,11 +1,13 @@
 ---
-title: ContextCore
-tags:
-  - contextcore
-  - projects
-draft: 
 description: An overview of what ContextCore is and why it exists
+draft: null
+tags:
+- contextcore
+- projects
+- project
+title: ContextCore
 ---
+
 # ContextCore
 
 >[!info]- Related Pages

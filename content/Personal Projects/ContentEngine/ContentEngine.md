@@ -1,10 +1,12 @@
 ---
-title: ContentEngine
+draft: null
 tags:
-  - projects
-  - contentengine
-draft:
+- projects
+- contentengine
+- project
+title: ContentEngine
 ---
+
 Can we create an AI agent that posts topical memes to twitter daily? Have it automatically generate 2-3 a day? Python, just make it a service that runs. 
 
 What are the components?
@@ -18,5 +20,3 @@ What are the components?
 [https://www.figma.com/board/5snsbPamP5JzqKpWAoLtoO/TrendingContentBot?node-id=2-851&t=jNFPfIe96jXfEzeM-0](https://www.figma.com/board/5snsbPamP5JzqKpWAoLtoO/TrendingContentBot?node-id=2-851&t=jNFPfIe96jXfEzeM-0)
 
 [https://replit.com/@niclog2010/Trending-Content-Machine-Bot#main.ps1](https://replit.com/@niclog2010/Trending-Content-Machine-Bot#main.ps1)
-
-  

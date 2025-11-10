@@ -66,6 +66,12 @@ ClaudeCode on the Web allows you to delegate coding tasks from your browser or m
 
 **IMPORTANT:** For this tool to work, you must first install the [Claude Github Tool](https://github.com/apps/claude)
 
+> [!note]- [ClaudeCode on the Web | Free Credits](https://support.claude.com/en/articles/12690958-claude-code-promotion)  (Nov 4 - Nov 18, 2025)
+> 1. Navigate to [claude.ai/code](https://claude.ai/code) to access Claude Code on the web.
+>2. Your promotional credits will be automatically applied when you use Claude Code.
+>3. Track your remaining promotional credit balance in the credit tracker panel on the Claude Code web interface.
+>4. Continue using Claude Code as you normally would—the promotional credits will be used before your regular usage limits.
+
 ---
 # Additional Tips/Tricks
 ### Tracking Usage

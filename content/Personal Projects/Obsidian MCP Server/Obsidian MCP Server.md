@@ -1017,13 +1017,61 @@ The `mcp_builder` skill strongly recommends using [[Pydantic]] models for input 
 - Schema generation for MCP
 - Field constraints and descriptions
 
-> [!note] [ClaudeCode on the Web | Free Credits](https://support.claude.com/en/articles/12690958-claude-code-promotion)  (Nov 4 - Nov 18)
-> 1. Navigate to [claude.ai/code](https://claude.ai/code) to access Claude Code on the web.
->2. Your promotional credits will be automatically applied when you use Claude Code.
->3. Track your remaining promotional credit balance in the credit tracker panel on the Claude Code web interface.
->4. Continue using Claude Code as you normally would—the promotional credits will be used before your regular usage limits.
->   
-> For more on [[Claude Code|ClaudeCode on the Web]]
+In plain words: **schemas for validating the INPUT PARAMETERS to each MCP tool call.**
+
+>[!note] Going to use my $250 free credits of [[Claude Code#ClaudeCode on the Web|ClaudeCode on the Web]]. 
+>Check the linked documentation for more info.
+
+Here's what my tool signatures look like now, they just contain basic python types
+```python
+@mcp.tool()
+async def create_obsidian_note(
+    title: str,
+    content: str,
+    vault: Optional[str] = None,
+    ctx: Context | None = None,
+)
+```
+
+But with Pydantic data schemas, you can create a data model that you would pass in as a parameter for `create_obsidian_note()` instead.
+```python
+class CreateNoteInput(BaseModel):
+    title: str = Field(..., min_length=1, description="Note title")
+    content: str = Field(default="", description="Note content")
+    vault: Optional[str] = Field(None, description="Vault name")
+    
+    @field_validator('title')
+    def validate_title(cls, v):
+        # Your custom validation logic here
+        return v.strip()
+```
+
+And then you use `CreateNoteInput` as the input param for `create_obsidian_note()`. ALL tools should get their own input data model. 
+
+When you use Pydantic models, MCP automatically generates JSON schemas that describe your tools to the AI.
+Current Approach:
+- AI calls: create_obsidian_note(title="", content="Hello")
+- Server returns: `ValueError: Note title cannot be empty.`
+- AI thinks: "Hmm, let me try again with a title"
+- AI calls: create_obsidian_note(title="My Note.md.md", content="Hello") 
+- Server returns: ValueError: Note title format invalid
+- AI thinks: "Ugh, let me try once more..."
+
+With Pydantic: 
+- AI calls: create_obsidian_note(title="", content="Hello")
+- Server returns structured validation error:
+```JSON
+{
+  "error": "ValidationError",
+  "details": [
+    {
+      "field": "title",
+      "message": "String should have at least 1 character",
+      "type": "string_too_short"
+    }
+  ]
+}
+```
 
 ---
 # MCP Server 1.6 - Vault-Aware Prompt Resources

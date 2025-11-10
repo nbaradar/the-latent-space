@@ -934,12 +934,96 @@ Testing:
 ![[Pasted image 20251030205521.png|700]]
 
 ---
+## MCP Server 1.4.3 REFACTOR - Codebase Structure
+Everything is in one huge file right now. I feel this is awful for debugging/testing/maintenance/future contributions. 
+Prompt:
+```txt
+Before I implement any new features in my codebase (nbaradar/obsidian-mcp-server) I want to refactor the entire codebase for structure and organization. Everything is in one huge file right now for the MCP server (obsidian-vault.py). This includes tools, session management, constants, server setup, and helper functions. I feel this is awful for debugging/testing/maintenance/future contributions.
+
+I want to refactor the codebase so it's structured to align with best practices. Please use the mcp_builder skill to look up if there's any information regarding codebase structure and organization, and structure of the code itself. And wherever there are gaps, we can defer to best practices as laid out by FastMCP since we use it for our server (python). If they don't have any information, fall back to common python best practices.
+
+For internal tracking and documentation updating, this update will be called "1.4.3 REFACTOR - Codebase Structure" and comes before "1.5 - Pydantic Input Validation"
+
+Please help me plan out the changes we need to achieve what I described.
+```
+
+We refactored the entire codebase from a single 2,600-line monolithic file (`obsidian_vault.py`) into a well-organized package structure. This was a pure architectural improvement - no functionality changed, all tool signatures remained identical.
+### New Structure
+```txt
+obsidian_vault/
+├── __init__.py           # Public API exports
+├── constants.py          # Module constants (CONFIG_PATH, etc.)
+├── models.py            # Data models (VaultMetadata, VaultConfiguration)
+├── config.py            # Configuration loading (vaults.yaml)
+├── session.py           # Session state management
+├── server.py            # FastMCP server initialization
+├── core/                # Pure business logic (framework-agnostic)
+│   ├── vault_operations.py      # Path validation & sandboxing
+│   ├── note_operations.py       # CRUD operations (8 functions)
+│   ├── search_operations.py     # Search & discovery (4 functions)
+│   ├── section_operations.py    # Heading manipulation (4 functions)
+│   └── frontmatter_operations.py # YAML operations (4 functions)
+└── tools/               # MCP tool wrappers (thin layer)
+    ├── vault_tools.py
+    ├── note_tools.py
+    ├── search_tools.py
+    ├── section_tools.py
+    └── frontmatter_tools.py
+```
+
+### Where to Find Things
+**Need to modify business logic?** → `obsidian_vault/core/`
+- All the "what" happens here: file operations, search algorithms, validation
+- Framework-independent Python functions
+- Each module is ~400 lines, focused on one responsibility
+
+**Need to change tool signatures or add MCP tools?** → `obsidian_vault/tools/`
+- Thin wrappers that resolve vault context and call core functions
+- Each tool: validate → resolve vault → delegate to core → return result
+
+**Need to understand configuration?** → `obsidian_vault/config.py`
+
+**Need to understand session management?** → `obsidian_vault/session.py`
+
+**Entry point:** `main.py` → calls `run_server()` from `obsidian_vault/server.py`
+### Why This Path?
+#### 1. **Maintainability**
+- Finding code: Instead of Ctrl+F through 2,600 lines, jump directly to the right 400-line module
+- Testing: Can test core logic without MCP framework overhead
+- Understanding: Each file has one clear job
+#### 2. **Clean Architecture**
+- Core business logic doesn't know about FastMCP
+- Could swap MCP for REST API or CLI without touching core
+- Tools layer is just "glue code" - minimal logic
+#### 3. **Collaboration**
+- Multiple developers can work on different modules without conflicts
+- Clear boundaries reduce cognitive load
+- New contributors can understand one module at a time
+#### 4. **Consistency**
+- All core functions follow same pattern: `function(vault, title, [params])`
+- All tools follow same pattern: resolve vault → delegate → return
+- Predictable structure across 20+ operations
+### Key Design Principle
+**Separation of Concerns**: The core modules know how to work with Obsidian vaults. The tools modules know how to work with MCP. They each do their job and nothing more.
+This means when MCP updates, we only touch `tools/`. When we add new vault features, we only touch `core/`. Clean boundaries = easier changes.
+### Migration Impact
+- **For end users**: Zero changes needed - all tool names and signatures identical
+- **For developers**: Import paths changed, but logic is the same just better organized
+---
 # MCP Server 1.5 - Pydantic Input Validation
 The `mcp_builder` skill strongly recommends using [[Pydantic]] models for input validation rather than plain parameters. This provides:
 - Automatic validation
 - Better error messages
 - Schema generation for MCP
 - Field constraints and descriptions
+
+> [!note] [ClaudeCode on the Web | Free Credits](https://support.claude.com/en/articles/12690958-claude-code-promotion)  (Nov 4 - Nov 18)
+> 1. Navigate to [claude.ai/code](https://claude.ai/code) to access Claude Code on the web.
+>2. Your promotional credits will be automatically applied when you use Claude Code.
+>3. Track your remaining promotional credit balance in the credit tracker panel on the Claude Code web interface.
+>4. Continue using Claude Code as you normally would—the promotional credits will be used before your regular usage limits.
+>   
+> For more on [[Claude Code|ClaudeCode on the Web]]
 
 ---
 # MCP Server 1.6 - Vault-Aware Prompt Resources

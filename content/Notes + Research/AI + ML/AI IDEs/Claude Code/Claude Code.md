@@ -57,6 +57,16 @@ You can change a variety of offered settings by running the /config command when
 |`exit` or Ctrl+C|Exit Claude Code|`> exit`|
 
 ---
+# ClaudeCode on the Web
+> [!info] References
+> [Official Documentation](https://code.claude.com/docs/en/claude-code-on-the-web)
+> [Announcement](https://www.claude.com/blog/claude-code-on-the-web#:~:text=Claude%20Code%20on%20the%20web%20lets%20you%20kick%20off%20coding,and%20Claude%20handles%20the%20implementation.)
+
+ClaudeCode on the Web allows you to delegate coding tasks from your browser or mobile Claude app instead of having to use the CLI.
+
+**IMPORTANT:** For this tool to work, you must first install the [Claude Github Tool](https://github.com/apps/claude)
+
+---
 # Additional Tips/Tricks
 ### Tracking Usage
 If you want to track your remaining usage credit, there are a couple open source tools that help you do so through JSONL files 

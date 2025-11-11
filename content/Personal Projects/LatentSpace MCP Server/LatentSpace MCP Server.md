@@ -8,7 +8,7 @@ tags:
   - project
   - python
 enableToc: true
-draft:
+draft: true
 ---
 > [!info] Reference: [[MCP Overview]] | [[Build a MCP Server]]
 

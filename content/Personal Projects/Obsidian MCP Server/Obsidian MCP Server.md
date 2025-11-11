@@ -1073,6 +1073,55 @@ With Pydantic:
 }
 ```
 
+### 🏗️ Architecture Overview
+#### Validation Flow
+```
+MCP Client → Pydantic Input Model → Tool Wrapper → Core Operation → Filesystem
+              ↓ (validates once)                      ↓ (no validation)
+           JSON Schema                        Only filesystem checks
+```
+#### Two-Layer Validation Pattern
+1. **Pydantic Layer** (at MCP boundary): Format, security, type checking
+2. **Core Layer** (in operations): Filesystem state (file exists, vault accessible, path escape)
+#### Key Principle
+> **Validation happens ONCE at the boundary. Core operations receive clean, pre-validated data.**
+
+### Input Validation Models (`obsidian_vault/models/`)
+```scala
+base.py                   # BaseNoteInput, BaseSectionInput (shared validation)
+note_models.py            # 7 CRUD models (Create, Retrieve, Replace, etc.)
+section_models.py         # 4 heading-based models (Insert, Append, Replace, Delete)
+search_models.py          # 5 search models (ListNotes, SearchNotes, etc.)
+frontmatter_models.py     # 4 frontmatter models (Read, Update, Replace, Delete)
+vault_models.py           # 2 vault models (ListVaults, SetActiveVault)
+```
+### Core Data Models
+```scala
+data_models.py            # VaultMetadata, VaultConfiguration (NOT input models!)
+```
+### Core Operations
+```scala
+vault_operations.py       # Path construction: construct_note_path(), resolve_note_path()
+note_operations.py        # CRUD: create_note(), retrieve_note(), etc.
+section_operations.py     # Heading-based: insert_after_heading(), etc.
+search_operations.py      # Discovery: list_notes(), search_note_content()
+frontmatter_operations.py # YAML: read_frontmatter(), update_frontmatter()
+```
+
+### Quick Decision Tree
+**When adding a new tool:**
+1. Does it need title validation? → Inherit from `BaseNoteInput`
+2. Does it need heading validation? → Inherit from `BaseSectionInput`
+3. Does it need custom validation? → Add `@field_validator`
+4. Is validation about filesystem state? → Put in core operation, not Pydantic
+5. Tool wrapper complete? → Update `models/__init__.py` exports
+
+**When debugging:**
+1. ImportError for VaultMetadata? → Use `data_models`, not `models`
+2. Validation too strict? → Check Field constraints (`min_length`, etc.)
+3. Need runtime validation? → Core operation, not Pydantic
+4. Validator not running? → Check `@classmethod` decorator
+
 ---
 # MCP Server 1.6 - Vault-Aware Prompt Resources
 

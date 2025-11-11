@@ -1,15 +1,16 @@
 ---
-date: '2025-10-27'
+date: 2025-10-27
 status: active
 tags:
-- mcp
-- lab
-- ai/ml
-- projects
-- obsidian-mcp-server
-- product-strategy
-- project
-title: 'Product Strategy: Skills vs MCP and Market Positioning'
+  - mcp
+  - lab
+  - ai/ml
+  - projects
+  - obsidian-mcp-server
+  - product-strategy
+  - project
+title: "Product Strategy: Skills vs MCP and Market Positioning"
+draft: true
 ---
 
 # Product Strategy: Skills vs MCP and Market Positioning

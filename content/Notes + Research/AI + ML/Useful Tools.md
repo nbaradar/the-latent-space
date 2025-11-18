@@ -58,3 +58,22 @@ AI-powered platform that transforms any public GitHub repository into a fully in
 Seems really useful, saving for later.
 
 ---
+## [Google Code Wiki](https://codewiki.google/?utm_source=blog&utm_medium=gfd&utm_campaign=launch_post)
+> [Blog Announcement](https://developers.googleblog.com/en/introducing-code-wiki-accelerating-your-code-understanding/)
+
+AI powered wikis for github codebases. 
+
+---
+## [Google Opal](https://opal.google/landing/)
+> [Blog Announcement](https://developers.googleblog.com/en/introducing-opal/)
+
+Basically googles version of N8N
+
+---
+## [Google Antigravity]()
+> [Blog Announcement](https://antigravity.google/blog/introducing-google-antigravity)
+
+A forked version of VSCode that is an agentic-first IDE. "We want Antigravity to be the home base for software development in the era of agents. Our vision is to ultimately enable anyone with an idea to experience liftoff and build that idea into reality. From today, Google Antigravity is available in public preview at no charge, with generous rate limits on Gemini 3 Pro usage."
+
+---
+##

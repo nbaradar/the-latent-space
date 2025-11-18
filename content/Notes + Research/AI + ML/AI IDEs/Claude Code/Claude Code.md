@@ -20,6 +20,8 @@ draft:
 >- https://github.com/hesreallyhim/awesome-claude-code
 >- https://github.com/wong2/awesome-mcp-servers
 >- https://github.com/punkpeye/awesome-mcp-servers
+>- [Writing effective tools for agents — with agents](https://www.anthropic.com/engineering/writing-tools-for-agents)
+>- [Code execution with MCP: Building more efficient agents](https://www.anthropic.com/engineering/code-execution-with-mcp)
 
 An agentic IDE/CLI provided by [[Anthropic]].
 

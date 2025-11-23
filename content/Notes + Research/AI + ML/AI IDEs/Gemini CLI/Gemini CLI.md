@@ -82,6 +82,11 @@ You should aim to include the following context in the `GEMINI.md` file:
 > - Follow Material Design principles for UI.
 >```
 
+## Chrome DevTools ([[Model Context Protocol|MCP]]) for Gemini AI Agent
+>[!info] Relevant Docs
+> - [Announcement Blog](https://developer.chrome.com/blog/chrome-devtools-mcp)
+> - [GitHub Repo](https://github.com/ChromeDevTools/chrome-devtools-mcp/)
+
 ---
 # Use Cases
 Directly from the GitHub ReadMe:

@@ -212,3 +212,10 @@ draft:
 > - These are the skills that create a buffer against AI takeover. Gates remains optimistic that intellectual professions with these qualities will continue to thrive.
 
 ![[Pasted image 20250919195811.png|400]]
+
+## [AI "workslop" sabotages productivity, study finds](https://archive.is/KjeSC)
+> - **Workslop:** (coined by researchers in the latest [Harvard Business Review](https://archive.is/o/KjeSC/https://hbr.org/2025/09/ai-generated-workslop-is-destroying-productivity)): The workplace offshoot of the general run of [AI-generated slop](https://archive.is/o/KjeSC/https://www.axios.com/2025/04/24/ai-slop-studio-ghibli-barbie-deepfakes) most of us see day-to-day — [rabbits jumping on trampolines](https://archive.is/o/KjeSC/https://www.axios.com/2025/08/03/ai-slop-viral-videos-content-scrolling), fast fashion ads featuring [Luigi Mangione](https://archive.is/o/KjeSC/https://www.thecut.com/article/luigi-mangione-shein-ai.html), weird uncanny images of hands with the wrong number of fingers, and so forth.
+> - 40%  of survey respondents said they'd encountered this stuff in the last month — slowing down their workday.
+> - Of those using AI at work, 18% admitted sending AI-generated content that was "unhelpful, low effort or low quality."
+
+![[Pasted image 20251122082233.png|400]]

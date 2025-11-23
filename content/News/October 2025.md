@@ -8,6 +8,13 @@ draft:
 # Politics
 
 # Industry
+## [OpenAI: Top Token Consumers](https://community.openai.com/t/openai-just-shared-the-top30-customers-whove-used-1t-tokens/1361452)
+> - OpenAI shared a list of the top 30 customers who've used 1T+ tokens during a dev presentation
+> - Someone created a [custom database](https://geyser-80.faces.site/tokens) to view the customer list
+> - This gives insight into how the biggest companies are using AI tools to drive value
+
+![[Pasted image 20251122085829.png|400]]
+
 ## [Nvidia’s China AI GPU market share has plummeted from 95% to zero](https://www.tomshardware.com/tech-industry/jensen-huang-says-nvidia-china-market-share-has-fallen-to-zero)
 > - Nvidia CEO Jensen Huang said the company’s share of China’s advanced AI accelerator market has collapsed from 95% to 0% 
 > - Nvidia has previously disclosed that China represented between 20% and 25% of its data center revenue 

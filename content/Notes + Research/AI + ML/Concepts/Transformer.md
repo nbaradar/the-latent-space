@@ -15,3 +15,4 @@ Transformer models come in 2 main varieties: `encoders` (ie. [[BERT (Language Mo
 - encoders: each word can look at all others (and then decide to which ones it should give more attention)
 - decoders: the prediction for each character or word can only look at the previous characters/words.
 
+![[Pasted image 20251122093827.png|500]]

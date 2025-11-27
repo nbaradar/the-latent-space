@@ -1,10 +1,9 @@
 ---
 tags:
-- projects
-- multiquery
-- contextcore
-- lab
-- project
+  - multiquery
+  - contextcore
+  - lab
+  - project
 title: MultiQuery
 ---
 

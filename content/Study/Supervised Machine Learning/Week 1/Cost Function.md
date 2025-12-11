@@ -22,7 +22,12 @@ You can intuit that w dictates the slope of f(x)
 You want to find correct values for $w, b$ so that $f_{w,b}$ matches your training set. 
 ![[Pasted image 20251205172436.png|400]]
 
+x^(i), y^(i) is a training example. y is the target
 
+![[Pasted image 20251211172620.png|600]]
+The squared error cost function is one type of many cost functions that machine learning engineers could use depending on the model they are building.
+
+It is also the most widely used Cost Function, especially for [[Linear Regression Models]]
 
 
 >[!example] [[Linear Regression Models|<- Previous Lesson]] | [[Supervised Machine Learning|Home]]

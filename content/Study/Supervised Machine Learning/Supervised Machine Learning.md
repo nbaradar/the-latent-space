@@ -13,5 +13,6 @@ Week 1:
 - [[Supervised vs. Unsupervised Machine Learning]]
 - [[Linear Regression Models]]
 - [[Cost Function]]
+- [[Gradient Descent]]
 
 Week 2:

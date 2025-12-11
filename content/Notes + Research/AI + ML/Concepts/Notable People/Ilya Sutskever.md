@@ -13,5 +13,6 @@ Left OpenAI and founded his own AI research company: [[Safe Superintelligence In
 
 ---
 ## Interviews
-- [University of Toronto: Honorary Degree Recipient Speech](https://www.youtube.com/watch?v=zuZ2zaotrJs)
+- [University of Toronto: Honorary Degree Recipient Speech](https://www.youtube.com/watch?v=zuZ2zaotrJs) June 8, 2025
+- [We're moving from the age of scaling to the age of research](https://www.dwarkesh.com/p/ilya-sutskever-2) - Nov 25, 2025
 

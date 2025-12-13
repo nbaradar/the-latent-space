@@ -7,6 +7,7 @@ draft:
 ---
 # Politics
 
+
 # Industry
 ## [OpenAI: Top Token Consumers](https://community.openai.com/t/openai-just-shared-the-top30-customers-whove-used-1t-tokens/1361452)
 > - OpenAI shared a list of the top 30 customers who've used 1T+ tokens during a dev presentation
@@ -29,7 +30,6 @@ draft:
 > - A [poll found](https://futureoflife.org/recent-news/americans-want-regulation-or-prohibition-of-superhuman-ai/) that 64 percent of Americans believe super intelligence should not be developed until there is a consensus that it is safe and reliable. 73 percent support robust AI regulation. Only 5 percent support the current landscape of largely unregulated AI.
 
 ![[Pasted image 20251025145049.png|400]]
-
 
 ## [Wikipedia says AI Causing Dangerous Decline in Traffic](https://www.404media.co/wikipedia-says-ai-is-causing-a-dangerous-decline-in-human-visitors/)
 > - Wikimedia Foundation says that it’s seeing a significant decline in human traffic due to use of generative AI chatbots that were trained on its articles and search engines that summarize them without actually clicking through to the site.

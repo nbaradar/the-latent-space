@@ -2,7 +2,7 @@
 title: Dune Awakening and Learned Helplessness
 tags:
   - thought
-draft:
+draft: true
 ---
 ![[Pasted image 20251022131910.png|400]]
 ## Boiling the Lobster (or Worm) Alive

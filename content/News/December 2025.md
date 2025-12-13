@@ -33,3 +33,6 @@ draft:
 
 ![[Pasted image 20251210150140.png|400]]
 # Society
+## [The Architects of AI Are TIME’s 2025 Person of the Year](https://time.com/7339685/person-of-the-year-2025-ai-architects/)
+> - 
+![[Pasted image 20251211195002.png|700]]

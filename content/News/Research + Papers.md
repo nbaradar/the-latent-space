@@ -134,3 +134,17 @@ draft:
 > We introduce DarkBench, a comprehensive benchmark for detecting dark design patterns—manipulative techniques that influence user behavior—in interactions with large language models (LLMs). Our benchmark comprises 660 prompts across six categories: brand bias, user retention, sycophancy, anthropomorphism, harmful generation, and sneaking. 
 > 
 > We evaluate models from five leading companies (OpenAI, Anthropic, Meta, Mistral, Google) and find that some LLMs are explicitly designed to favor their developers’ products and exhibit untruthful communication, among other manipulative behaviors. Companies developing LLMs should recognize and mitigate the impact of dark design patterns to promote more ethical Al.
+
+---
+## [Adaptation of Agentic AI](https://arxiv.org/abs/2512.16301)
+**December 2025**
+> In this paper, we unify the rapidly expanding research landscape into a systematic framework that spans both agent adaptations and tool adaptations. We further decompose these into tool-execution-signaled and agent-output-signaled forms of agent adaptation, as well as agent-agnostic and agent-supervised forms of tool adaptation. We demonstrate that this framework helps clarify the design space of adaptation strategies in agentic AI, makes their trade-offs explicit, and provides practical guidance for selecting or switching among strategies during system design. We then review the representative approaches in each category, analyze their strengths and limitations, and highlight key open challenges and future opportunities. Overall, this paper aims to offer a conceptual foundation and practical roadmap for researchers and practitioners seeking to build more capable, efficient, and reliable agentic AI systems.
+> 
+> *TL;DR: 4 bucket taxonomy for AI Agents: **A1, A2, T1, T2***. These strategies are NOT MUTUALLY EXCLUSIVE
+> • **A1: Tool Execution Signaled Agent Adaptation (§3.2.1, §4.1):** The agent is optimized using verifiable outcomes produced by external tools it invokes. This paradigm captures settings where correctness signals arise directly from tool execution, such as code sandbox results, retrieval relevance scores, or API call outcomes. 
+> 
+> • **A2: Agent Output Signaled Agent Adaptation (§3.2.2, §4.2):** The agent is optimized using evaluations of its own outputs, e.g., final answers, plans, or reasoning traces, possibly after incorporating tool results. This paradigm includes both tool-free outcome-based learning and tool-augmented adaptation driven by answer correctness or preference scores. 
+> 
+> • **T1: Agent-Agnostic Tool Adaptation (§3.2.3, §5.1):** Tools are trained independently of the frozen agent. These tools include retrievers, domain-specific models, and other pretrained components that can be used as plug-and-play modules orchestrated by the frozen agent. 
+> 
+> • **T2: Agent-Supervised Tool Adaptation (§3.2.4, §5.2):** The agent remains fixed while its tools are adapted using signals derived from the agent’s outputs. This paradigm includes reward-driven retriever tuning, adaptive rerankers, search subagents, and memory-update modules trained to better support the frozen agent.

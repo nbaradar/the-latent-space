@@ -14,6 +14,12 @@ draft:
 ![[Pasted image 20251210215254.png|350]]
 
 # Industry
+## [Anthropic Donates MCP to Linux Foundation](https://www.anthropic.com/news/donating-the-model-context-protocol-and-establishing-of-the-agentic-ai-foundation)
+> - The [Agentic AI Foundation (AAIF)](https://aaif.io/) is a directed fund under the Linux Foundation. The AAIF aims to ensure agentic AI evolves transparently, collaboratively, and in the public interest
+> - [[Anthropic]] is donating the [[Model Context Protocol]] to the Linux Foundation's new Agentic AI Foundation, where it will join [goose](https://github.com/block/goose) by Block and [AGENTS.md](http://agents.md/) by [[OpenAI]]
+> - MCP now has an official, community-driven [Registry](https://github.com/modelcontextprotocol/registry) for discovering available MCP servers,
+
+![[Pasted image 20251219090652.png|400]]
 ## [Introducing Mistral 3](https://mistral.ai/news/mistral-3)
 > - This release includes three state-of-the-art small, dense models (14B, 8B, and 3B)
 > - And [[Mistral]] Large 3 – our most capable model to date – a sparse mixture-of-experts trained with 41B active and 675B total parameters.

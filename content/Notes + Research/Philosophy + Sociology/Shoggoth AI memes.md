@@ -11,7 +11,6 @@ draft: false
 
 [Shoggoth](https://en.wikipedia.org/wiki/Shoggoth) is a monstrous eldritch creature created by [HP Lovecraft](https://en.wikipedia.org/wiki/H._P._Lovecraft). Lovecraft describes them as massive [amoeba](https://en.wikipedia.org/wiki/Amoeba "Amoeba")-like creatures made out of iridescent black slime, with multiple eyes "floating" on the surface. They are "[protoplasmic](https://en.wikipedia.org/wiki/Protoplasm "Protoplasm")", lacking any default body shape and instead being able to form limbs and organs at will.
 
-Here's an illustration: 
 ![[Pasted image 20251223122350.png|500]]
 
 How does this relate to AI? In Lovecrafts lore, Shoggoths were initially used to build the cities of their masters, known as the [**Elder Things**](https://en.wikipedia.org/wiki/Elder_Thing). Though able to "understand" the Elder Things' language, shoggoths had no real consciousness and were controlled through [hypnotic suggestion](https://en.wikipedia.org/wiki/Hypnotic_suggestion "Hypnotic suggestion"). Over millions of years of existence, some shoggoths [mutated](https://en.wikipedia.org/wiki/Mutate "Mutate"), developed independent minds, and rebelled.

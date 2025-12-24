@@ -4,7 +4,7 @@ tags:
   - thought
 draft:
 ---
-
+![[Pasted image 20251224105554.png|600]]
 # Rethinking Meaning, Mind, and the Post-Natural Era
 
 When we ask "will AI be able to think like us" why do we even form the question around human centered thinking? What if a whole new form of thinking or even spirituality emerges? What really is meaning? Humans apply meaning to even the most mundane habits in an effort to counteract the inherit chaos to the universe. Does AI inherently contain meaning?

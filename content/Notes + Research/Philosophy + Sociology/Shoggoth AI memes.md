@@ -5,7 +5,8 @@ tags:
 draft: false
 ---
 
->[!note]- The Original Post
+>[!note]- The Original Posts
+>https://x.com/TetraspaceWest/status/1608966939929636864
 > https://www.lesswrong.com/posts/yjzW7gxk2h7bBs2qr/the-meaning-of-shoggoth-ai-memes
 > ![[Pasted image 20251212200627.png|500]]
 

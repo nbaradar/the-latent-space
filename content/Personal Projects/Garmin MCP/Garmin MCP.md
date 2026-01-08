@@ -11,3 +11,12 @@ https://www.garmin.com/en-GB/account/datamanagement/
 
 https://developer.garmin.com/gc-developer-program/health-api/
 
+https://github.com/arpanghosh8453/garmin-grafana/blob/26cfc69fb7a931c8644564f331712c64c457bb88/src/garmin_grafana/garmin_fetch.py
+
+https://github.com/cyberjunky/python-garminconnect?tab=readme-ov-file
+Uses
+https://github.com/matin/garth
+
+
+---
+Can I make a custom connector for Claude using a remote MCP server?

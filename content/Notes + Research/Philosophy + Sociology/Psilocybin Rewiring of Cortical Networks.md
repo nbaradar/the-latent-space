@@ -3,7 +3,7 @@ title: Psilocybin Rewiring of Cortical Networks
 tags:
   - thought
   - neuroscience
-draft: false
+draft: true
 ---
 >[!example] [Link to Study: 'Psilocybin triggers an activity-dependent rewiring of large-scale cortical networks'](https://www.cell.com/cell/fulltext/S0092-8674(25)01305-4)
 >![[Pasted image 20251224104937.png|300]]

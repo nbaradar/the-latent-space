@@ -14,5 +14,6 @@ A Directory of all the CLI coding agents currently available: https://clicodinga
 | [[Windsurf]]        | Cognition                     |
 | [[Kiro IDE]]        | Amazon                        |
 | [[Qwen Code]]       | [[Alibaba]]                   |
+| OpenCode            | [Anomoly](https://anoma.ly/)  |
 
 

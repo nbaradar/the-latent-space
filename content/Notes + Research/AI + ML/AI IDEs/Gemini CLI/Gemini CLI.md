@@ -1,10 +1,10 @@
 ---
 title: Gemini CLI
 tags:
-  - lab
   - gemini
   - google
   - ai/ml
+  - reference
 draft:
 ---
 >[!info]- Relevant Links 

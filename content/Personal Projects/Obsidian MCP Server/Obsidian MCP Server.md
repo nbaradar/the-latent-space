@@ -1129,6 +1129,10 @@ frontmatter_operations.py # YAML: read_frontmatter(), update_frontmatter()
 
 ---
 # Brainstorming Features 
+
+### Obsidian CLI 
+https://obsidian.md/help/cli
+How can you incorporate this? Could using CLI + Skills just make this MCP server obsolete?
 ### Markdown Validation 
 Use a prompt resource with system instructions on the markdown spec
 ### Tool Annotations

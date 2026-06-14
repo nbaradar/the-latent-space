@@ -76,6 +76,12 @@ ClaudeCode on the Web allows you to delegate coding tasks from your browser or m
 
 ---
 # Additional Tips/Tricks
+
+### Auto-Dream Mode
+https://www.reddit.com/r/ClaudeCode/comments/1rzt8fv/what_is_this_autodream_feature/
+> Based on context around this feature flag in the binary, it seems to perform periodic background memory consolidation. When enabled, it occasionally spawns a background Claude agent instance that does a "reflective pass" over your memory files, synthesizing what you've learned across recent sessions into consolidated, organized memories.
+>
+> Per the binary, here is the actual prompt the background Claude instance receives: "You are performing a dream — a reflective pass over your memory files. Synthesize what you've learned recently into durable, well-organized memories so that future sessions can orient quickly. Update [MEMORY.md](http://memory.md/) so it stays under [line limit] lines. It's an index, not a dump — link to memory files with one-line descriptions. Never write memory content directly into it. Return a brief summary of what you consolidated, updated, or pruned. If nothing changed (memories are already tight), say so."
 ### Tracking Usage
 If you want to track your remaining usage credit, there are a couple open source tools that help you do so through JSONL files 
 Look at [CCUsage](https://ccusage.com/) 

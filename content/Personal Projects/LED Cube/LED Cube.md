@@ -4,7 +4,7 @@ tags:
   - project
   - diy
   - arduino
-draft:
+draft: true
 ---
 [1000pcs F5 5mm Round White Clear Led Super Bright Ligte Emitting Diodes 6000-6500k Lamp Bulb](https://www.aliexpress.us/item/3256806931796890.html?spm=a2g0o.order_list.order_list_main.53.4b7b1802aY1G3X&gatewayAdapt=glo2usa#nav-specification)
 ![[S5f45ffb3030c483e9a1244d7c4a1ab0c7.pdf]]

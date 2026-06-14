@@ -1,9 +1,9 @@
 ---
-title: Intake
+title: Link Intake
 tags:
   - signal
   - links
-draft: true
+draft: false
 ---
 
 # Intake

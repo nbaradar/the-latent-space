@@ -1,3 +1,11 @@
+---
+title: Intake
+tags:
+  - signal
+  - links
+draft: true
+---
+
 # Intake
 
 ## 2026-06-14
@@ -720,13 +728,6 @@ no of course we dont know why, we dont know why the model does anything - yes we
 - [https://x.com/trungtphan/status/2032225992161575419?s=46&t=bKaqRQCZMRh5sT6p4F6kAw](https://x.com/trungtphan/status/2032225992161575419?s=46&t=bKaqRQCZMRh5sT6p4F6kAw)
   - Posted: 2026-03-13
 
-## 2026-03-10
-
-### Discord
-
-- [https://www.reddit.com/r/MarioKartWorld/comments/1l7vemt/unofficial_mario_kart_world_ost_download/](https://www.reddit.com/r/MarioKartWorld/comments/1l7vemt/unofficial_mario_kart_world_ost_download/)
-  - Posted: 2026-03-10
-
 ## 2026-03-09
 
 ### Discord
@@ -826,8 +827,6 @@ no of course we dont know why, we dont know why the model does anything - yes we
 
 ### Discord
 
-- [https://www.google.com/search?q=four+thousand+weeks+time+management+for+mortals&rlz=1C5GCCM_en&oq=four+thousand+weeks+time+management+for+mortals&gs_lcrp=EgZjaHJvbWUqCggAEAAY4wIYgAQyCggAEAAY4wIYgAQyBwgBEC4YgAQyBwgCEAAYgAQyBwgDEAAYgAQyBwgEEAAYgAQyBwgFEAAYgAQyBwgGEAAYgAQyBwgHEAAYgAQyBwgIEAAYgATSAQg0NzUzajBqNKgCALACAQ&sourceid=chrome&ie=UTF-8](https://www.google.com/search?q=four+thousand+weeks+time+management+for+mortals&rlz=1C5GCCM_en&oq=four+thousand+weeks+time+management+for+mortals&gs_lcrp=EgZjaHJvbWUqCggAEAAY4wIYgAQyCggAEAAY4wIYgAQyBwgBEC4YgAQyBwgCEAAYgAQyBwgDEAAYgAQyBwgEEAAYgAQyBwgFEAAYgAQyBwgGEAAYgAQyBwgHEAAYgAQyBwgIEAAYgATSAQg0NzUzajBqNKgCALACAQ&sourceid=chrome&ie=UTF-8)
-  - Posted: 2026-02-13
 - [https://www.theguardian.com/lifeandstyle/2026/jan/03/secret-being-happy-2026-simpler-than-you-think](https://www.theguardian.com/lifeandstyle/2026/jan/03/secret-being-happy-2026-simpler-than-you-think)
   - Posted: 2026-02-13
 - [https://code.claude.com/docs/en/agent-teams](https://code.claude.com/docs/en/agent-teams)
@@ -886,8 +885,6 @@ no of course we dont know why, we dont know why the model does anything - yes we
 
 ### Discord
 
-- [https://gamejolt.com/games/lisa-the-pointless/221705](https://gamejolt.com/games/lisa-the-pointless/221705)
-  - Posted: 2026-02-05
 - [https://1password.com/blog/from-magic-to-malware-how-openclaws-agent-skills-become-an-attack-surface](https://1password.com/blog/from-magic-to-malware-how-openclaws-agent-skills-become-an-attack-surface)
   - Posted: 2026-02-05
 - [https://openai.com/business/frontier/](https://openai.com/business/frontier/)
@@ -941,15 +938,6 @@ no of course we dont know why, we dont know why the model does anything - yes we
   - Posted: 2026-01-21
 - [https://github.com/anthropics/original_performance_takehome/](https://github.com/anthropics/original_performance_takehome/)
   - Posted: 2026-01-21
-
-## 2026-01-20
-
-### Discord
-
-- [https://www.gofundme.com/f/help-sanaz-provide-stability-for-her-children](https://www.gofundme.com/f/help-sanaz-provide-stability-for-her-children)
-  - Posted: 2026-01-20
-- [https://mocoshow.com/2025/08/17/community-rallies-for-family-after-father-detained-by-ice/](https://mocoshow.com/2025/08/17/community-rallies-for-family-after-father-detained-by-ice/)
-  - Posted: 2026-01-20
 
 ## 2026-01-16
 

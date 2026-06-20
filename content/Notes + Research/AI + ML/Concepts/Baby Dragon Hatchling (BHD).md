@@ -3,7 +3,7 @@ title: Baby Dragon Hatchling (BDH)
 tags:
   - ai/ml
   - concept
-  - architecture
+  - model
 ---
 [Research Paper](https://arxiv.org/abs/2509.26507)
 [GitHub Repo](https://github.com/pathwaycom/bdh)

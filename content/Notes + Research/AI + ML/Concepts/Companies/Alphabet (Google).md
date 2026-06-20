@@ -16,3 +16,5 @@ They are currently known for their series of [[Gemini]] models.
 - [DeepMind](https://en.wikipedia.org/wiki/Google_DeepMind) (Founded 2010)
 - [Google Brain](https://en.wikipedia.org/wiki/Google_Brain) (Founded 2011)
 - [Google AI](https://en.wikipedia.org/wiki/Google_AI) (Founded 2017)
+
+---

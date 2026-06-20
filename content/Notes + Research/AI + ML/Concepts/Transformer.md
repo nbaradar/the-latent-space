@@ -3,6 +3,7 @@ title: Transformer
 tags:
   - concept
   - ai/ml
+  - model
 draft:
 ---
 >[!info] Additional Resources

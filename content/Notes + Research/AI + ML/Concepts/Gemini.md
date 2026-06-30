@@ -4,6 +4,7 @@ tags:
   - concept
   - google
   - gemini
+  - model
 draft:
 ---
 ![[Pasted image 20251022111332.png|400]]

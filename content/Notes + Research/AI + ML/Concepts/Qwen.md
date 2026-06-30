@@ -4,6 +4,7 @@ tags:
   - ai/ml
   - concept
   - alibaba
+  - model
 draft:
 ---
 ![[Pasted image 20250725112617.png|400]]

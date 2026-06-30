@@ -7,17 +7,215 @@ draft: false
 ---
 # Intake
 
-## 2026-06-14
+## 2026-06-22
+
+### Reddit
+
+- [Americans Have Turned Against AI in Incredible Numbers](https://tech.yahoo.com/ai/articles/americans-turned-against-ai-incredible-130000345.html)
+
+- Saved: 2026-06-22
+
+  
 
 ### Discord
 
+  
+
+- [https://cloud.google.com/blog/products/data-analytics/how-the-open-knowledge-format-can-improve-data-sharing/](https://cloud.google.com/blog/products/data-analytics/how-the-open-knowledge-format-can-improve-data-sharing/)
+
+- Posted: 2026-06-22
+
+  
+
+## 2026-06-21
+
+  
+
+### Reddit
+
+  
+
+- [How are you actually vetting MCP servers before you install them?](https://www.reddit.com/r/mcp/comments/1ubx5ec/how_are_you_actually_vetting_mcp_servers_before/)
+
+- Saved: 2026-06-21
+
+- [College Students Consumed by “Resignation and Despair” as They’re Relentlessly Pressured to Use AI](https://futurism.com/artificial-intelligence/college-students-resignation-despair)
+
+- Saved: 2026-06-21
+
+- [Meta Exec Admits Zuckerberg Has Crushed Workers’ Spirits](https://finance.yahoo.com/technology/articles/meta-exec-admits-zuckerberg-crushed-120000153.html?.tsrc=daily_mail&segment_id=DY_VTO_50_Supernova&ncid=crm_19908-1475736-20260621-0--A&bt_ee=2%2BmdDgPOPduImz%2B5IOLvMdhloepTa0asc9%2Bwku94273JTMc%2FiEL6l0S6H%2B010gnJ&bt_ts=1782063633963)
+
+- Saved: 2026-06-21
+
+- [Price reversal phenomenon](https://i.redd.it/r48x2fxivn8h1.png)
+
+- Saved: 2026-06-21
+
+- [Anthropic is rolling out identity verification for "certain capabilities." Updated yesterday](https://i.redd.it/7zp497v7yl8h1.jpeg)
+
+- Saved: 2026-06-21
+
+  
+
+## 2026-06-20
+
+  
+
+### Reddit
+
+  
+
+- [Officially the most successful group project of all time](https://i.redd.it/2cao52qxmd8h1.png)
+
+- Saved: 2026-06-20
+
+- [Seeing all coworkers chats](https://www.reddit.com/r/claude/comments/1uazung/seeing_all_coworkers_chats/)
+
+- Saved: 2026-06-20
+
+  
+
+## 2026-06-19
+
+  
+
+### Reddit
+
+  
+
+- [Low-skilled attacker used Claude, Codex to breach 14 companies](https://www.helpnetsecurity.com/2026/06/17/ai-agents-offensive-cyber-operations-claude-codex)
+
+- Saved: 2026-06-19
+
+  
+
+## 2026-06-17
+
+  
+
+### Reddit
+
+  
+
+- [Pentagon used Elon Musk’s Grok AI to fire 2,000 missiles at Iran, official says](https://www.independent.co.uk/news/world/americas/us-politics/elon-musk-grok-ai-iran-war-b2996939.html)
+
+- Saved: 2026-06-17
+
+- [It may already be too late to control AI](https://thehill.com/opinion/technology/5924895-ai-safety-report-2026-highlights/)
+
+- Saved: 2026-06-17
+
+  
+
+### Discord
+
+  
+
+- [https://www.langchain.com/blog/the-art-of-loop-engineering](https://www.langchain.com/blog/the-art-of-loop-engineering)
+
+- Posted: 2026-06-17
+
+- [https://z.ai/blog/glm-5.2](https://z.ai/blog/glm-5.2)
+
+- Posted: 2026-06-17
+
+  
+
+## 2026-06-16
+
+  
+
+### Reddit
+
+  
+
+- [Claude Code hilariously ignores directions and spawns an entire family tree of descendant agents](https://www.reddit.com/r/BetterOffline/comments/1u7icud/claude_code_hilariously_ignores_directions_and/)
+
+- Saved: 2026-06-16
+
+- [Open Knowledge Format has just been announced as a new Knowledge Base format for AI agents made by Google](https://cloud.google.com/blog/products/data-analytics/how-the-open-knowledge-format-can-improve-data-sharing)
+
+- Saved: 2026-06-16
+
+- [Exclusive: OpenAI Losses Increased Nearly 8X in 2025, With Spending Hitting $34 Billion](https://www.wheresyoured.at/exclusive-openai-financials/?ref=ed-zitrons-wheres-your-ed-at-newsletter)
+
+- Saved: 2026-06-16
+
+- [Leak Exposes Members of Peter Thiel’s Secretive ‘Dialog’ Society](https://www.wired.com/story/leak-exposes-members-of-peter-thiels-secretive-dialog-society/)
+
+- Saved: 2026-06-16
+
+- [The Mythos & Fable era has started the final stretch of 6-18 months to fully end-to-end Recursive Self Improvement countdown at OpenAI and Anthropic...expect anything in the endgame phase now 💨🚀🌌](https://www.reddit.com/gallery/1u7c41g)
+
+- Saved: 2026-06-16
+
+- [Anthropic warns that AI will soon be able to improve itself without human intervention](https://edition.cnn.com/2026/06/05/business/anthropic-calls-for-ai-brake-pedal)
+
+- Saved: 2026-06-16
+
+- [Exclusive: OpenAI Losses Increased Nearly 8X in 2025, With Spending Hitting $34 Billion](https://www.wheresyoured.at/exclusive-openai-financials/)
+
+- Saved: 2026-06-16
+
+  
+
+### Discord
+
+  
+
+- [https://github.com/DietrichGebert/ponytail](https://github.com/DietrichGebert/ponytail)
+
+- Posted: 2026-06-16
+
+  
+
+## 2026-06-15
+
+  
+
+### Reddit
+
+  
+
+- [The White House Is Ratcheting Up Its War Against Anthropic](https://www.theatlantic.com/technology/2026/06/trump-anthropic-export-control-ai-race/687555/?gift=5MjKTLV9QwyU_J0HzTnanoWieJfkMhNH_YTT9pP_fhA)
+- Saved: 2026-06-15
+
+- [During testing, Mythos 5 invented its own language, then switched back to English to talk to humans](https://i.redd.it/j7uzra6wqf7h1.png)
+- Saved: 2026-06-15
+
+- [Stop using Ollama](https://sleepingrobots.com/dreams/stop-using-ollama/)
+- Saved: 2026-06-15
+
+- [Coding After Coders: The End of Computer Programming as We Know It
+
+In the era of A.I. agents, many Silicon Valley programmers are now barely programming. Instead, what they’re doing is deeply, deeply weird.](https://www.reddit.com/r/siliconvalley/comments/1u6s8fi/coding_after_coders_the_end_of_computer/)
+- Saved: 2026-06-15
+
+- [Anthropic backtracks. Claims Mythos is on par with ChatGPT 5.5](https://i.redd.it/setcavb6vh7h1.png)
+- Saved: 2026-06-15
+
+### Discord
+- [https://share.google/9XQYYjpTI9MHjmOo4](https://share.google/9XQYYjpTI9MHjmOo4)
+- Posted: 2026-06-15
+  
+## 2026-06-14
+
+### Reddit
+- [LeCun's new paper argues AGI is a broken concept and humans were never "general" to begin with](https://www.reddit.com/r/aigossips/comments/1u5p2g6/lecuns_new_paper_argues_agi_is_a_broken_concept/)
+- Saved: 2026-06-14
+
+- [Google introduced the Open Knowledge Format (OKF) - a standardized way to store information in a directory of markdown files. Makes it really easy to make a digital brain that agents can use.](https://i.redd.it/u5w0vwig467h1.png)
+- Saved: 2026-06-14
+
+## 2026-06-14
+
+### Discord
 - [https://www.anthropic.com/news/fable-mythos-access](https://www.anthropic.com/news/fable-mythos-access)
   - Posted: 2026-06-14
 
 ## 2026-06-11
 
 ### Reddit
-
 - [⚡️ Anthropic and OpenAI subscriptions are more unprofitable than previously thought](https://www.reddit.com/r/ArtificialInteligence/comments/1u32dmh/anthropic_and_openai_subscriptions_are_more/)
   - Saved: 2026-06-11
 - [Europe 2031](https://europe2031.ai/)

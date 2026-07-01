@@ -111,14 +111,19 @@ button.desktop-explorer {
 .explorer-content {
   list-style: none;
   overflow: hidden;
-  overflow-y: auto;
   margin-top: 0.5rem;
+  min-height: 0;
+
+  & > .explorer-ul {
+    max-height: 100%;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+  }
 
   & ul {
     list-style: none;
     margin: 0;
     padding: 0;
-    overscroll-behavior: contain;
 
     & li > a {
       color: var(--dark);
@@ -147,6 +152,10 @@ button.desktop-explorer {
     margin-left: 6px;
     padding-left: 0.8rem;
     border-left: 1px solid var(--lightgray);
+  }
+
+  .folder-outer.open > ul {
+    overflow: visible;
   }
 }
 

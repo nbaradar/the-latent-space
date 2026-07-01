@@ -42,7 +42,7 @@ export const defaultContentPageLayout: PageLayout = {
     Component.MobileOnly(Component.Explorer()),
 
     // Desktop-only recent notes in the left sidebar (optional)
-    Component.DesktopOnly(Component.RecentNotes({ showTags: false, limit: 3 })),
+    Component.DesktopOnly(Component.RecentNotes({ showTags: false, limit: 10, scrollable: true })),
   ],
 
   right: [
@@ -54,7 +54,6 @@ export const defaultContentPageLayout: PageLayout = {
     Component.MobileOnly(Component.RecentNotes({ showTags: false, limit: 3 })),
   ],
 }
-
 
 // components for pages that display lists of pages  (e.g. tags or folders)
 export const defaultListPageLayout: PageLayout = {

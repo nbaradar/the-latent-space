@@ -1,10 +1,8 @@
 import { QuartzComponent, QuartzComponentConstructor, QuartzComponentProps } from "./types"
 import { FullSlug, SimpleSlug, resolveRelative } from "../util/path"
 import { QuartzPluginData } from "../plugins/vfile"
-import { byDateAndAlphabetical } from "./PageList"
 import style from "./styles/recentNotes.scss"
-import { Date, getDate } from "./Date"
-import { GlobalConfiguration } from "../cfg"
+import { Date, ValidDateType } from "./Date"
 import { i18n } from "../i18n"
 import { classNames } from "../util/lang"
 
@@ -13,16 +11,45 @@ interface Options {
   limit: number
   linkToMore: SimpleSlug | false
   showTags: boolean
+  scrollable: boolean
+  dateType: ValidDateType
   filter: (f: QuartzPluginData) => boolean
-  sort: (f1: QuartzPluginData, f2: QuartzPluginData) => number
+  sort?: (f1: QuartzPluginData, f2: QuartzPluginData) => number
 }
 
-const defaultOptions = (cfg: GlobalConfiguration): Options => ({
+function getDateByType(
+  data: QuartzPluginData,
+  dateType: ValidDateType,
+): globalThis.Date | undefined {
+  return data.dates?.[dateType]
+}
+
+function byDateTypeAndAlphabetical(dateType: ValidDateType) {
+  return (f1: QuartzPluginData, f2: QuartzPluginData) => {
+    const f1Date = getDateByType(f1, dateType)
+    const f2Date = getDateByType(f2, dateType)
+
+    if (f1Date && f2Date) {
+      return f2Date.getTime() - f1Date.getTime()
+    } else if (f1Date && !f2Date) {
+      return -1
+    } else if (!f1Date && f2Date) {
+      return 1
+    }
+
+    const f1Title = f1.frontmatter?.title.toLowerCase() ?? ""
+    const f2Title = f2.frontmatter?.title.toLowerCase() ?? ""
+    return f1Title.localeCompare(f2Title)
+  }
+}
+
+const defaultOptions = (): Options => ({
   limit: 3,
   linkToMore: false,
   showTags: true,
+  scrollable: false,
+  dateType: "created",
   filter: () => true,
-  sort: byDateAndAlphabetical(cfg),
 })
 
 export default ((userOpts?: Partial<Options>) => {
@@ -32,16 +59,18 @@ export default ((userOpts?: Partial<Options>) => {
     displayClass,
     cfg,
   }: QuartzComponentProps) => {
-    const opts = { ...defaultOptions(cfg), ...userOpts }
-    const pages = allFiles.filter(opts.filter).sort(opts.sort)
+    const opts = { ...defaultOptions(), ...userOpts }
+    const sort = opts.sort ?? byDateTypeAndAlphabetical(opts.dateType)
+    const pages = allFiles.filter(opts.filter).sort(sort)
     const remaining = Math.max(0, pages.length - opts.limit)
     return (
-      <div class={classNames(displayClass, "recent-notes")}>
+      <div class={classNames(displayClass, "recent-notes", opts.scrollable ? "scrollable" : "")}>
         <h3>{opts.title ?? i18n(cfg.locale).components.recentNotes.title}</h3>
         <ul class="recent-ul">
           {pages.slice(0, opts.limit).map((page) => {
             const title = page.frontmatter?.title ?? i18n(cfg.locale).propertyDefaults.title
             const tags = page.frontmatter?.tags ?? []
+            const date = getDateByType(page, opts.dateType)
 
             return (
               <li class="recent-li">
@@ -53,9 +82,9 @@ export default ((userOpts?: Partial<Options>) => {
                       </a>
                     </h3>
                   </div>
-                  {page.dates && (
+                  {date && (
                     <p class="meta">
-                      <Date date={getDate(cfg, page)!} locale={cfg.locale} />
+                      <Date date={date} locale={cfg.locale} />
                     </p>
                   )}
                   {opts.showTags && (

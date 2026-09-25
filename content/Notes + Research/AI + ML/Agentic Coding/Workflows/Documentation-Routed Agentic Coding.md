@@ -26,11 +26,12 @@ published: 2026-09-25
 Here's what a working session looks like. The rest of the page explains the structure that makes it work.
 
 > [!example] One-time setup
-> Run **`/adopt-routed-workflow`** in the repo. It sets up the structure from scratch, or migrates your existing docs into it without losing anything. See [[#Adopting it in any repo]].
+> 1. **Install the skills once** for your user: clone [doc-routed-agentic-coding](https://github.com/nbaradar/doc-routed-agentic-coding) and run `./install.sh --link`.
+> 2. **In each repo, run `/adopt-routed-workflow`.** It sets up the structure from scratch, or migrates your existing docs into it without losing anything. See [[#Adopting it in any repo]].
 
 1. **Open the repo in a new chat session.** The agent automatically loads a small contract (`AGENTS.md`) and nothing else.
-2. **Run `/project-status`.** A few lines: what was last built, what's in progress, which plans are waiting, and what needs you.
-3. **Run `/plan-unit` and design the next piece together.** You and the agent agree on scope, what's out of scope, and the key decisions; the agent writes it up as a plan.
+2. **Run `/project-status`.** A few lines: what was last built, what's in progress, which plans are waiting (including Drafts and how many open questions each has), and what needs you.
+3. **Run `/plan-unit` and design the next piece together.** You and the agent agree on scope, what's out of scope, and the key decisions; the agent writes it up as a plan. Planning doesn't have to finish in one session: `/plan-unit 0003` picks a Draft back up later.
 4. **Approve the plan.** The agent summarises the plan and asks you to **Approve**, **Revise**, or **Keep as Draft**. Nothing gets built until you approve.
 5. **Open a fresh session and run `/implement-plan <n>`.** The agent works through the plan on its own, running tests and checks, and stops only when the plan says to or when reality contradicts it.
 6. **Review and merge.** The agent finishes by updating the project's status and history docs and marking the plan Done, then reports anything it couldn't verify. You review the PR against a checklist and merge.
@@ -77,13 +78,11 @@ docs/
   decisions/              RFCs / ADRs + index and conventions
   plans/                  implementation plans + TEMPLATE.md + index with statuses
   future/                 deliberately deferred work
-.claude/skills/
-  plan-unit/              design → write a plan
-  implement-plan/         implement an approved plan → run the Definition of Done
-  project-status/         a short status report
 .github/pull_request_template.md
 tests/documentation.test.mjs
 ```
+
+The skills are **not** in the project. They're installed once for your user, in `~/.claude/skills/`, and work in every repo; see [[#Rules vs procedures]].
 
 ### Who reads what
 
@@ -96,6 +95,22 @@ tests/documentation.test.mjs
 
 > [!note] Claude Code quirk
 > Claude Code reads `CLAUDE.md`, not `AGENTS.md`. A one-line `CLAUDE.md` containing `@AGENTS.md` keeps the shared `AGENTS.md` convention (read by Codex, Cursor, and others) working in Claude Code too.
+
+## Rules vs procedures
+
+The workflow is split into layers so the repo **describes itself**, whatever tool is reading it:
+
+| Layer | Holds | Lives in | Required? |
+|---|---|---|---|
+| **Rules** | Stages, the approval requirement, Definition of Done, doc discipline, routing | The project's `AGENTS.md` | Yes. Always loaded, and read by any agent (Claude Code, Codex, Cursor…) |
+| **Details** | Plan lifecycle, templates | `docs/plans/`, templates | Yes. Read when planning |
+| **Enforcement** | Headers, indexes, links, plan statuses | The doc checker | Yes. Catches drift |
+| **Procedures** | Step-by-step, interactive ways of following the rules | Skills, installed per user | No. Shortcuts that make the rules easy to follow |
+
+A quick fix made without any skill, or by a tool that doesn't support Claude Code skills, still gets told to update `status.md` and `history.md`, because that rule lives in `AGENTS.md`. The skills are generic and **defer to `AGENTS.md`** for anything project-specific (check commands, which changes need an RFC), so one copy serves every project.
+
+> [!tip] One copy, symlinked
+> The skills live in a single repo. `./install.sh --link` symlinks each one into `~/.claude/skills/`, so editing a skill in any project edits the repo's file, and `git status` shows the change ready to commit. Keep project copies out: a project skill and a personal skill with the same name conflict.
 
 ## Routing: how the agent finds context
 
@@ -186,7 +201,9 @@ Lives in `AGENTS.md`, so every agent sees it, even without the skill:
 
 ## The skills
 
-> [!example]- `/plan-unit`: design → plan
+> [!example]- `/plan-unit`: design → plan, or resume a Draft
+> - **Start or resume:** `/plan-unit NNNN` reopens that plan. With no number and existing Drafts, it asks whether to resume one or start fresh. Approved or later plans aren't reopened without your go-ahead, and Done plans are never rewritten.
+> - **When resuming,** it summarises where the plan stands, **re-checks it against the current code and docs** (a Draft can go stale), takes the open questions first, and edits the plan in place, keeping its number
 > - Gathers context through the routing table; opens only relevant docs and code
 > - Recommends **one** smallest cohesive unit (not a survey of options)
 > - Asks only questions whose answers change the plan
@@ -205,13 +222,13 @@ Lives in `AGENTS.md`, so every agent sees it, even without the skill:
 > - Reports what was built, verified counts, what wasn't verified, deviations, and follow-ups
 
 > [!example]- `/project-status`: a cheap status report
-> Reads **only** `status.md`, the plans index, the last two history entries, and `git log` / `git status`. Outputs at most about 12 lines:
+> Reads **only** `status.md`, the plans index, the last two history entries, and `git log` / `git status`. For Draft plans it counts the open questions with a single shell command instead of opening each plan file, so it can tell a Draft that's blocked on questions from one that only needs your approval. Outputs at most about 12 lines:
 > ```text
 > Last built:  …
 > In progress: …
 > Plans:       …
 > Next up:     …
-> Needs you:   …
+> Needs you:   … (Drafts awaiting answers or approval: /plan-unit NNNN)
 > Repo:        …
 > ```
 
@@ -232,7 +249,7 @@ A documentation test file runs with the normal unit tests and **fails** when:
 
 ## Adopting it in any repo
 
-I packaged the whole setup as a personal skill, **`/adopt-routed-workflow`**, in `~/.claude/skills/`, so it works in every project, not just the one it was built in.
+I packaged the whole setup in a public repo, **[doc-routed-agentic-coding](https://github.com/nbaradar/doc-routed-agentic-coding)**, with four skills: **`/adopt-routed-workflow`** plus the three workflow skills. Clone it and run `./install.sh --link` to install them for your user; they then work in every project.
 
 ### Two modes
 
@@ -259,7 +276,7 @@ flowchart TD
     G2 --> L
     L -->|migration| V[Move text word for word<br/>+ coverage check]
     L -->|setup| W
-    V --> W[Add workflow pieces:<br/>AGENTS.md, docs, plans, skills,<br/>PR template, doc checker]
+    V --> W[Add workflow pieces:<br/>AGENTS.md, docs, plans,<br/>PR template, doc checker<br/>+ check skills are installed]
     W --> C[Verify: doc checks,<br/>break-it tests, project checks]
     C --> O[Optional condense pass<br/>migration only, with approval]
     C --> R[Report: tokens,<br/>layout, what wasn't verified]
@@ -270,27 +287,33 @@ flowchart TD
 2. **Assess:** inventory every doc, measure what loads by default, find the project's check commands, and sort each section into *rule / topic reference / rationale / roadmap / status / history / for humans / out of date*.
 3. **Propose a layout and wait for approval.**
 4. **Migration only:** move text word for word with a script, then prove coverage.
-5. **Add the workflow pieces** from templates, adapted to the project's names and commands.
+5. **Add the workflow pieces** from templates, adapted to the project's names and commands. It doesn't copy skills into the project; it checks the workflow skills are installed and points you to `install.sh` if not.
 6. **Verify:** the doc checks pass *and* fail when something is broken on purpose; the project's own checks still pass.
 7. **Optional condense pass** (migration only, with approval).
 8. **Report:** tokens before and after, the new layout, what was corrected, what wasn't verified, and a suggested commit message.
 
-### What's inside the skill
+### What's in the repo
 
 ```text
-adopt-routed-workflow/
-  SKILL.md                  the instructions (~1,500 words, loaded only when invoked)
-  templates/
-    layout.md               default layout + where each kind of existing content goes
-    AGENTS.md               contract skeleton: routing, workflow, Definition of Done
-    docs-README.md, status.md, history.md, decisions-README.md
-    plans-README.md, plan-TEMPLATE.md, pull_request_template.md
-    skills/                 generic /project-status, /plan-unit, /implement-plan
-  scripts/
-    check-docs.mjs          dependency-free doc checker (settings block at the top)
-    coverage.py             proves a migration lost nothing
-    measure.py              estimates tokens (characters ÷ 4)
+install.sh                  installs the skills for your user (copy, or --link)
+skills/
+  adopt-routed-workflow/
+    SKILL.md                the instructions (~1,500 words, loaded only when invoked)
+    templates/
+      layout.md             default layout + where each kind of existing content goes
+      AGENTS.md             contract skeleton: routing, workflow, Definition of Done
+      docs-README.md, status.md, history.md, decisions-README.md
+      plans-README.md, plan-TEMPLATE.md, pull_request_template.md
+    scripts/
+      check-docs.mjs        dependency-free doc checker (settings block at the top)
+      coverage.py           proves a migration lost nothing
+      measure.py            estimates tokens (characters ÷ 4)
+  project-status/           short status report
+  plan-unit/                design → plan → approval, or resume a Draft
+  implement-plan/           implement an approved plan → Definition of Done
 ```
+
+Repo: [https://github.com/nbaradar/doc-routed-agentic-coding](https://github.com/nbaradar/doc-routed-agentic-coding)
 
 > [!tip] Lessons from doing the first migration by hand
 > 1. **Move text word for word first; condense later.** A script that copies line ranges makes the move mechanical and reviewable.
@@ -312,6 +335,15 @@ adopt-routed-workflow/
 | All documentation | ~50,800 | ~55,300 (+9%, none loaded by default) |
 
 *Estimates: characters ÷ 4, not tokenizer counts.*
+
+## Changelog
+
+- **2026-09-25:** First version of the workflow. Later that day:
+  - Added an explicit **approval gate** to `/plan-unit`.
+  - Added the `/adopt-routed-workflow` skill, with setup and migration modes.
+  - `/plan-unit` can **resume a Draft** (`/plan-unit NNNN`), re-checking it for staleness before continuing.
+  - `/project-status` shows each Draft's **open-question count** without opening plan files, and lists Drafts under *Needs you*.
+  - The three workflow skills became **generic, per-user skills** in the public repo, symlinked into `~/.claude/skills/` from a single copy and no longer stored in projects. The workflow's rules stay in each project's `AGENTS.md`; see [[#Rules vs procedures]].
 
 ## Lessons learned
 

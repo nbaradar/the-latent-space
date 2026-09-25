@@ -19,7 +19,27 @@ published: 2026-09-25
 > Built and first used with [[Claude Code]] on a solo TypeScript / Postgres project (a personal finance dashboard).
 
 > [!info] Status
-> **Set up, not yet battle-tested.** The skills below had not been run on a real unit of work when this was written. See [[#Evaluation log]] for results as I test it against other workflows.
+> **Set up, not yet battle-tested.** The skills below had not been run on a real unit of work when this was written. How I plan to test whether it actually helps agents is in [[Testing Documentation-Routed Agentic Coding]]; results go in the [[#Evaluation log]].
+
+## How it works in practice
+
+Here's what a working session looks like. The rest of the page explains the structure that makes it work.
+
+> [!example] One-time setup
+> Run **`/adopt-routed-workflow`** in the repo. It sets up the structure from scratch, or migrates your existing docs into it without losing anything. See [[#Adopting it in any repo]].
+
+1. **Open the repo in a new chat session.** The agent automatically loads a small contract (`AGENTS.md`) and nothing else.
+2. **Run `/project-status`.** A few lines: what was last built, what's in progress, which plans are waiting, and what needs you.
+3. **Run `/plan-unit` and design the next piece together.** You and the agent agree on scope, what's out of scope, and the key decisions; the agent writes it up as a plan.
+4. **Approve the plan.** The agent summarises the plan and asks you to **Approve**, **Revise**, or **Keep as Draft**. Nothing gets built until you approve.
+5. **Open a fresh session and run `/implement-plan <n>`.** The agent works through the plan on its own, running tests and checks, and stops only when the plan says to or when reality contradicts it.
+6. **Review and merge.** The agent finishes by updating the project's status and history docs and marking the plan Done, then reports anything it couldn't verify. You review the PR against a checklist and merge.
+
+> [!tip] What changes compared with ad-hoc prompting
+> - **You spend your attention on design, not supervision.** The back-and-forth happens once, while planning. Implementation runs without you.
+> - **Every session starts small.** The agent loads about 5k tokens of rules and routing instead of the whole project's history, then opens only the docs the task needs.
+> - **Nothing falls through the cracks at the end.** A checklist, backed by tests, makes the agent update status, history, and docs before calling the work finished.
+> - **Fresh sessions are a feature.** Because the plan holds the context, a new session for implementation works well, and it exposes gaps in the plan.
 
 ## The problem
 
@@ -122,7 +142,7 @@ flowchart LR
 ```
 
 1. **Design** *(together)*. If the unit changes an architectural boundary (e.g., a new core table), write an **RFC** first and accept it.
-2. **Plan** *(together)*. `/plan-unit` writes `docs/plans/NNNN-title.md` from the template. It stays **Draft** until approved and its *Open questions* section is empty.
+2. **Plan** *(together)*. `/plan-unit` writes `docs/plans/NNNN-title.md` from the template. It stays **Draft** until its *Open questions* section is empty **and you explicitly approve it**: the skill summarises the plan and asks you to Approve, Revise, or Keep as Draft.
 3. **Implement** *(agent alone)*. `/implement-plan NNNN` refuses anything not **Approved**, sets it **In progress**, loads the plan's required reading, and builds it.
 4. **Finish** *(agent alone)*. Runs the **Definition of Done** before saying it's finished.
 
@@ -171,8 +191,9 @@ Lives in `AGENTS.md`, so every agent sees it, even without the skill:
 > - Recommends **one** smallest cohesive unit (not a survey of options)
 > - Asks only questions whose answers change the plan
 > - Drafts an RFC if a boundary changes and gets it accepted first
-> - Writes the plan from the template, updates the plans index and `status.md`
-> - Runs the doc checks and reports the path, status, and open questions
+> - Writes the plan from the template, updates the plans index and `status.md`, and runs the doc checks
+> - **Approval gate:** if open questions remain, it lists them and keeps the plan Draft. Otherwise it summarises goal, scope, non-goals, key decisions, and acceptance criteria, and asks you to **Approve**, **Revise**, or **Keep as Draft**. It never approves a plan on its own judgment.
+> - On approval: sets `Status: Approved` with the date, updates the index and status, and tells you the next step: `/implement-plan NNNN`, ideally in a fresh session
 
 > [!example]- `/implement-plan <n>`: implement → finish
 > - Refuses a plan that isn't **Approved**, or when another plan is **In progress**
@@ -209,15 +230,74 @@ A documentation test file runs with the normal unit tests and **fails** when:
 > [!caution] Limitation
 > Tests check **structure**, not **content**. Nothing proves `status.md` was updated *meaningfully*; that still depends on the checklist, the skill, and a human reviewing the PR against the template.
 
-## Migrating an existing project
+## Adopting it in any repo
 
-What worked for moving two bloated files into this structure without losing anything:
+I packaged the whole setup as a personal skill, **`/adopt-routed-workflow`**, in `~/.claude/skills/`, so it works in every project, not just the one it was built in.
 
-1. **Move text word for word first; condense later.** A script copied line ranges from the old files into the new ones.
-2. **Check nothing was lost.** Compare every non-blank line of the originals against the new files, and look at each mismatch: formatting, a renamed heading, a rewritten link, or content that was genuinely out of date.
-3. **Drop only exact duplicates** during the move.
-4. **Condense in a separate pass.** Start with what loads by default, then the largest on-demand files.
-5. **Measure** before and after.
+### Two modes
+
+The skill picks a mode first and tells you which one it chose.
+
+| | **Setup mode** | **Migration mode** |
+|---|---|---|
+| **When** | No meaningful docs (at most a stub README or a generated `CLAUDE.md`) | Existing agent or project docs worth keeping |
+| **What it does** | Creates the structure from scratch | Moves existing docs into the structure, then adds the workflow |
+| **Asks you** | What the project is, hard rules, what's high-risk, the first thing to build | Approval of the proposed layout and where each existing section goes |
+| **Guarantee** | Invents no topic docs you didn't give it content for | Nothing is lost, proven line by line |
+
+Borderline cases, like a single short `CLAUDE.md`, get migration mode: it costs little and guarantees existing text survives.
+
+### What it does, step by step
+
+```mermaid
+flowchart TD
+    M{Existing docs?} -->|no| S1[Inspect repo:<br/>language, commands, layout]
+    S1 --> S2[Ask one short round<br/>of questions]
+    M -->|yes| G1[Branch + snapshot<br/>original docs]
+    G1 --> G2[Inventory, measure tokens,<br/>classify every section]
+    S2 --> L[Propose layout<br/>wait for approval]
+    G2 --> L
+    L -->|migration| V[Move text word for word<br/>+ coverage check]
+    L -->|setup| W
+    V --> W[Add workflow pieces:<br/>AGENTS.md, docs, plans, skills,<br/>PR template, doc checker]
+    W --> C[Verify: doc checks,<br/>break-it tests, project checks]
+    C --> O[Optional condense pass<br/>migration only, with approval]
+    C --> R[Report: tokens,<br/>layout, what wasn't verified]
+    O --> R
+```
+
+1. **Preconditions:** a new branch, never the default one. In migration mode, a snapshot of the original docs.
+2. **Assess:** inventory every doc, measure what loads by default, find the project's check commands, and sort each section into *rule / topic reference / rationale / roadmap / status / history / for humans / out of date*.
+3. **Propose a layout and wait for approval.**
+4. **Migration only:** move text word for word with a script, then prove coverage.
+5. **Add the workflow pieces** from templates, adapted to the project's names and commands.
+6. **Verify:** the doc checks pass *and* fail when something is broken on purpose; the project's own checks still pass.
+7. **Optional condense pass** (migration only, with approval).
+8. **Report:** tokens before and after, the new layout, what was corrected, what wasn't verified, and a suggested commit message.
+
+### What's inside the skill
+
+```text
+adopt-routed-workflow/
+  SKILL.md                  the instructions (~1,500 words, loaded only when invoked)
+  templates/
+    layout.md               default layout + where each kind of existing content goes
+    AGENTS.md               contract skeleton: routing, workflow, Definition of Done
+    docs-README.md, status.md, history.md, decisions-README.md
+    plans-README.md, plan-TEMPLATE.md, pull_request_template.md
+    skills/                 generic /project-status, /plan-unit, /implement-plan
+  scripts/
+    check-docs.mjs          dependency-free doc checker (settings block at the top)
+    coverage.py             proves a migration lost nothing
+    measure.py              estimates tokens (characters ÷ 4)
+```
+
+> [!tip] Lessons from doing the first migration by hand
+> 1. **Move text word for word first; condense later.** A script that copies line ranges makes the move mechanical and reviewable.
+> 2. **Prove nothing was lost.** Compare every non-blank line of the originals against the new files, and explain each mismatch: formatting, a renamed heading, a rewritten link, a recorded duplicate, or out-of-date content you chose to correct.
+> 3. **Drop only exact duplicates** during the move.
+> 4. **Condense in a separate pass,** starting with what loads by default.
+> 5. **Measure** before and after.
 
 ## Results
 
@@ -242,6 +322,8 @@ What worked for moving two bloated files into this structure without losing anyt
 - **Tell agents what's already decided.** Most mid-task interruptions are the agent asking about something already settled.
 
 ## Evaluation log
+
+Method: [[Testing Documentation-Routed Agentic Coding]].
 
 > [!question] To fill in as I test this against other workflows
 > | Metric | Result |

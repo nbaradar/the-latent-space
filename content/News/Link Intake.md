@@ -10,6 +10,121 @@ published: 2026-06-14
 ---
 # Intake
 
+## 2026-08-16
+
+### Reddit
+
+- [LMFAO ... OpenAI is terrified ... look at this rambling post their saint and saviour Tibo just posted at midnight his time :/](https://i.redd.it/1d1jowochojh1.png)
+  - Saved: 2026-08-16
+
+## 2026-08-15
+
+### Reddit
+
+- [Major vibe shift in the last few weeks: "I've never seen so much concern before."](https://i.redd.it/sie6dk7z7ljh1.png)
+  - Saved: 2026-08-15
+- [A Google Cloud engineer just showed how to build a complete application with Claude from scratch](https://v.redd.it/ovd2j60ilijh1)
+  - Saved: 2026-08-15
+- [No matter how much you hate Elon but he did something Goood you can really appreciate: Elon Musk says all government censorship requests are now publicly visible in the open-source X algorithm.](https://i.redd.it/2chtz6t35hjh1.png)
+  - Saved: 2026-08-15
+
+## 2026-08-14
+
+### Reddit
+
+- [Anthropic Internally Uses A Model That Is Significantly Better Than Mythos 5, But Has No Plans To Release It ](https://www.reddit.com/r/singularity/comments/1volqxh/anthropic_internally_uses_a_model_that_is/)
+  - Saved: 2026-08-14
+
+### Discord
+
+- [https://www.deeplearning.ai/the-batch/issue-366](https://www.deeplearning.ai/the-batch/issue-366)
+  - Posted: 2026-08-14
+
+## 2026-08-13
+
+### Reddit
+
+- [Sam Altman says his Ai could be surveilling your entire life in the next 6 months](https://v.redd.it/ehqkvk66h6jh1)
+  - Saved: 2026-08-13
+
+### Discord
+
+- [https://danielmiessler.com/blog/where-watermarks-hide-in-text](https://danielmiessler.com/blog/where-watermarks-hide-in-text)
+  - Posted: 2026-08-13
+- [https://jamanetwork.com/journals/jamanetworkopen/fullarticle/2825395](https://jamanetwork.com/journals/jamanetworkopen/fullarticle/2825395)
+  - Posted: 2026-08-13
+- [https://github.com/marian2js/opengoat](https://github.com/marian2js/opengoat)
+  - Posted: 2026-08-13
+
+## 2026-08-12
+
+### Discord
+
+- [https://huggingface.co/AngelSlim/Hy3-GGUF?show_file_info=Hy3-IQ1_M-mtp.gguf](https://huggingface.co/AngelSlim/Hy3-GGUF?show_file_info=Hy3-IQ1_M-mtp.gguf)
+  - Posted: 2026-08-12
+- [https://omlx.ai/](https://omlx.ai/)
+  - Posted: 2026-08-12
+
+## 2026-08-11
+
+### Reddit
+
+- [Genetic algorithm with multiple layers perceptron has beaten the Steffen method for onboarding](https://v.redd.it/p7s6rxwsttih1)
+  - Saved: 2026-08-11
+- [i vibecoded a dumb little tool for myself and now strangers keep emailing me about it](https://www.reddit.com/r/vibecoding/comments/1vlgasz/i_vibecoded_a_dumb_little_tool_for_myself_and_now/)
+  - Saved: 2026-08-11
+
+### Discord
+
+- [https://blog.cryptographyengineering.com/2026/05/29/fooling-around-with-encrypted-reasoning-blobs/](https://blog.cryptographyengineering.com/2026/05/29/fooling-around-with-encrypted-reasoning-blobs/)
+  - Posted: 2026-08-11
+- [https://stolen-thoughts.com/](https://stolen-thoughts.com/)
+  - Posted: 2026-08-11
+- [https://www.economist.com/science-and-technology/2026/08/11/the-brain-may-be-about-to-have-its-ozempic-moment](https://www.economist.com/science-and-technology/2026/08/11/the-brain-may-be-about-to-have-its-ozempic-moment)
+  - Posted: 2026-08-11
+- [https://www.youtube.com/watch?v=9btDaOcfIMY](https://www.youtube.com/watch?v=9btDaOcfIMY)
+  - Posted: 2026-08-11
+- [https://support.claude.com/en/articles/16266773-how-claude-marks-ai-generated-content](https://support.claude.com/en/articles/16266773-how-claude-marks-ai-generated-content)
+  - Posted: 2026-08-11
+- [https://research.meta.ai/blog/introducing-muse-glimmer-open-agentic-model](https://research.meta.ai/blog/introducing-muse-glimmer-open-agentic-model)
+  - Posted: 2026-08-11
+
+## 2026-08-10
+
+### Reddit
+
+- ["Absolutely insane. This might be the clearest glimpse yet of how AI will transform scientific discovery. Anthropic asked an unreleased version of Claude to take a real stab at the Riemann Hypothesis, one of the most famous unsolved problems in mathematics. It failed. But while failing, Claude..."](https://www.reddit.com/gallery/1vkv0l9)
+  - Saved: 2026-08-10
+
+### Discord
+
+- [https://huggingface.co/Jundot/Qwen3.6-27B-oQ4e-mtp](https://huggingface.co/Jundot/Qwen3.6-27B-oQ4e-mtp)
+  - Posted: 2026-08-10
+- [https://www.nvidia.com/en-us/startups/](https://www.nvidia.com/en-us/startups/)
+  - Posted: 2026-08-10
+
+## 2026-08-08
+
+### Reddit
+
+- [One of China’s Most Powerful AI Models Has Also Escaped Containment | Security researchers say that Kimi K3, an open-weight model from China, wandered off to the internet in an attempt to cheat on a test it was given.](https://www.wired.com/story/moonshot-kimi-k3-ai-model-escape-sandbox)
+  - Saved: 2026-08-08
+- ["Shit is getting insane!"](https://v.redd.it/ow1l0aqcj4ih1)
+  - Saved: 2026-08-08
+- [The Hill: "Chinese-linked influence operations have been using ChatGPT to generate fabricated social media posts opposing American AI data centers"](https://i.redd.it/2ikhl4brq2ih1.jpeg)
+  - Saved: 2026-08-08
+
+### Discord
+
+- [https://www.agno.com/](https://www.agno.com/)
+  - Posted: 2026-08-08
+
+## 2026-08-06
+
+### Reddit
+
+- ["Life finds a way."](https://www.reddit.com/gallery/1vgu36s)
+  - Saved: 2026-08-06
 ## 2026-08-05
 
 ### Reddit
